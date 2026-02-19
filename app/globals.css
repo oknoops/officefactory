@@ -1,4 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
+  --primary-red: #E63946;
+  --primary-dark: #1D1D1B;
+  /* Very dark grey almost black */
+  --secondary-blue: #0F172A;
+  /* For nav/footer usually */
+  --bg-light: #F8F9FA;
+  --text-main: #212529;
+  --text-muted: #6C757D;
+  --white: #FFFFFF;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,33 +23,62 @@
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Custom button classes to augment Tailwind */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.btn-primary {
+  background-color: var(--primary-red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c92a37;
+}
+
+.btn-dark {
+  background-color: var(--secondary-blue);
+  color: white;
+}
+
+.btn-dark:hover {
+  opacity: 0.9;
+}
+
+.btn-light {
+  background-color: #E9ECEF;
+  color: var(--text-main);
+}
+
+.btn-light:hover {
+  background-color: #DEE2E6;
+}
+
+.section-padding {
+  padding: 4rem 0;
 }

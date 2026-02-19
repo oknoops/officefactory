@@ -1,0 +1,73 @@
+import Image from 'next/image';
+import { FC } from 'react';
+
+const Pricing: FC = () => {
+    return (
+        <section id="services" className="py-24 bg-[#F8F9FA]">
+            <div className="container">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1D1D1B]">Nos Offres</h2>
+                <p className="text-[#6C757D] mb-12 text-lg">
+                    Une liste de prix de vos produits aide les clients potentiels à déterminer rapidement si le produit correspond à leur budget et à leurs besoins.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                    {/* Card 1 */}
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="p-8 pb-4">
+                            <h3 className="text-2xl font-bold mb-2">Domiciliation d'entreprise</h3>
+                            <div className="text-4xl font-bold text-[#1D1D1B]">
+                                79,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
+                            </div>
+                        </div>
+                        <div className="relative h-64 w-full mt-auto">
+                            <Image
+                                src="https://images.unsplash.com/photo-1708961462805-9949475ea462?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFpbGJveHxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="Domiciliation"
+                                fill
+                                style={{ objectFit: 'cover' }}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="p-8 pb-4">
+                            <h3 className="text-2xl font-bold mb-2">Coworking</h3>
+                            <div className="text-4xl font-bold text-[#1D1D1B]">
+                                149,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
+                            </div>
+                        </div>
+                        <div className="relative h-64 w-full mt-auto">
+                            <Image
+                                src="https://plus.unsplash.com/premium_photo-1684769161054-2fa9a998dcb6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y293b3JraW5nfGVufDB8fDB8fHww"
+                                alt="Coworking"
+                                fill
+                                style={{ objectFit: 'cover' }}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="p-8 pb-4">
+                            <h3 className="text-2xl font-bold mb-2">Bureau individuel</h3>
+                            <div className="text-4xl font-bold text-[#1D1D1B]">
+                                249,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
+                            </div>
+                        </div>
+                        <div className="relative h-64 w-full mt-auto">
+                            <Image
+                                src="https://plus.unsplash.com/premium_photo-1723823035067-adef00deb8ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHByaXZhdGUlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D"
+                                alt="Bureau individuel"
+                                fill
+                                style={{ objectFit: 'cover' }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Pricing;
