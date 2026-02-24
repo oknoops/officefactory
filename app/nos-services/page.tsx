@@ -23,7 +23,7 @@ export default function ServicesPage() {
                             Nos services
                         </h1>
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-                            Découvrez nos services à Bruxelles : domiciliation d’entreprise dès 80€, coworking, bureau partagé et bureau individuel à Uccle.
+                            Découvrez nos services à Bruxelles : domiciliation d’entreprise dès 79€, coworking, bureau partagé et bureau individuel à Uccle.
                         </p>
                         <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             Nous Contacter
@@ -251,7 +251,7 @@ export default function ServicesPage() {
             <section className="py-20 bg-white relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute right-0 top-0 w-2/3 h-full bg-[#E63946] transform -skew-x-12 translate-x-20"></div>
+                    <div className="absolute right-0 top-0 w-full md:w-2/3 h-full bg-[#E63946] transform md:-skew-x-12 md:translate-x-20"></div>
                 </div>
 
                 <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center text-white">

@@ -32,14 +32,29 @@ const Navbar: FC = () => {
                 <div className="hidden md:flex flex-1 justify-between ml-12 items-center">
                     {/* Links */}
                     <div className="flex items-center gap-8">
-                        <Link href="/" className="font-medium hover:text-[#E63946] transition-colors">Accueil</Link>
-                        <Link href="/nos-services" className="font-medium hover:text-[#E63946] transition-colors">Nos Services</Link>
-                        <Link href="/a-propos" className="font-medium hover:text-[#E63946] transition-colors">À propos</Link>
+                        <Link href="/" className="font-medium hover:text-[#E63946] transition-colors py-6">Accueil</Link>
+
+                        <div className="relative group/nav py-6">
+                            <button className="font-medium hover:text-[#E63946] transition-colors flex items-center gap-1">
+                                Nos Offres
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                            <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-xl flex flex-col py-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 mt-0 border border-gray-100">
+                                <Link href="/nos-services" className="px-5 py-3 text-sm hover:bg-[#F8F9FA] hover:text-[#E63946] transition-colors font-medium">Toutes nos offres</Link>
+                                <Link href="/services/domiciliation-bruxelles" className="px-5 py-3 text-sm hover:bg-[#F8F9FA] hover:text-[#E63946] transition-colors text-gray-600">Domiciliation d'entreprise</Link>
+                                <Link href="/services/coworking-bruxelles" className="px-5 py-3 text-sm hover:bg-[#F8F9FA] hover:text-[#E63946] transition-colors text-gray-600">Coworking</Link>
+                                <Link href="/services/bureau-individuel-bruxelles" className="px-5 py-3 text-sm hover:bg-[#F8F9FA] hover:text-[#E63946] transition-colors text-gray-600">Bureau individuel</Link>
+                                <Link href="/services/bureau-equipe-bruxelles" className="px-5 py-3 text-sm hover:bg-[#F8F9FA] hover:text-[#E63946] transition-colors text-gray-600">Bureau d'équipe</Link>
+                                <Link href="/services/demarches-administratives" className="px-5 py-3 text-sm hover:bg-[#F8F9FA] hover:text-[#E63946] transition-colors text-gray-600 border-t border-gray-50 font-medium">Démarches administratives</Link>
+                            </div>
+                        </div>
+
+                        <Link href="/a-propos" className="font-medium hover:text-[#E63946] transition-colors py-6">À propos</Link>
                     </div>
 
                     {/* Actions */}
                     <div className="flex items-center gap-3">
-                        <a href="https://brusselsofficefactory.odoo.com/web/login" className="btn btn-light text-sm px-4">
+                        <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light text-sm px-4">
                             Se connecter
                         </a>
                         <a href="/contact" className="btn btn-dark text-sm px-4">
@@ -73,13 +88,15 @@ const Navbar: FC = () => {
                         >
                             Accueil
                         </Link>
-                        <Link
-                            href="/nos-services"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="hover:text-[#E63946] border-b border-gray-100 pb-2"
-                        >
-                            Nos Services
-                        </Link>
+                        <div className="flex flex-col gap-2 border-b border-gray-100 pb-2">
+                            <span className="font-medium text-gray-400 text-sm uppercase tracking-wider mt-2">Nos Offres</span>
+                            <Link href="/nos-services" onClick={() => setIsMenuOpen(false)} className="hover:text-[#E63946] pl-4">Toutes nos offres</Link>
+                            <Link href="/services/domiciliation-bruxelles" onClick={() => setIsMenuOpen(false)} className="hover:text-[#E63946] pl-4 text-base text-gray-600">Domiciliation d'entreprise</Link>
+                            <Link href="/services/coworking-bruxelles" onClick={() => setIsMenuOpen(false)} className="hover:text-[#E63946] pl-4 text-base text-gray-600">Coworking</Link>
+                            <Link href="/services/bureau-individuel-bruxelles" onClick={() => setIsMenuOpen(false)} className="hover:text-[#E63946] pl-4 text-base text-gray-600">Bureau individuel</Link>
+                            <Link href="/services/bureau-equipe-bruxelles" onClick={() => setIsMenuOpen(false)} className="hover:text-[#E63946] pl-4 text-base text-gray-600">Bureau d'équipe</Link>
+                            <Link href="/services/demarches-administratives" onClick={() => setIsMenuOpen(false)} className="hover:text-[#E63946] pl-4 text-base text-[#1D1D1B] font-medium pt-2 mt-2 border-t border-gray-50">Démarches adm.</Link>
+                        </div>
                         <Link
                             href="/a-propos"
                             onClick={() => setIsMenuOpen(false)}
@@ -90,7 +107,7 @@ const Navbar: FC = () => {
                     </div>
 
                     <div className="flex flex-col gap-4 mt-4">
-                        <a href="https://brusselsofficefactory.odoo.com/web/login" className="btn btn-light w-full justify-center">
+                        <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light w-full justify-center">
                             Se connecter
                         </a>
                         <a href="/contact" className="btn btn-dark w-full justify-center">

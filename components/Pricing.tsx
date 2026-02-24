@@ -15,9 +15,16 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="p-8 pb-4">
                             <h3 className="text-2xl font-bold mb-2">Domiciliation d'entreprise</h3>
+                            <div className="text-sm font-medium text-[#6C757D] mb-1">À partir de</div>
                             <div className="text-4xl font-bold text-[#1D1D1B]">
                                 79,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
                             </div>
+                            <ul className="mt-6 space-y-2">
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Archivage du courrier pour réception
+                                </li>
+                            </ul>
                         </div>
                         <div className="relative h-64 w-full mt-auto">
                             <Image
@@ -33,9 +40,16 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="p-8 pb-4">
                             <h3 className="text-2xl font-bold mb-2">Coworking</h3>
+                            <div className="text-sm font-medium text-[#6C757D] mb-1">À partir de</div>
                             <div className="text-4xl font-bold text-[#1D1D1B]">
                                 149,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
                             </div>
+                            <ul className="mt-6 space-y-2">
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Archivage du courrier pour réception
+                                </li>
+                            </ul>
                         </div>
                         <div className="relative h-64 w-full mt-auto">
                             <Image
@@ -51,9 +65,16 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="p-8 pb-4">
                             <h3 className="text-2xl font-bold mb-2">Bureau individuel</h3>
+                            <div className="text-sm font-medium text-[#6C757D] mb-1">À partir de</div>
                             <div className="text-4xl font-bold text-[#1D1D1B]">
                                 249,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
                             </div>
+                            <ul className="mt-6 space-y-2">
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Archivage du courrier pour réception
+                                </li>
+                            </ul>
                         </div>
                         <div className="relative h-64 w-full mt-auto">
                             <Image

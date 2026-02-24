@@ -34,7 +34,7 @@ const ProFeatures: FC = () => {
                     <FeatureItem
                         icon={UserCheck}
                         title="Réceptionniste"
-                        desc="Accueil professionnel pour orienter vos clients et partenaires"
+                        desc="Accueil professionnel pour orienter vos clients et partenaires."
                     />
                     <FeatureItem
                         icon={Car}

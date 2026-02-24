@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import MapSection from '@/components/MapSection';
 
 export const metadata = {
     title: 'Contactez-nous | Office Factory',
@@ -16,24 +17,19 @@ export default function ContactPage() {
                     <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#1D1D1B] text-center">
                         Contactez-nous
                     </h1>
-                    {/* Wrapper for cropping Odoo header/footer */}
-                    {/* Wrapper for cropping Odoo header/footer and hiding scrollbar */}
-                    <div className="bg-white rounded-2xl shadow-sm overflow-hidden relative max-w-4xl mx-auto h-[900px]">
+                    <div className="bg-white rounded-2xl shadow-sm overflow-hidden w-full max-w-4xl mx-auto">
                         <iframe
-                            src="https://brusselsofficefactory.odoo.com/nous-contacter"
-                            width="100%"
-                            height="1800px" // Make iframe very tall to prevent internal scrolling
-                            className="border-0 w-full absolute top-0 left-0"
-                            style={{
-                                marginTop: '-290px', // Adjusted to show top of form
-                            }}
-                            scrolling="no" // Deprecated but helps in some browsers
+                            src="https://brusselsofficefactory.odoo.com/nous-contacter?v=1"
+                            height="1200px"
+                            className="border-0 w-full"
+                            scrolling="no"
                             title="Formulaire de contact Office Factory"
                         />
                     </div>
                 </div>
             </section>
 
+            <MapSection />
             <Footer />
         </main>
     );

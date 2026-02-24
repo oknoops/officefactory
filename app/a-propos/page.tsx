@@ -30,8 +30,11 @@ export default function AboutPage() {
                             <p className="mb-6">
                                 Situé à <strong className="text-[#1D1D1B]">Uccle</strong>, notre centre propose une gamme complète de services incluant la location de bureaux privatifs, d'espaces partagés et de coworking. Nous comprenons les besoins des entrepreneurs d'aujourd'hui et mettons tout en œuvre pour offrir une flexibilité maximale.
                             </p>
-                            <p>
+                            <p className="mb-6">
                                 En plus de l'hébergement, nous proposons un service de <strong className="text-[#1D1D1B]">domiciliation d’entreprise</strong> dans un cadre réglementé et professionnel, idéal pour établir votre siège social en toute sérénité.
+                            </p>
+                            <p>
+                                Office Factory est fier d'être <a href="/belgian-workspace-association" className="text-[#E63946] font-semibold hover:underline">Membre de la Belgian Workspace Association (BWA)</a>. Cette adhésion garantit que nous respectons les normes les plus strictes en matière d'éthique, de qualité d'infrastructure et de services proposés dans notre secteur.
                             </p>
                         </div>
                     </div>

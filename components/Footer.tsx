@@ -10,7 +10,7 @@ const Footer: FC = () => {
     return (
         <footer className="bg-[#F8F9FA] pt-16 pb-8 border-t border-gray-200">
             <div className="container">
-                <div className="grid md:grid-cols-4 gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
                     {/* Column 1: Brand */}
                     <div className="col-span-1">
                         <div className="flex items-center gap-2 mb-4">
@@ -24,8 +24,8 @@ const Footer: FC = () => {
                             </div>
                         </div>
                         <p className="text-[#6C757D] mb-4">
-                            Chaussée d'Alsemberg, 843<br />
-                            1180 Uccle
+                            842 Chaussée d'Alsemberg,<br />
+                            1180 Uccle, Belgique
                         </p>
                         <div className="flex gap-4">
                             {/* Social icons if any - Screenshot cut off */}
@@ -34,16 +34,28 @@ const Footer: FC = () => {
 
                     {/* Column 2: Links */}
                     <div className="col-span-1">
-                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Services</h4>
+                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Office Factory</h4>
                         <ul className="space-y-2 text-[#6C757D]">
-                            <li><a href="/nos-services" className="hover:text-[#E63946]">Nos Offres</a></li>
                             <li><a href="/a-propos" className="hover:text-[#E63946]">À propos</a></li>
                             <li><a href="/contact" className="hover:text-[#E63946]">Contactez-nous</a></li>
                             <li><a href="/contact" className="hover:text-[#E63946]">Domiciliez votre entreprise</a></li>
                         </ul>
                     </div>
 
-                    {/* Column 3: Contact */}
+                    {/* Column 3: Nos Offres */}
+                    <div className="col-span-1">
+                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Nos Offres</h4>
+                        <ul className="space-y-2 text-[#6C757D]">
+                            <li><a href="/nos-services" className="hover:text-[#E63946]">Toutes nos offres</a></li>
+                            <li><a href="/services/domiciliation-bruxelles" className="hover:text-[#E63946]">Domiciliation d'entreprise</a></li>
+                            <li><a href="/services/coworking-bruxelles" className="hover:text-[#E63946]">Coworking</a></li>
+                            <li><a href="/services/bureau-individuel-bruxelles" className="hover:text-[#E63946]">Bureau individuel</a></li>
+                            <li><a href="/services/bureau-equipe-bruxelles" className="hover:text-[#E63946]">Bureau d'équipe</a></li>
+                            <li><a href="/services/demarches-administratives" className="hover:text-[#E63946]">Démarches administratives</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Contact */}
                     <div className="col-span-1">
                         <h4 className="font-bold mb-4 text-[#1D1D1B]">Contact</h4>
                         <ul className="space-y-2 text-[#6C757D]">
@@ -52,7 +64,7 @@ const Footer: FC = () => {
                         </ul>
                     </div>
 
-                    {/* Column 4: Newsletter */}
+                    {/* Column 5: Newsletter */}
                     <div className="col-span-1">
                         <h4 className="font-bold mb-4 text-[#1D1D1B]">Newsletter</h4>
                         <p className="text-[#6C757D] text-sm mb-4">

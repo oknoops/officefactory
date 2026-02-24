@@ -113,7 +113,7 @@ export default function CoworkingPage() {
                             <div className="absolute top-0 right-0 bg-[#E63946] text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">
                                 POPULAIRE
                             </div>
-                            <h3 className="text-xl font-bold mb-2">Coworking Illimité</h3>
+                            <h3 className="text-xl font-bold mb-2">Coworking illimité</h3>
                             <div className="flex items-baseline gap-1 mb-6">
                                 <span className="text-4xl font-bold text-[#1D1D1B]">149€</span>
                                 <span className="text-[#6C757D]">/ mois</span>

@@ -8,7 +8,7 @@ const Hero: FC = () => {
                 {/* Left Content */}
                 <div className="max-w-xl">
                     <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1D1D1B] leading-tight">
-                        Un cadre flexible pour un travail flexible
+                        Domiciliez votre société sur Bruxelles
                     </h1>
                     <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                         Bureaux privatifs et espaces partagés, qui s’adaptent à votre rythme
@@ -21,6 +21,13 @@ const Hero: FC = () => {
                             Domiciliez votre entreprise
                         </a>
                     </div>
+
+                    <a href="/belgian-workspace-association" className="mt-8 flex items-center gap-3 text-base text-[#6C757D] font-medium bg-white/50 backdrop-blur-sm p-3 rounded-xl border border-gray-200/50 inline-flex shadow-sm hover:bg-white/80 transition-colors">
+                        <span className="flex items-center justify-center w-8 h-8 rounded-full overflow-hidden shrink-0 bg-white">
+                            <Image src="/logo-BWA.webp" alt="BWA Logo" width={24} height={24} style={{ objectFit: 'contain' }} />
+                        </span>
+                        Membre de la Belgian Workspace Association
+                    </a>
                 </div>
 
                 {/* Right Image */}
