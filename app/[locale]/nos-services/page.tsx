@@ -3,13 +3,24 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Check } from 'lucide-react';
 import NewsletterForm from '@/components/NewsletterForm';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata = {
-    title: 'Nos Services | Office Factory',
-    description: 'Découvrez nos services à Bruxelles : domiciliation d’entreprise, coworking, bureau partagé et bureau individuel à Uccle.',
-};
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    return {
+        title: t('services_title'),
+        description: t('services_desc'),
+    };
+}
 
 export default function ServicesPage() {
+    const t = useTranslations('ServicesPage');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -20,13 +31,13 @@ export default function ServicesPage() {
                     {/* Left Content */}
                     <div className="max-w-xl">
                         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1D1D1B] leading-tight">
-                            Nos services
+                            {t('title')}
                         </h1>
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-                            Découvrez nos services à Bruxelles : domiciliation d’entreprise dès 79€, coworking, bureau partagé et bureau individuel à Uccle.
+                            {t('desc')}
                         </p>
                         <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
-                            Nous Contacter
+                            {t('btn_contact')}
                         </a>
                     </div>
 
@@ -59,35 +70,31 @@ export default function ServicesPage() {
                     {/* Content (Right) */}
                     <div className="order-1 md:order-2">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
-                            Domiciliation d'entreprises à Bruxelles
+                            {t('s1_title')}
                         </h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Établissez votre <strong className="font-semibold text-[#1D1D1B]">siège social à Bruxelles</strong> grâce à notre service de <strong className="font-semibold text-[#1D1D1B]">domiciliation d’entreprise à Bruxelles</strong>, conforme et reconnu. Adresse professionnelle à Uccle, idéale pour renforcer votre crédibilité et répondre aux obligations légales.
+                            {t('s1_desc_p1')}<strong className="font-semibold text-[#1D1D1B]">{t('s1_desc_b1')}</strong>{t('s1_desc_p2')}<strong className="font-semibold text-[#1D1D1B]">{t('s1_desc_b2')}</strong>{t('s1_desc_p3')}
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Adresse officielle pour votre société</span>
+                                <span className="text-[#1D1D1B]">{t('s1_f1')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Business Center agréé SPF Économie</span>
+                                <span className="text-[#1D1D1B]">{t('s1_f2')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Réception du courrier</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Accès aux salles de réunion (en option)</span>
+                                <span className="text-[#1D1D1B]">{t('s1_f3')}</span>
                             </li>
                         </ul>
                         <div className="font-bold text-xl text-[#1D1D1B]">
-                            À partir de 79€/mois
+                            {t('s1_price')}
                         </div>
                         <div className="mt-4">
                             <a href="/services/domiciliation-bruxelles" className="text-[#E63946] font-semibold hover:underline">
-                                En savoir plus →
+                                {t('s1_link')}
                             </a>
                         </div>
                     </div>
@@ -100,35 +107,35 @@ export default function ServicesPage() {
                     {/* Content (Left) */}
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
-                            Espace Coworking à Bruxelles
+                            {t('s2_title')}
                         </h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Accédez à un <strong className="font-semibold text-[#1D1D1B]">espace coworking à Bruxelles</strong> adapté aux indépendants et entrepreneurs. Solution flexible pour travailler dans un environnement professionnel, sans engagement lourd.
+                            {t('s2_desc_p1')}<strong className="font-semibold text-[#1D1D1B]">{t('s2_desc_b1')}</strong>{t('s2_desc_p2')}
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Accès 24h/24 – 7j/7</span>
+                                <span className="text-[#1D1D1B]">{t('s2_f1')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">WiFi & internet haut débit</span>
+                                <span className="text-[#1D1D1B]">{t('s2_f2')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Accès aux espaces communs</span>
+                                <span className="text-[#1D1D1B]">{t('s2_f3')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Réception colis</span>
+                                <span className="text-[#1D1D1B]">{t('s2_f4')}</span>
                             </li>
                         </ul>
                         <div className="font-bold text-xl text-[#1D1D1B]">
-                            À partir de 149€/mois
+                            {t('s2_price')}
                         </div>
                         <div className="mt-4">
                             <a href="/services/coworking-bruxelles" className="text-[#E63946] font-semibold hover:underline">
-                                En savoir plus →
+                                {t('s2_link')}
                             </a>
                         </div>
                     </div>
@@ -161,35 +168,39 @@ export default function ServicesPage() {
                     {/* Content (Right) */}
                     <div className="order-1 md:order-2">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
-                            Bureau individuel à Bruxelles
+                            {t('s3_title')}
                         </h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Besoin d’un espace privé ? Notre <strong className="font-semibold text-[#1D1D1B]">location de bureau à Bruxelles</strong> vous permet de travailler en toute tranquillité dans un <strong className="font-semibold text-[#1D1D1B]">bureau individuel à Bruxelles</strong>.
+                            {t('s3_desc_p1')}<strong className="font-semibold text-[#1D1D1B]">{t('s3_desc_b1')}</strong>{t('s3_desc_p2')}<strong className="font-semibold text-[#1D1D1B]">{t('s3_desc_b2')}</strong>{t('s3_desc_p3')}
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Espace privé fermé</span>
+                                <span className="text-[#1D1D1B]">{t('s3_f1')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Accès 24/7</span>
+                                <span className="text-[#1D1D1B]">{t('s3_f2')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Internet haut débit</span>
+                                <span className="text-[#1D1D1B]">{t('s3_f3')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Possibilité de domiciliation entreprise Bruxelles</span>
+                                <span className="text-[#1D1D1B]">{t('s3_f4')}</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
+                                <span className="text-[#1D1D1B]">{t('s3_f5')}</span>
                             </li>
                         </ul>
                         <div className="font-bold text-xl text-[#1D1D1B]">
-                            À partir de 249€/mois
+                            {t('s3_price')}
                         </div>
                         <div className="mt-4">
                             <a href="/services/bureau-individuel-bruxelles" className="text-[#E63946] font-semibold hover:underline">
-                                En savoir plus →
+                                {t('s3_link')}
                             </a>
                         </div>
                     </div>
@@ -202,35 +213,35 @@ export default function ServicesPage() {
                     {/* Content (Left) */}
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
-                            Bureau d’équipe à Bruxelles
+                            {t('s4_title')}
                         </h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Installez votre société dans un <strong className="font-semibold text-[#1D1D1B]">bureau d'équipe à Bruxelles</strong>, adapté aux PME et sociétés en croissance. Solution idéale pour une <strong className="font-semibold text-[#1D1D1B]">location bureau Bruxelles</strong> avec flexibilité.
+                            {t('s4_desc_p1')}<strong className="font-semibold text-[#1D1D1B]">{t('s4_desc_b1')}</strong>{t('s4_desc_p2')}<strong className="font-semibold text-[#1D1D1B]">{t('s4_desc_b2')}</strong>{t('s4_desc_p3')}
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Espace dédié pour votre équipe</span>
+                                <span className="text-[#1D1D1B]">{t('s4_f1')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Salle de réunion disponible</span>
+                                <span className="text-[#1D1D1B]">{t('s4_f2')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Accès 24/7</span>
+                                <span className="text-[#1D1D1B]">{t('s4_f3')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Possibilité de domiciliation société Bruxelles</span>
+                                <span className="text-[#1D1D1B]">{t('s4_f4')}</span>
                             </li>
                         </ul>
                         <div className="font-bold text-xl text-[#1D1D1B]">
-                            À partir de : prix sur demande
+                            {t('s4_price')}
                         </div>
                         <div className="mt-4">
                             <a href="/services/bureau-equipe-bruxelles" className="text-[#E63946] font-semibold hover:underline">
-                                En savoir plus →
+                                {t('s4_link')}
                             </a>
                         </div>
                     </div>
@@ -263,35 +274,35 @@ export default function ServicesPage() {
                     {/* Content (Right) */}
                     <div className="order-1 md:order-2">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
-                            Démarches administratives
+                            {t('s5_title')}
                         </h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Nous vous accompagnons dans toutes les <strong className="font-semibold text-[#1D1D1B]">démarches administratives et juridiques</strong> liées à la vie de votre société en Belgique (création, modification, fermeture).
+                            {t('s5_desc_p1')}<strong className="font-semibold text-[#1D1D1B]">{t('s5_desc_b1')}</strong>{t('s5_desc_p2')}
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Création d'entreprise & statuts</span>
+                                <span className="text-[#1D1D1B]">{t('s5_f1')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Modification de société</span>
+                                <span className="text-[#1D1D1B]">{t('s5_f2')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Fermeture et liquidation</span>
+                                <span className="text-[#1D1D1B]">{t('s5_f3')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">Gain de temps et tranquillité d'esprit</span>
+                                <span className="text-[#1D1D1B]">{t('s5_f4')}</span>
                             </li>
                         </ul>
                         <div className="font-bold text-xl text-[#1D1D1B]">
-                            Sur devis
+                            {t('s5_price')}
                         </div>
                         <div className="mt-4">
                             <a href="/services/demarches-administratives" className="text-[#E63946] font-semibold hover:underline">
-                                En savoir plus →
+                                {t('s5_link')}
                             </a>
                         </div>
                     </div>
@@ -308,13 +319,13 @@ export default function ServicesPage() {
                 <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center text-white">
                     <div className="md:col-start-2">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Votre bureau ou siège social à Bruxelles commence ici
+                            {t('banner_title')}
                         </h2>
                         <p className="text-white/90 mb-8 text-lg">
-                            Location de bureau, coworking et domiciliation société Bruxelles à Uccle.
+                            {t('banner_desc')}
                         </p>
                         <a href="/contact" className="inline-block bg-white text-[#E63946] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
-                            Plus d'infos
+                            {t('banner_btn')}
                         </a>
                     </div>
                 </div>
@@ -324,10 +335,10 @@ export default function ServicesPage() {
             <section className="py-20 bg-white border-t border-gray-100">
                 <div className="container max-w-4xl text-center">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#1D1D1B]">
-                        Abonnez-vous à notre newsletter
+                        {t('news_title')}
                     </h2>
                     <p className="text-[#6C757D] mb-8">
-                        Soyez le premier à découvrir les dernières nouveautés, produits et tendances.
+                        {t('news_desc')}
                     </p>
                     <div className="max-w-lg mx-auto">
                         <NewsletterForm />

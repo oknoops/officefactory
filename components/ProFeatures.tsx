@@ -1,5 +1,6 @@
 import { UserCheck, Car, Clock, Package, Wifi, Users } from 'lucide-react';
 import { FC } from 'react';
+import { useTranslations } from 'next-intl';
 
 const FeatureItem: FC<{ icon: any, title: string, desc: string }> = ({ icon: Icon, title, desc }) => (
     <div className="flex gap-4 items-start">
@@ -16,16 +17,17 @@ const FeatureItem: FC<{ icon: any, title: string, desc: string }> = ({ icon: Ico
 );
 
 const ProFeatures: FC = () => {
+    const t = useTranslations('ProFeatures');
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-[#F8F9FA]">
             <div className="container grid lg:grid-cols-12 gap-12">
                 {/* Left Text Block */}
                 <div className="lg:col-span-4 pr-8">
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#1D1D1B] leading-tight">
-                        Un espace pensé pour les professionnels
+                        {t('title')}
                     </h2>
                     <a href="/a-propos" className="btn btn-primary px-8 py-3 text-lg">
-                        À propos de Office Factory
+                        {t('cta')}
                     </a>
                 </div>
 
@@ -33,33 +35,33 @@ const ProFeatures: FC = () => {
                 <div className="lg:col-span-8 grid md:grid-cols-2 gap-x-12 gap-y-16">
                     <FeatureItem
                         icon={UserCheck}
-                        title="Réceptionniste"
-                        desc="Accueil professionnel pour orienter vos clients et partenaires."
+                        title={t('feat1_title')}
+                        desc={t('feat1_desc')}
                     />
                     <FeatureItem
                         icon={Car}
-                        title="Parking"
-                        desc="Places de parking disponibles pour vous et vos visiteurs."
+                        title={t('feat2_title')}
+                        desc={t('feat2_desc')}
                     />
                     <FeatureItem
                         icon={Clock}
-                        title="24h/24, 7j/7"
-                        desc="Accès permanent à votre espace de travail, sans contrainte d'horaires."
+                        title={t('feat3_title')}
+                        desc={t('feat3_desc')}
                     />
                     <FeatureItem
                         icon={Package}
-                        title="Réception Colis"
-                        desc="Gestion et réception sécurisée de vos courriers et colis."
+                        title={t('feat4_title')}
+                        desc={t('feat4_desc')}
                     />
                     <FeatureItem
                         icon={Wifi}
-                        title="Internet Haut Débit"
-                        desc="Connexion rapide et performante pour un travail sans interruption."
+                        title={t('feat5_title')}
+                        desc={t('feat5_desc')}
                     />
                     <FeatureItem
                         icon={Users}
-                        title="Salle de réunion"
-                        desc="Espaces équipés pour vos rendez-vous et réunions professionnelles."
+                        title={t('feat6_title')}
+                        desc={t('feat6_desc')}
                     />
                 </div>
             </div>

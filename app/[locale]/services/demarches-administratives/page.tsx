@@ -3,14 +3,26 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FileText, Edit, XCircle, Check } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { useTranslations } from 'next-intl';
 
-export const metadata = {
-    title: 'Démarches Administratives | Office Factory Bruxelles',
-    description: 'Office Factory vous accompagne dans la création, modification, ou fermeture de votre entreprise en Belgique. Laissez-nous gérer la paperasse.',
-    keywords: 'création entreprise, modification entreprise, fermeture entreprise, démarches administratives Bruxelles, Office Factory',
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    return {
+        title: t('demarches_title'),
+        description: t('demarches_desc'),
+        keywords: t('demarches_keywords'),
+    };
+}
 
 export default function DemarchesAdministrativesPage() {
+    const t = useTranslations('DemarchesPage');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -20,16 +32,16 @@ export default function DemarchesAdministrativesPage() {
                 <div className="container grid md:grid-cols-2 gap-12 items-center">
                     <div className="max-w-xl">
                         <span className="text-[#E63946] font-semibold tracking-wider uppercase mb-2 block">
-                            Assistance Juridique & Administrative
+                            {t('tag')}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#1D1D1B] leading-tight">
-                            Démarches administratives pour votre société
+                            {t('title')}
                         </h1>
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-                            Outre nos services de domiciliation et de coworking, Office Factory vous accompagne dans toutes les démarches administratives et juridiques liées à la vie de votre société, en Belgique.
+                            {t('desc')}
                         </p>
                         <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
-                            Nous confier vos démarches
+                            {t('btn_contact')}
                         </a>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
@@ -56,14 +68,14 @@ export default function DemarchesAdministrativesPage() {
                         <div className="w-16 h-16 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6">
                             <FileText size={32} />
                         </div>
-                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">Créer une entreprise</h2>
+                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">{t('s1_t')}</h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Lancez votre activité en toute sérénité sans vous perdre dans le labyrinthe des obligations légales belges. De la rédaction des statuts à l'inscription à la BCE, nous prenons tout en charge.
+                            {t('s1_d')}
                         </p>
                         <ul className="space-y-3 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Rédaction des statuts & passage chez le notaire</span></li>
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Aide à l'élaboration du plan financier</span></li>
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Inscription BCE, TVA, et déclaration UBO</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s1_l1')}</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s1_l2')}</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s1_l3')}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -76,14 +88,14 @@ export default function DemarchesAdministrativesPage() {
                         <div className="w-16 h-16 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6">
                             <Edit size={32} />
                         </div>
-                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">Modifier une entreprise</h2>
+                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">{t('s2_t')}</h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Votre société évolue, déménage ou change de dirigeants ? Nous rédigeons et effectuons les publications officielles nécessaires pour que votre structure soit toujours à jour légalement.
+                            {t('s2_d')}
                         </p>
                         <ul className="space-y-3 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Changement de siège social (domiciliation)</span></li>
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Modification de l'objet social</span></li>
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Mise à jour UBO & Moniteur Belge</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s2_l1')}</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s2_l2')}</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s2_l3')}</span></li>
                         </ul>
                     </div>
                     <div className="relative h-[350px] rounded-3xl overflow-hidden shadow-lg">
@@ -102,14 +114,14 @@ export default function DemarchesAdministrativesPage() {
                         <div className="w-16 h-16 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6">
                             <XCircle size={32} />
                         </div>
-                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">Fermer une entreprise</h2>
+                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">{t('s3_t')}</h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            Mettre fin à une activité requiert le respect de procédures strictes. Nous vous accompagnons pour dissoudre et liquider votre société dans les règles de l'art, afin de fermer ce chapitre proprement.
+                            {t('s3_d')}
                         </p>
                         <ul className="space-y-3 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Préparation des assemblées générales</span></li>
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Coordination avec le liquidateur & publications</span></li>
-                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">Radiation des registres (TVA, BCE)</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s3_l1')}</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s3_l2')}</span></li>
+                            <li className="flex items-start gap-3"><span className="text-[#E63946] mt-1"><Check size={20} /></span><span className="text-[#1D1D1B]">{t('s3_l3')}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -118,12 +130,12 @@ export default function DemarchesAdministrativesPage() {
             {/* CTA Section */}
             <section className="py-20 bg-[#E63946] text-white text-center">
                 <div className="container max-w-4xl">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">Gagnez du temps, confiez-nous vos formalités !</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('cta_title')}</h2>
                     <p className="text-xl opacity-90 mb-8">
-                        Nos experts s'occupent de toute la paperasse pour que vous puissiez vous concentrer sur votre business.
+                        {t('cta_desc')}
                     </p>
                     <a href="/contact" className="btn bg-white text-[#E63946] hover:bg-gray-100 font-semibold px-8 py-3 rounded-full text-lg">
-                        Prendre contact
+                        {t('cta_btn')}
                     </a>
                 </div>
             </section>

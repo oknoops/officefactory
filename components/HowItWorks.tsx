@@ -1,16 +1,18 @@
 import { FC } from 'react';
 import { FileEdit, Briefcase, FileSignature } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const HowItWorks: FC = () => {
+    const t = useTranslations('HowItWorks');
     return (
         <section className="py-24 bg-[#F8F9FA] relative z-10 -mt-8 rounded-t-[3rem]">
             <div className="container">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#1D1D1B]">
-                        Comment ça marche ?
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-[#6C757D] max-w-2xl mx-auto">
-                        Lancer ou domicilier votre activité n'a jamais été aussi simple. Rejoignez-nous en 3 étapes.
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -23,10 +25,10 @@ const HowItWorks: FC = () => {
                         <div className="w-20 h-20 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                             <FileEdit size={32} />
                         </div>
-                        <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">Étape 1</span>
-                        <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">Vous remplissez le formulaire.</h3>
+                        <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">{t('step_prefix')} 1</span>
+                        <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">{t('step1_title')}</h3>
                         <p className="text-[#6C757D] leading-relaxed max-w-sm">
-                            Faites-nous part de vos besoins via notre formulaire en ligne ou par téléphone.
+                            {t('step1_desc')}
                         </p>
                     </div>
 
@@ -35,10 +37,10 @@ const HowItWorks: FC = () => {
                         <div className="w-20 h-20 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                             <Briefcase size={32} />
                         </div>
-                        <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">Étape 2</span>
-                        <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">Nous nous occupons de la paperasse.</h3>
+                        <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">{t('step_prefix')} 2</span>
+                        <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">{t('step2_title')}</h3>
                         <p className="text-[#6C757D] leading-relaxed max-w-sm">
-                            Notre équipe gère les démarches administratives, juridiques et logistiques pour vous.
+                            {t('step2_desc')}
                         </p>
                     </div>
 
@@ -47,17 +49,17 @@ const HowItWorks: FC = () => {
                         <div className="w-20 h-20 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                             <FileSignature size={32} />
                         </div>
-                        <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">Étape 3</span>
-                        <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">Vous signez le contrat et c'est fait.</h3>
+                        <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">{t('step_prefix')} 3</span>
+                        <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">{t('step3_title')}</h3>
                         <p className="text-[#6C757D] leading-relaxed max-w-sm">
-                            Tout est prêt. Il ne vous reste plus qu'à signer et à profiter de vos nouveaux services.
+                            {t('step3_desc')}
                         </p>
                     </div>
                 </div>
 
                 <div className="mt-16 text-center">
                     <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full text-lg font-semibold">
-                        Commencer maintenant
+                        {t('cta')}
                     </a>
                 </div>
             </div>

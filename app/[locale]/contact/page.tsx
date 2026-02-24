@@ -1,13 +1,25 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MapSection from '@/components/MapSection';
+import { useTranslations } from 'next-intl';
 
-export const metadata = {
-    title: 'Contactez-nous | Office Factory',
-    description: 'Contactez Office Factory pour votre domiciliation ou espace de bureau à Bruxelles.',
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    return {
+        title: t('contact_title'),
+        description: t('contact_desc'),
+    };
+}
 
 export default function ContactPage() {
+    const t = useTranslations('ContactPage');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -15,7 +27,7 @@ export default function ContactPage() {
             <section className="pt-32 pb-20 bg-[#F8F9FA]">
                 <div className="container">
                     <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#1D1D1B] text-center">
-                        Contactez-nous
+                        {t('title')}
                     </h1>
                     <div className="bg-white rounded-2xl shadow-sm overflow-hidden w-full max-w-4xl mx-auto">
                         <iframe

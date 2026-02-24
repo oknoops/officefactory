@@ -1,0 +1,845 @@
+
+> officefactory@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.28:3000
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 506ms
+RootLayout received locale parameter: fr
+Home Component rendered with locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+ GET /fr 200 in 1590ms (compile: 1205ms, proxy.ts: 71ms, render: 314ms)
+RootLayout received locale parameter: fr
+Home Component rendered with locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+ HEAD /fr 200 in 95ms (compile: 10ms, proxy.ts: 12ms, render: 73ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 72ms (compile: 6ms, proxy.ts: 4ms, render: 62ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 49ms (compile: 6ms, proxy.ts: 4ms, render: 40ms)
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 624ms (compile: 601ms, proxy.ts: 3ms, render: 20ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 179ms (compile: 108ms, proxy.ts: 12ms, render: 58ms)
+ GET /en/a-propos 200 in 26ms (compile: 4ms, proxy.ts: 3ms, render: 19ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 126ms (compile: 47ms, proxy.ts: 9ms, render: 70ms)
+ GET /en/a-propos 200 in 37ms (compile: 5ms, proxy.ts: 3ms, render: 29ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 149ms (compile: 50ms, proxy.ts: 11ms, render: 89ms)
+ GET /en/a-propos 200 in 63ms (compile: 5ms, proxy.ts: 5ms, render: 53ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 35ms (compile: 7ms, proxy.ts: 4ms, render: 24ms)
+✓ Compiled in 442ms
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 27ms (compile: 5ms, proxy.ts: 3ms, render: 19ms)
+✓ Compiled in 37ms
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 149ms (compile: 66ms, proxy.ts: 12ms, render: 71ms)
+ GET /en/a-propos 200 in 29ms (compile: 4ms, proxy.ts: 3ms, render: 22ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 146ms (compile: 54ms, proxy.ts: 13ms, render: 79ms)
+ GET /en/a-propos 200 in 48ms (compile: 8ms, proxy.ts: 3ms, render: 37ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 125ms (compile: 52ms, proxy.ts: 12ms, render: 61ms)
+ GET /en/a-propos 200 in 33ms (compile: 4ms, proxy.ts: 5ms, render: 24ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 33ms (compile: 7ms, proxy.ts: 3ms, render: 23ms)
+✓ Compiled in 45ms
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 27ms (compile: 5ms, proxy.ts: 3ms, render: 19ms)
+✓ Compiled in 35ms
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 135ms (compile: 57ms, proxy.ts: 11ms, render: 68ms)
+ GET /en/a-propos 200 in 27ms (compile: 5ms, proxy.ts: 3ms, render: 19ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 128ms (compile: 47ms, proxy.ts: 10ms, render: 70ms)
+ GET /en/a-propos 200 in 37ms (compile: 6ms, proxy.ts: 3ms, render: 27ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 116ms (compile: 48ms, proxy.ts: 11ms, render: 56ms)
+ GET /en/a-propos 200 in 28ms (compile: 6ms, proxy.ts: 4ms, render: 18ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 156ms (compile: 7ms, proxy.ts: 4ms, render: 144ms)
+RootLayout received locale parameter: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl/a-propos 200 in 34ms (compile: 6ms, proxy.ts: 4ms, render: 24ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 32ms (compile: 5ms, proxy.ts: 2ms, render: 25ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 69ms (compile: 9ms, proxy.ts: 4ms, render: 56ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 73ms (compile: 7ms, proxy.ts: 5ms, render: 60ms)
+RootLayout received locale parameter: favicon.webp
+RootLayout triggering notFound for locale: favicon.webp
+Home Component rendered with locale: favicon.webp
+getRequestConfig resolved requestLocale: undefined
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+ GET /favicon.webp 404 in 281ms (compile: 49ms, render: 232ms)
+RootLayout received locale parameter: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+ GET /fr/a-propos 200 in 35ms (compile: 6ms, proxy.ts: 5ms, render: 24ms)
+RootLayout received locale parameter: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl/a-propos 200 in 29ms (compile: 5ms, proxy.ts: 3ms, render: 21ms)
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 38ms (compile: 8ms, proxy.ts: 5ms, render: 26ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 136ms (compile: 57ms, proxy.ts: 3ms, render: 75ms)
+✓ Compiled in 62ms
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 143ms (compile: 53ms, proxy.ts: 3ms, render: 87ms)
+ GET /nl 200 in 44ms (compile: 5ms, proxy.ts: 3ms, render: 36ms)
+✓ Compiled in 13ms
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 227ms (compile: 50ms, proxy.ts: 60ms, render: 116ms)
+ GET /nl 200 in 64ms (compile: 8ms, proxy.ts: 4ms, render: 52ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 210ms (compile: 76ms, proxy.ts: 14ms, render: 119ms)
+ GET /nl 200 in 66ms (compile: 5ms, proxy.ts: 3ms, render: 58ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 155ms (compile: 52ms, proxy.ts: 13ms, render: 90ms)
+ GET /nl 200 in 61ms (compile: 8ms, proxy.ts: 15ms, render: 39ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+✓ Compiled in 40ms
+ GET /nl 200 in 39ms (compile: 5ms, proxy.ts: 2ms, render: 32ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 188ms (compile: 53ms, proxy.ts: 10ms, render: 125ms)
+ GET /nl 200 in 63ms (compile: 11ms, proxy.ts: 8ms, render: 44ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 220ms (compile: 82ms, proxy.ts: 12ms, render: 126ms)
+ GET /nl 200 in 61ms (compile: 7ms, proxy.ts: 4ms, render: 49ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 137ms (compile: 49ms, proxy.ts: 10ms, render: 79ms)
+ GET /nl 200 in 50ms (compile: 7ms, proxy.ts: 13ms, render: 31ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 200ms (compile: 72ms, proxy.ts: 17ms, render: 112ms)
+ GET /nl 200 in 59ms (compile: 6ms, proxy.ts: 3ms, render: 49ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 204ms (compile: 52ms, proxy.ts: 11ms, render: 141ms)
+ GET /nl 200 in 89ms (compile: 21ms, proxy.ts: 15ms, render: 53ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 173ms (compile: 50ms, proxy.ts: 9ms, render: 114ms)
+ GET /nl 200 in 84ms (compile: 11ms, proxy.ts: 15ms, render: 59ms)
+RootLayout received locale parameter: fr
+Home Component rendered with locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+ GET /fr 200 in 65ms (compile: 12ms, proxy.ts: 5ms, render: 49ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 54ms (compile: 9ms, proxy.ts: 5ms, render: 40ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 260ms (compile: 102ms, proxy.ts: 14ms, render: 144ms)
+ GET /en 200 in 61ms (compile: 14ms, proxy.ts: 9ms, render: 38ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 268ms (compile: 58ms, proxy.ts: 15ms, render: 195ms)
+ GET /en 200 in 108ms (compile: 20ms, proxy.ts: 21ms, render: 67ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 150ms (compile: 52ms, proxy.ts: 11ms, render: 87ms)
+ GET /en 200 in 57ms (compile: 8ms, proxy.ts: 15ms, render: 34ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 170ms (compile: 71ms, proxy.ts: 2ms, render: 97ms)
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+✓ Compiled in 0ms
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 185ms (compile: 85ms, proxy.ts: 13ms, render: 86ms)
+ GET /en 200 in 471ms (compile: 128ms, proxy.ts: 3ms, render: 340ms)
+ GET /en 200 in 325ms (compile: 80ms, proxy.ts: 12ms, render: 233ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+✓ Compiled in 93ms
+ GET /en 200 in 49ms (compile: 5ms, proxy.ts: 3ms, render: 41ms)
+✓ Compiled in 43ms
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 137ms (compile: 22ms, proxy.ts: 52ms, render: 63ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+✓ Compiled in 46ms
+ GET /en 200 in 59ms (compile: 8ms, proxy.ts: 3ms, render: 48ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 303ms (compile: 11ms, proxy.ts: 6ms, render: 286ms)
+RootLayout received locale parameter: favicon.webp
+RootLayout triggering notFound for locale: favicon.webp
+Home Component rendered with locale: favicon.webp
+getRequestConfig resolved requestLocale: favicon.webp
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+getRequestConfig resolved requestLocale: favicon.webp
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+getRequestConfig resolved requestLocale: undefined
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+ GET /favicon.webp 404 in 80ms (compile: 3ms, render: 77ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 163ms (compile: 5ms, proxy.ts: 3ms, render: 155ms)
+RootLayout received locale parameter: favicon.webp
+RootLayout triggering notFound for locale: favicon.webp
+Home Component rendered with locale: favicon.webp
+getRequestConfig resolved requestLocale: favicon.webp
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+getRequestConfig resolved requestLocale: favicon.webp
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+getRequestConfig resolved requestLocale: undefined
+Locale not included or undefined, falling back to defaultLocale
+Messages loaded successfully for locale: fr
+ GET /favicon.webp 404 in 71ms (compile: 4ms, render: 67ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 68ms (compile: 9ms, proxy.ts: 9ms, render: 50ms)
+✓ Compiled in 3ms
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 211ms (compile: 58ms, proxy.ts: 40ms, render: 113ms)
+ GET /nl 200 in 68ms (compile: 6ms, proxy.ts: 3ms, render: 59ms)
+RootLayout received locale parameter: fr
+Home Component rendered with locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+ GET /fr 200 in 59ms (compile: 8ms, proxy.ts: 4ms, render: 47ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 57ms (compile: 8ms, proxy.ts: 5ms, render: 44ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 158ms (compile: 53ms, proxy.ts: 12ms, render: 94ms)
+ GET /en 200 in 49ms (compile: 5ms, proxy.ts: 3ms, render: 41ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 187ms (compile: 51ms, proxy.ts: 11ms, render: 125ms)
+ GET /en 200 in 90ms (compile: 14ms, proxy.ts: 25ms, render: 52ms)
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/services/coworking-bruxelles 200 in 481ms (compile: 448ms, proxy.ts: 4ms, render: 30ms)
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 108ms (compile: 71ms, proxy.ts: 3ms, render: 34ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 612ms (compile: 439ms, proxy.ts: 4ms, render: 168ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+✓ Compiled in 160ms
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 104ms (compile: 53ms, proxy.ts: 2ms, render: 49ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 131ms (compile: 53ms, proxy.ts: 2ms, render: 76ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 211ms (compile: 51ms, proxy.ts: 3ms, render: 158ms)
+ GET /en 200 in 125ms (compile: 6ms, proxy.ts: 16ms, render: 103ms)
+ GET /en 200 in 91ms (compile: 5ms, proxy.ts: 15ms, render: 71ms)
+ GET /en 200 in 58ms (compile: 5ms, proxy.ts: 10ms, render: 43ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 61ms (compile: 7ms, proxy.ts: 5ms, render: 48ms)
+RootLayout received locale parameter: fr
+Home Component rendered with locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+getRequestConfig resolved requestLocale: fr
+Messages loaded successfully for locale: fr
+ GET /fr 200 in 50ms (compile: 8ms, proxy.ts: 3ms, render: 39ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 54ms (compile: 6ms, proxy.ts: 8ms, render: 40ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 52ms (compile: 8ms, proxy.ts: 6ms, render: 38ms)
+✓ Compiled in 178ms
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 159ms (compile: 90ms, proxy.ts: 3ms, render: 66ms)
+⨯ The requested resource isn't a valid image for /relaxed-coworking.webp received null
+✓ Compiled in 3ms
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 276ms (compile: 87ms, proxy.ts: 38ms, render: 151ms)
+ GET /nl 200 in 110ms (compile: 7ms, proxy.ts: 3ms, render: 100ms)
+ GET /nl 200 in 76ms (compile: 4ms, proxy.ts: 3ms, render: 69ms)
+ GET /nl 200 in 48ms (compile: 7ms, proxy.ts: 3ms, render: 38ms)
+✓ Compiled in 4ms
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 247ms (compile: 57ms, proxy.ts: 15ms, render: 175ms)
+ GET /nl 200 in 129ms (compile: 4ms, proxy.ts: 3ms, render: 122ms)
+ GET /nl 200 in 99ms (compile: 8ms, proxy.ts: 3ms, render: 88ms)
+ GET /nl 200 in 65ms (compile: 4ms, proxy.ts: 3ms, render: 58ms)
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+RootLayout received locale parameter: nl
+Home Component rendered with locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl 200 in 267ms (compile: 50ms, proxy.ts: 12ms, render: 204ms)
+ GET /nl 200 in 124ms (compile: 5ms, proxy.ts: 4ms, render: 115ms)
+ GET /nl 200 in 83ms (compile: 4ms, proxy.ts: 2ms, render: 76ms)
+ GET /nl 200 in 51ms (compile: 5ms, proxy.ts: 3ms, render: 43ms)
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl/a-propos 200 in 112ms (compile: 72ms, proxy.ts: 5ms, render: 36ms)
+RootLayout received locale parameter: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl/belgian-workspace-association 200 in 619ms (compile: 419ms, proxy.ts: 3ms, render: 197ms)
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl/a-propos 200 in 46ms (compile: 12ms, proxy.ts: 5ms, render: 29ms)
+RootLayout received locale parameter: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+getRequestConfig resolved requestLocale: nl
+Messages loaded successfully for locale: nl
+ GET /nl/spf-economie 200 in 223ms (compile: 69ms, proxy.ts: 3ms, render: 151ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 51ms (compile: 8ms, proxy.ts: 4ms, render: 39ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 43ms (compile: 10ms, proxy.ts: 5ms, render: 27ms)
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/a-propos 200 in 29ms (compile: 6ms, proxy.ts: 4ms, render: 19ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 98ms (compile: 9ms, proxy.ts: 4ms, render: 85ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1555006666-ac288b898517?w=900&auto=format&fit=crop&q=60 404
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+✓ Compiled in 46ms
+ GET /en/spf-economie 200 in 39ms (compile: 5ms, proxy.ts: 2ms, render: 31ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 102ms (compile: 54ms, proxy.ts: 2ms, render: 46ms)
+✓ Compiled in 3ms
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 308ms (compile: 101ms, proxy.ts: 27ms, render: 180ms)
+ GET /en/spf-economie 200 in 122ms (compile: 7ms, proxy.ts: 7ms, render: 109ms)
+ GET /en/spf-economie 200 in 96ms (compile: 4ms, proxy.ts: 8ms, render: 84ms)
+ GET /en/spf-economie 200 in 71ms (compile: 7ms, proxy.ts: 6ms, render: 59ms)
+ GET /en/spf-economie 200 in 43ms (compile: 5ms, proxy.ts: 5ms, render: 32ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 226ms (compile: 55ms, proxy.ts: 13ms, render: 158ms)
+ GET /en/spf-economie 200 in 127ms (compile: 8ms, proxy.ts: 5ms, render: 113ms)
+ GET /en/spf-economie 200 in 100ms (compile: 8ms, proxy.ts: 4ms, render: 88ms)
+ GET /en/spf-economie 200 in 73ms (compile: 10ms, proxy.ts: 5ms, render: 59ms)
+ GET /en/spf-economie 200 in 48ms (compile: 12ms, proxy.ts: 4ms, render: 31ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/spf-economie 200 in 213ms (compile: 49ms, proxy.ts: 10ms, render: 154ms)
+ GET /en/spf-economie 200 in 124ms (compile: 8ms, proxy.ts: 5ms, render: 111ms)
+ GET /en/spf-economie 200 in 98ms (compile: 7ms, proxy.ts: 5ms, render: 86ms)
+ GET /en/spf-economie 200 in 72ms (compile: 8ms, proxy.ts: 4ms, render: 59ms)
+ GET /en/spf-economie 200 in 46ms (compile: 10ms, proxy.ts: 5ms, render: 31ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+✓ Compiled in 37ms
+ GET /en/spf-economie 200 in 47ms (compile: 9ms, proxy.ts: 5ms, render: 33ms)
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 151ms (compile: 90ms, proxy.ts: 6ms, render: 55ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 145ms (compile: 85ms, proxy.ts: 2ms, render: 58ms)
+RootLayout received locale parameter: en
+Home Component rendered with locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en 200 in 140ms (compile: 53ms, proxy.ts: 3ms, render: 84ms)
+ POST /api/subscribe 200 in 384ms (compile: 240ms, render: 143ms)
+RootLayout received locale parameter: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+getRequestConfig resolved requestLocale: en
+Messages loaded successfully for locale: en
+ GET /en/contact 200 in 580ms (compile: 456ms, proxy.ts: 3ms, render: 121ms)

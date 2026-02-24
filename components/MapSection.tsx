@@ -1,15 +1,17 @@
 import { FC } from 'react';
+import { useTranslations } from 'next-intl';
 
 const MapSection: FC = () => {
+    const t = useTranslations('MapSection');
     return (
         <section className="py-20 bg-white border-t border-gray-100">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1D1D1B]">
-                        Notre localisation
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-[#6C757D]">
-                        842 Chaussée d'Alsemberg, 1180 Uccle, Belgique
+                        {t('address')}
                     </p>
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-sm h-[400px] w-full border border-gray-100">

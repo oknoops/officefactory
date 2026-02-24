@@ -1,12 +1,14 @@
 import { Component } from 'lucide-react';
 import Image from 'next/image';
-import Script from 'next/script'; // Import Script for Odoo external form embedding if needed
-// Or simple link
+import Script from 'next/script';
+import { useTranslations } from 'next-intl';
 
 import { FC } from 'react';
 import NewsletterForm from './NewsletterForm';
 
 const Footer: FC = () => {
+    const t = useTranslations('Footer');
+
     return (
         <footer className="bg-[#F8F9FA] pt-16 pb-8 border-t border-gray-200">
             <div className="container">
@@ -24,40 +26,37 @@ const Footer: FC = () => {
                             </div>
                         </div>
                         <p className="text-[#6C757D] mb-4">
-                            842 Chaussée d'Alsemberg,<br />
-                            1180 Uccle, Belgique
+                            {t('address_line1')}<br />
+                            {t('address_line2')}
                         </p>
-                        <div className="flex gap-4">
-                            {/* Social icons if any - Screenshot cut off */}
-                        </div>
                     </div>
 
                     {/* Column 2: Links */}
                     <div className="col-span-1">
-                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Office Factory</h4>
+                        <h4 className="font-bold mb-4 text-[#1D1D1B]">{t('aboutHead')}</h4>
                         <ul className="space-y-2 text-[#6C757D]">
-                            <li><a href="/a-propos" className="hover:text-[#E63946]">À propos</a></li>
-                            <li><a href="/contact" className="hover:text-[#E63946]">Contactez-nous</a></li>
-                            <li><a href="/contact" className="hover:text-[#E63946]">Domiciliez votre entreprise</a></li>
+                            <li><a href="/a-propos" className="hover:text-[#E63946]">{t('link_about')}</a></li>
+                            <li><a href="/contact" className="hover:text-[#E63946]">{t('link_contact')}</a></li>
+                            <li><a href="/contact" className="hover:text-[#E63946]">{t('link_domiciliate')}</a></li>
                         </ul>
                     </div>
 
-                    {/* Column 3: Nos Offres */}
+                    {/* Column 3: Nos Services */}
                     <div className="col-span-1">
-                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Nos Offres</h4>
+                        <h4 className="font-bold mb-4 text-[#1D1D1B]">{t('servicesHead')}</h4>
                         <ul className="space-y-2 text-[#6C757D]">
-                            <li><a href="/nos-services" className="hover:text-[#E63946]">Toutes nos offres</a></li>
-                            <li><a href="/services/domiciliation-bruxelles" className="hover:text-[#E63946]">Domiciliation d'entreprise</a></li>
-                            <li><a href="/services/coworking-bruxelles" className="hover:text-[#E63946]">Coworking</a></li>
-                            <li><a href="/services/bureau-individuel-bruxelles" className="hover:text-[#E63946]">Bureau individuel</a></li>
-                            <li><a href="/services/bureau-equipe-bruxelles" className="hover:text-[#E63946]">Bureau d'équipe</a></li>
-                            <li><a href="/services/demarches-administratives" className="hover:text-[#E63946]">Démarches administratives</a></li>
+                            <li><a href="/nos-services" className="hover:text-[#E63946]">{t('link_services_all')}</a></li>
+                            <li><a href="/services/domiciliation-bruxelles" className="hover:text-[#E63946]">{t('link_services_domiciliation')}</a></li>
+                            <li><a href="/services/coworking-bruxelles" className="hover:text-[#E63946]">{t('link_services_coworking')}</a></li>
+                            <li><a href="/services/bureau-individuel-bruxelles" className="hover:text-[#E63946]">{t('link_services_bureau_individuel')}</a></li>
+                            <li><a href="/services/bureau-equipe-bruxelles" className="hover:text-[#E63946]">{t('link_services_bureau_equipe')}</a></li>
+                            <li><a href="/services/demarches-administratives" className="hover:text-[#E63946]">{t('link_services_demarches')}</a></li>
                         </ul>
                     </div>
 
                     {/* Column 4: Contact */}
                     <div className="col-span-1">
-                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Contact</h4>
+                        <h4 className="font-bold mb-4 text-[#1D1D1B]">{t('contactHead')}</h4>
                         <ul className="space-y-2 text-[#6C757D]">
                             <li><a href="mailto:hello@officefactory.be" className="hover:text-[#E63946]">hello@officefactory.be</a></li>
                             <li><a href="tel:+32471794552" className="hover:text-[#E63946]">+32 471 79 45 52</a></li>
@@ -66,9 +65,9 @@ const Footer: FC = () => {
 
                     {/* Column 5: Newsletter */}
                     <div className="col-span-1">
-                        <h4 className="font-bold mb-4 text-[#1D1D1B]">Newsletter</h4>
+                        <h4 className="font-bold mb-4 text-[#1D1D1B]">{t('newsletter_title')}</h4>
                         <p className="text-[#6C757D] text-sm mb-4">
-                            Rejoignez notre newsletter pour recevoir nos dernières actualités.
+                            {t('newsletter_desc')}
                         </p>
                         {/* 
                 This form submits to Odoo. 
@@ -84,7 +83,7 @@ const Footer: FC = () => {
                 </div>
 
                 <div className="border-t border-gray-200 pt-8 text-center text-sm text-[#6C757D]">
-                    <p>© 2026 Office Factory. Tous droits réservés.</p>
+                    <p>{t('copyright')}</p>
                 </div>
             </div>
         </footer>

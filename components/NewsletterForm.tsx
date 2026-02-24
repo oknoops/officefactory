@@ -1,8 +1,10 @@
 'use client';
 
 import React, { FC, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const NewsletterForm: FC = () => {
+    const t = useTranslations('NewsletterForm');
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
@@ -23,7 +25,7 @@ const NewsletterForm: FC = () => {
 
             if (response.ok) {
                 setStatus('success');
-                setMessage("Welcome to the Factory! You're in.");
+                setMessage(t('msg_success'));
                 setEmail('');
             } else {
                 throw new Error('Failed to subscribe');
@@ -31,7 +33,7 @@ const NewsletterForm: FC = () => {
         } catch (error) {
             console.error('Subscription error:', error);
             setStatus('error');
-            setMessage('Something went wrong. Please try again.');
+            setMessage(t('msg_error'));
         }
     };
 
@@ -41,7 +43,7 @@ const NewsletterForm: FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Votre email..."
+                placeholder={t('placeholder')}
                 className="p-2 border border-gray-300 rounded bg-white text-sm focus:outline-none focus:border-[#E63946]"
                 required
                 disabled={status === 'loading' || status === 'success'}
@@ -51,7 +53,7 @@ const NewsletterForm: FC = () => {
                 className="btn btn-primary text-sm py-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 disabled={status === 'loading' || status === 'success'}
             >
-                {status === 'loading' ? 'Joining...' : 'S\'abonner'}
+                {status === 'loading' ? t('btn_subscribing') : t('btn_subscribe')}
             </button>
 
             {/* Feedback Messages */}
@@ -67,7 +69,7 @@ const NewsletterForm: FC = () => {
             )}
             {status === 'idle' && (
                 <p className="text-xs text-gray-400 mt-1">
-                    * S'inscrire à notre newsletter.
+                    {t('msg_idle')}
                 </p>
             )}
         </form>

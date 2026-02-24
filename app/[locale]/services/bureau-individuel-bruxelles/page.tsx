@@ -2,14 +2,26 @@ import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Key, Layout, CreditCard, ShieldCheck } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-export const metadata = {
-    title: 'Location Bureau Individuel Bruxelles | Office Privé Uccle | Office Factory',
-    description: 'Louez votre bureau individuel à Bruxelles (Uccle). Espace privé, meublé et tout compris. La solution idéale pour travailler au calme.',
-    keywords: 'bureau individuel Bruxelles, location bureau Bruxelles, location bureau Uccle, bureau privé Bruxelles',
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    return {
+        title: t('bureau_individuel_title'),
+        description: t('bureau_individuel_desc'),
+        keywords: t('bureau_individuel_keywords'),
+    };
+}
 
 export default function PrivateOfficePage() {
+    const t = useTranslations('BureauIndividuelPage');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -19,16 +31,16 @@ export default function PrivateOfficePage() {
                 <div className="container grid md:grid-cols-2 gap-12 items-center">
                     <div className="max-w-xl">
                         <span className="text-[#E63946] font-semibold tracking-wider uppercase mb-2 block">
-                            Votre Espace Privé
+                            {t('tag')}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#1D1D1B] leading-tight">
-                            Location de Bureau Individuel à Uccle
+                            {t('title')}
                         </h1>
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-                            Profitez du calme et de la confidentialité d'un <strong className="text-[#1D1D1B]">bureau individuel à Bruxelles</strong>. Un espace entièrement meublé, sécurisé et accessible 24h/24.
+                            {t('desc_p1')}<strong className="text-[#1D1D1B]">{t('desc_b')}</strong>{t('desc_p2')}
                         </p>
                         <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
-                            Voir les disponibilités
+                            {t('btn_avail')}
                         </a>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
@@ -47,36 +59,36 @@ export default function PrivateOfficePage() {
             <section className="py-20">
                 <div className="container">
                     <h2 className="text-3xl font-bold mb-12 text-[#1D1D1B] text-center">
-                        Un bureau clé en main
+                        {t('h2_1')}
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-all">
                             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mx-auto mb-4">
                                 <Key size={32} />
                             </div>
-                            <h3 className="font-bold text-lg mb-2">Accès Privatif</h3>
-                            <p className="text-sm text-[#6C757D]">Votre propre clé pour votre bureau fermé et sécurisé.</p>
+                            <h3 className="font-bold text-lg mb-2">{t('f1_t')}</h3>
+                            <p className="text-sm text-[#6C757D]">{t('f1_d')}</p>
                         </div>
                         <div className="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-all">
                             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mx-auto mb-4">
                                 <Layout size={32} />
                             </div>
-                            <h3 className="font-bold text-lg mb-2">Entièrement Meublé</h3>
-                            <p className="text-sm text-[#6C757D]">Bureau, chaise ergonomique et rangements inclus.</p>
+                            <h3 className="font-bold text-lg mb-2">{t('f2_t')}</h3>
+                            <p className="text-sm text-[#6C757D]">{t('f2_d')}</p>
                         </div>
                         <div className="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-all">
                             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mx-auto mb-4">
                                 <CreditCard size={32} />
                             </div>
-                            <h3 className="font-bold text-lg mb-2">Tout Compris</h3>
-                            <p className="text-sm text-[#6C757D]">Charges, internet, nettoyage et précompte immobilier inclus.</p>
+                            <h3 className="font-bold text-lg mb-2">{t('f3_t')}</h3>
+                            <p className="text-sm text-[#6C757D]">{t('f3_d')}</p>
                         </div>
                         <div className="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-all">
                             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mx-auto mb-4">
                                 <ShieldCheck size={32} />
                             </div>
-                            <h3 className="font-bold text-lg mb-2">Sécurité</h3>
-                            <p className="text-sm text-[#6C757D]">Système d'alarme et surveillance pour votre tranquillité.</p>
+                            <h3 className="font-bold text-lg mb-2">{t('f4_t')}</h3>
+                            <p className="text-sm text-[#6C757D]">{t('f4_d')}</p>
                         </div>
                     </div>
                 </div>
@@ -86,14 +98,14 @@ export default function PrivateOfficePage() {
             <section className="py-20 bg-[#F8F9FA]">
                 <div className="container max-w-4xl text-center">
                     <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">
-                        Votre bureau privé, sans les contraintes
+                        {t('h2_2')}
                     </h2>
                     <p className="text-xl text-[#6C757D] mb-8">
-                        À partir de <strong className="text-[#E63946] text-2xl">249€ / mois</strong> HTVA. Contrats flexibles.
+                        {t('p_price_1')}<strong className="text-[#E63946] text-2xl">{t('p_price_b')}</strong>{t('p_price_2')}
                     </p>
                     <div className="flex gap-4 justify-center">
                         <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
-                            Contacter pour une visite
+                            {t('btn_visit')}
                         </a>
                     </div>
                 </div>

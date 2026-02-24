@@ -7,13 +7,19 @@ import ProFeatures from '@/components/ProFeatures';
 import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 
-export default function Home() {
+export default async function Home({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  console.log('Home Component rendered with locale:', locale);
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
       <Hero />
-      <HowItWorks />
       <Benefits />
+      <HowItWorks />
       <Pricing />
       <ProFeatures />
       <MapSection />
