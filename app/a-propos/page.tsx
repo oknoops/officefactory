@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { ShieldCheck } from 'lucide-react';
 
 export const metadata = {
     title: 'À propos | Office Factory',
@@ -65,7 +66,24 @@ export default function AboutPage() {
             </section>
 
             {/* Stats / Features (Optional/Standard Layout Filler if needed, but keeping it simple as per request) */}
-
+            <section className="py-20 bg-[#F8F9FA]">
+                <div className="container max-w-5xl">
+                    <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
+                        <div className="w-20 h-20 bg-green-50 rounded-full flex justify-center items-center text-green-600 shrink-0">
+                            <ShieldCheck size={40} />
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-4 text-[#1D1D1B]">En conformité avec la loi belge (SPF Économie)</h3>
+                            <p className="text-[#6C757D] mb-4">
+                                Depuis la loi du 29 mars 2018, il est formellement obligatoire pour tout centre d'affaires proposant la domiciliation d'être enregistré et agréé par le <strong className="text-[#1D1D1B]">SPF Économie</strong>. Chez Office Factory, nous vous garantissons cette sécurité juridique indispensable pour éviter toute radiation de votre entreprise.
+                            </p>
+                            <a href="/spf-economie" className="text-[#E63946] font-semibold hover:underline flex items-center gap-2">
+                                En savoir plus sur notre agrément →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
             {/* CTA Section */}
             <section className="py-20 bg-[#F8F9FA]">
                 <div className="container text-center">
