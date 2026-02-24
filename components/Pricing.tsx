@@ -22,7 +22,15 @@ const Pricing: FC = () => {
                             <ul className="mt-6 space-y-2">
                                 <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Adresse officielle à Bruxelles
+                                </li>
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     Archivage du courrier pour réception
+                                </li>
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Accès aux salles de réunion (en option)
                                 </li>
                             </ul>
                         </div>
@@ -45,6 +53,14 @@ const Pricing: FC = () => {
                                 149,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
                             </div>
                             <ul className="mt-6 space-y-2">
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Accès 24h/24 – 7j/7
+                                </li>
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    WiFi & internet haut débit
+                                </li>
                                 <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     Archivage du courrier pour réception
@@ -70,6 +86,14 @@ const Pricing: FC = () => {
                                 249,00 € <span className="text-base font-normal text-[#6C757D]">/ mois</span>
                             </div>
                             <ul className="mt-6 space-y-2">
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Espace privé fermé avec accès 24/7
+                                </li>
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    Possibilité de domiciliation
+                                </li>
                                 <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     Archivage du courrier pour réception

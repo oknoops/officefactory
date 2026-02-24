@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 const Benefits: FC = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white border-b border-gray-100">
             <div className="container text-center">
                 <h2 className="text-4xl md:text-5xl font-bold mb-16 text-[#1D1D1B]">
                     Un espace. Plusieurs façon de travailler.

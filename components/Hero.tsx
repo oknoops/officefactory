@@ -15,7 +15,7 @@ const Hero: FC = () => {
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <a href="/nos-services" className="btn btn-primary text-base px-6 py-3 font-semibold">
-                            Nos Services
+                            Nos Offres
                         </a>
                         <a href="/contact" className="btn btn-primary text-base px-6 py-3 font-semibold">
                             Domiciliez votre entreprise

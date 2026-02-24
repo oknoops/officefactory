@@ -3,7 +3,7 @@ import { FileEdit, Briefcase, FileSignature } from 'lucide-react';
 
 const HowItWorks: FC = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-[#F8F9FA] relative z-10 -mt-8 rounded-t-[3rem]">
             <div className="container">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#1D1D1B]">
@@ -16,11 +16,11 @@ const HowItWorks: FC = () => {
 
                 <div className="grid md:grid-cols-3 gap-8 relative">
                     {/* Connecting line for desktop */}
-                    <div className="hidden md:block absolute top-[45px] left-[15%] right-[15%] h-0.5 bg-gray-100 z-0"></div>
+                    <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-0.5 bg-gray-200 z-0"></div>
 
                     {/* Step 1 */}
                     <div className="flex flex-col items-center text-center relative z-10">
-                        <div className="w-24 h-24 bg-white border-8 border-[#F8F9FA] shadow-sm rounded-full flex items-center justify-center text-[#E63946] mb-6">
+                        <div className="w-20 h-20 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                             <FileEdit size={32} />
                         </div>
                         <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">Étape 1</span>
@@ -32,7 +32,7 @@ const HowItWorks: FC = () => {
 
                     {/* Step 2 */}
                     <div className="flex flex-col items-center text-center relative z-10">
-                        <div className="w-24 h-24 bg-white border-8 border-[#F8F9FA] shadow-sm rounded-full flex items-center justify-center text-[#E63946] mb-6">
+                        <div className="w-20 h-20 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                             <Briefcase size={32} />
                         </div>
                         <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">Étape 2</span>
@@ -44,7 +44,7 @@ const HowItWorks: FC = () => {
 
                     {/* Step 3 */}
                     <div className="flex flex-col items-center text-center relative z-10">
-                        <div className="w-24 h-24 bg-white border-8 border-[#F8F9FA] shadow-sm rounded-full flex items-center justify-center text-[#E63946] mb-6">
+                        <div className="w-20 h-20 bg-red-50 text-[#E63946] rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                             <FileSignature size={32} />
                         </div>
                         <span className="text-sm font-bold text-[#E63946] uppercase tracking-wider mb-2">Étape 3</span>
