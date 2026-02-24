@@ -247,6 +247,57 @@ export default function ServicesPage() {
                 </div>
             </section>
 
+            {/* Service 5: Démarches Administratives */}
+            <section className="py-20">
+                <div className="container grid md:grid-cols-2 gap-16 items-center">
+                    {/* Image (Left) */}
+                    <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg order-2 md:order-1">
+                        <Image
+                            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=60"
+                            alt="Démarches administratives"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+
+                    {/* Content (Right) */}
+                    <div className="order-1 md:order-2">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
+                            Démarches administratives
+                        </h2>
+                        <p className="text-[#6C757D] mb-6 leading-relaxed">
+                            Nous vous accompagnons dans toutes les <strong className="font-semibold text-[#1D1D1B]">démarches administratives et juridiques</strong> liées à la vie de votre société en Belgique (création, modification, fermeture).
+                        </p>
+                        <ul className="space-y-3 mb-8">
+                            <li className="flex items-start gap-3">
+                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
+                                <span className="text-[#1D1D1B]">Création d'entreprise & statuts</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
+                                <span className="text-[#1D1D1B]">Modification de société</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
+                                <span className="text-[#1D1D1B]">Fermeture et liquidation</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
+                                <span className="text-[#1D1D1B]">Gain de temps et tranquillité d'esprit</span>
+                            </li>
+                        </ul>
+                        <div className="font-bold text-xl text-[#1D1D1B]">
+                            Sur devis
+                        </div>
+                        <div className="mt-4">
+                            <a href="/services/demarches-administratives" className="text-[#E63946] font-semibold hover:underline">
+                                En savoir plus →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Banner */}
             <section className="py-20 bg-white relative overflow-hidden">
                 {/* Background Pattern */}

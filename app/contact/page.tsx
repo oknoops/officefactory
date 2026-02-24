@@ -20,8 +20,11 @@ export default function ContactPage() {
                     <div className="bg-white rounded-2xl shadow-sm overflow-hidden w-full max-w-4xl mx-auto">
                         <iframe
                             src="https://brusselsofficefactory.odoo.com/nous-contacter?v=1"
-                            height="1200px"
+                            height="1250px"
                             className="border-0 w-full"
+                            style={{
+                                marginTop: '-85px', // Hides the Odoo top navbar/hamburger
+                            }}
                             scrolling="no"
                             title="Formulaire de contact Office Factory"
                         />
