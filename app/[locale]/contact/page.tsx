@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MapSection from '@/components/MapSection';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
 
@@ -20,6 +20,19 @@ export async function generateMetadata({
 
 export default function ContactPage() {
     const t = useTranslations('ContactPage');
+    const locale = useLocale();
+
+    let iframeSrc = "https://brusselsofficefactory.odoo.com/nous-contacter?v=1";
+    let marginTop = "-85px";
+
+    if (locale === 'en') {
+        iframeSrc = "https://brusselsofficefactory.odoo.com/en/nous-contacter-form";
+        marginTop = "0px";
+    } else if (locale === 'nl') {
+        iframeSrc = "https://brusselsofficefactory.odoo.com/nl/nous-contacter-form";
+        marginTop = "0px";
+    }
+
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -31,11 +44,11 @@ export default function ContactPage() {
                     </h1>
                     <div className="bg-white rounded-2xl shadow-sm overflow-hidden w-full max-w-4xl mx-auto">
                         <iframe
-                            src="https://brusselsofficefactory.odoo.com/nous-contacter?v=1"
+                            src={iframeSrc}
                             height="1250px"
                             className="border-0 w-full"
                             style={{
-                                marginTop: '-85px', // Hides the Odoo top navbar/hamburger
+                                marginTop: marginTop, // Hides the Odoo top navbar/hamburger on the default form
                             }}
                             scrolling="no"
                             title="Formulaire de contact Office Factory"
