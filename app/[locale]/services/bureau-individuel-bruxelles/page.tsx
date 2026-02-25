@@ -45,7 +45,7 @@ export default function PrivateOfficePage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/modernofficebuilding.webp"
+                            src="https://plus.unsplash.com/premium_photo-1723823035067-adef00deb8ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHByaXZhdGUlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D"
                             alt="Bureau Individuel Bruxelles - Office Factory"
                             fill
                             className="object-cover"

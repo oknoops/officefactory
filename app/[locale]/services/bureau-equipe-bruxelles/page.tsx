@@ -45,7 +45,7 @@ export default function TeamOfficePage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/modernofficebuilding.webp"
+                            src="https://plus.unsplash.com/premium_photo-1682608388687-f26e5de54316?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2ZmaWNlJTIwY29tcGFueXxlbnwwfHwwfHx8MA%3D%3D"
                             alt="Bureau équipe Bruxelles - Office Factory"
                             fill
                             className="object-cover"

@@ -60,7 +60,7 @@ export default function ServicesPage() {
                     {/* Image (Left) */}
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg order-2 md:order-1">
                         <Image
-                            src="https://images.unsplash.com/photo-1708961462805-9949475ea462?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFpbGJveHxlbnwwfHwwfHx8MA%3D%3D"
+                            src="/letterbox.jpg"
                             alt="Boîtes aux lettres domiciliation"
                             fill
                             className="object-cover"
@@ -87,6 +87,10 @@ export default function ServicesPage() {
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
                                 <span className="text-[#1D1D1B]">{t('s1_f3')}</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-[#E63946] mt-1"><Check size={20} /></span>
+                                <span className="text-[#1D1D1B]">{t('s1_f4')}</span>
                             </li>
                         </ul>
                         <div className="font-bold text-xl text-[#1D1D1B]">
@@ -143,7 +147,7 @@ export default function ServicesPage() {
                     {/* Image (Right) */}
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg">
                         <Image
-                            src="https://plus.unsplash.com/premium_photo-1684769161054-2fa9a998dcb6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y293b3JraW5nfGVufDB8fDB8fHww"
+                            src="/office.jpg"
                             alt="Espace Coworking"
                             fill
                             className="object-cover"

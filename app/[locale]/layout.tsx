@@ -21,7 +21,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import Script from 'next/script'
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -67,7 +66,6 @@ export default async function RootLayout({
           `}
           </Script>
 
-          <WhatsAppButton />
           {children}
         </NextIntlClientProvider>
       </body>

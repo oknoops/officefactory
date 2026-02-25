@@ -45,7 +45,7 @@ export default function CoworkingPage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/modernofficebuilding.webp"
+                            src="/office.jpg"
                             alt="Espace Coworking Bruxelles - Office Factory"
                             fill
                             className="object-cover"

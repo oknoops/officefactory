@@ -17,7 +17,7 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="relative h-64 w-full">
                             <Image
-                                src="https://images.unsplash.com/photo-1708961462805-9949475ea462?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFpbGJveHxlbnwwfHwwfHx8MA%3D%3D"
+                                src="/letterbox.jpg"
                                 alt="Domiciliation"
                                 fill
                                 style={{ objectFit: 'cover' }}
@@ -29,7 +29,7 @@ const Pricing: FC = () => {
                             <div className="text-4xl font-bold text-[#1D1D1B]">
                                 79,00 € <span className="text-base font-normal text-[#6C757D]">{t('per_month')}</span>
                             </div>
-                            <ul className="mt-6 space-y-2">
+                            <ul className="mt-6 space-y-2 flex-grow">
                                 <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     {t('card1_feature1')}
@@ -38,7 +38,14 @@ const Pricing: FC = () => {
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     {t('card1_feature2')}
                                 </li>
+                                <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
+                                    <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                    {t('card1_feature3')}
+                                </li>
                             </ul>
+                            <a href="/services/domiciliation-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
+                                {t('card1_link')}
+                            </a>
                         </div>
                     </div>
 
@@ -46,7 +53,7 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="relative h-64 w-full">
                             <Image
-                                src="https://plus.unsplash.com/premium_photo-1684769161054-2fa9a998dcb6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y293b3JraW5nfGVufDB8fDB8fHww"
+                                src="/office.jpg"
                                 alt="Coworking"
                                 fill
                                 style={{ objectFit: 'cover' }}
@@ -58,7 +65,7 @@ const Pricing: FC = () => {
                             <div className="text-4xl font-bold text-[#1D1D1B]">
                                 149,00 € <span className="text-base font-normal text-[#6C757D]">{t('per_month')}</span>
                             </div>
-                            <ul className="mt-6 space-y-2">
+                            <ul className="mt-6 space-y-2 flex-grow">
                                 <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     {t('card2_feature1')}
@@ -72,6 +79,9 @@ const Pricing: FC = () => {
                                     {t('card2_feature3')}
                                 </li>
                             </ul>
+                            <a href="/services/coworking-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
+                                {t('card2_link')}
+                            </a>
                         </div>
                     </div>
 
@@ -91,7 +101,7 @@ const Pricing: FC = () => {
                             <div className="text-4xl font-bold text-[#1D1D1B]">
                                 249,00 € <span className="text-base font-normal text-[#6C757D]">{t('per_month')}</span>
                             </div>
-                            <ul className="mt-6 space-y-2">
+                            <ul className="mt-6 space-y-2 flex-grow">
                                 <li className="flex items-start gap-2 text-[#6C757D] text-sm font-medium">
                                     <svg className="w-5 h-5 text-[#E63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     {t('card3_feature1')}
@@ -105,6 +115,9 @@ const Pricing: FC = () => {
                                     {t('card3_feature3')}
                                 </li>
                             </ul>
+                            <a href="/services/bureau-individuel-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
+                                {t('card3_link')}
+                            </a>
                         </div>
                     </div>
                 </div>

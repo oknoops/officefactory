@@ -45,7 +45,7 @@ export default function DomiciliationPage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/modernofficebuilding.webp"
+                            src="/letterbox.jpg"
                             alt="Immeuble Office Factory Uccle - Domiciliation"
                             fill
                             className="object-cover"
@@ -61,7 +61,7 @@ export default function DomiciliationPage() {
                     <h2 className="text-3xl font-bold mb-12 text-[#1D1D1B] text-center">
                         {t('h2_1')}
                     </h2>
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 gap-8">
                         {/* Benefit 1 */}
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mb-6">
@@ -90,6 +90,16 @@ export default function DomiciliationPage() {
                             <h3 className="text-xl font-bold mb-3 text-[#1D1D1B]">{t('f3_t')}</h3>
                             <p className="text-[#6C757D]">
                                 {t('f3_d')}
+                            </p>
+                        </div>
+                        {/* Benefit 4 */}
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mb-6">
+                                <Check size={24} />
+                            </div>
+                            <h3 className="text-xl font-bold mb-3 text-[#1D1D1B]">{t('f4_t')}</h3>
+                            <p className="text-[#6C757D]">
+                                {t('f4_d')}
                             </p>
                         </div>
                     </div>

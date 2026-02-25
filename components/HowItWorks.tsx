@@ -57,7 +57,16 @@ const HowItWorks: FC = () => {
                     </div>
                 </div>
 
-                <div className="mt-16 text-center">
+                <div className="mt-12 flex flex-col items-center gap-4">
+                    <p className="text-sm font-medium text-[#1D1D1B] bg-white border border-gray-200 rounded-full px-6 py-2 shadow-sm">
+                        ✓ {t('digital_note')}
+                    </p>
+                    <p className="text-xs text-[#6C757D]">
+                        {t('legal_note')}
+                    </p>
+                </div>
+
+                <div className="mt-8 text-center">
                     <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full text-lg font-semibold">
                         {t('cta')}
                     </a>
