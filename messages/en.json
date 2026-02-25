@@ -61,7 +61,6 @@
         "step3_title": "You sign the contract and it's done",
         "step3_desc": "Everything is ready. All you have to do is sign and enjoy your new services",
         "digital_note": "Everything can be done 100% online — or in person if you prefer",
-        "legal_note": "Note: we do not handle legal or juridical matters.",
         "cta": "Start now"
     },
     "Pricing": {
@@ -290,7 +289,7 @@
     },
     "BureauEquipePage": {
         "tag": "Growth & Flexibility",
-        "title": "Team offices and private floors",
+        "title": "Team offices",
         "desc_p1": "Offer your team a dedicated and inspiring workspace. Modular ",
         "desc_b": "office rental in Brussels",
         "desc_p2": " to support your growth.",
@@ -405,7 +404,7 @@
         "f2_d2": ".",
         "f3_t": "Mail Management",
         "f3_d": "We receive and sort your mail daily. Mail forwarding or email scanning options available.",
-        "f4_t": "Document Archiving",
+        "f4_t": "Physical archiving of company statutes and documents",
         "f4_d": "Secure physical storage of your company's statutes and official documents.",
         "h2_2": "Transparent pricing",
         "p_price_1": "Our domiciliation service is accessible from ",

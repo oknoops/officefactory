@@ -61,9 +61,6 @@ const HowItWorks: FC = () => {
                     <p className="text-sm font-medium text-[#1D1D1B] bg-white border border-gray-200 rounded-full px-6 py-2 shadow-sm">
                         ✓ {t('digital_note')}
                     </p>
-                    <p className="text-xs text-[#6C757D]">
-                        {t('legal_note')}
-                    </p>
                 </div>
 
                 <div className="mt-8 text-center">
