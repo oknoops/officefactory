@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Target, Users, BookOpen, ShieldCheck } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
+import { Target, Users, BookOpen, ShieldCheck, Award, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
@@ -127,8 +129,45 @@ export default function BWAPage() {
                 </div>
             </section>
 
+            {/* AML Certification */}
+            <section className="py-20 bg-white">
+                <div className="container grid md:grid-cols-2 gap-12 items-center">
+                    <div className="relative h-[350px] w-full rounded-3xl overflow-hidden shadow-lg">
+                        <Image
+                            src="/certificat_bwa.jpg"
+                            alt={t('aml_img_alt')}
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div>
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-12 h-12 bg-red-50 text-[#E63946] rounded-full flex items-center justify-center">
+                                <Award size={24} />
+                            </div>
+                            <span className="text-[#E63946] font-semibold tracking-wider uppercase text-sm">{t('aml_tag')}</span>
+                        </div>
+                        <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">
+                            {t('aml_title')}
+                        </h2>
+                        <p className="text-lg text-[#6C757D] leading-relaxed mb-4">
+                            {t('aml_p1')}
+                        </p>
+                        <p className="text-[#6C757D] leading-relaxed mb-8">
+                            {t('aml_p2')}
+                        </p>
+                        <Link
+                            href="/blog/office-factory-certifie-aml-belgian-workspace-association"
+                            className="inline-flex items-center gap-2 text-[#E63946] font-semibold hover:underline"
+                        >
+                            {t('aml_link')} <ArrowRight size={18} />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA */}
-            <section className="py-20 bg-white text-center">
+            <section className="py-20 bg-[#F8F9FA] text-center">
                 <div className="container max-w-3xl">
                     <h2 className="text-3xl font-bold mb-6 text-[#1D1D1B]">
                         {t('cta_title')}
@@ -142,6 +181,7 @@ export default function BWAPage() {
                 </div>
             </section>
 
+            <WhatsAppButton />
             <Footer />
         </main>
     );

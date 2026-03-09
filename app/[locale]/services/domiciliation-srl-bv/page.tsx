@@ -43,7 +43,7 @@ const domiciliationSRLServiceSchema = {
         '@type': 'City',
         name: 'Brussels',
     },
-    description: 'Domiciliation de siège social pour SRL/BV à Bruxelles (Uccle). Adresse professionnelle agréée SPF Économie, gestion du courrier, conformité légale.',
+    description: 'Domiciliation de siège social pour SRL/BV à Bruxelles (Uccle). Adresse professionnelle enregistrée auprès du SPF Économie, gestion du courrier, conformité légale.',
     offers: {
         '@type': 'Offer',
         price: '79',

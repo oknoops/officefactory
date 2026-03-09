@@ -43,7 +43,7 @@ const domiciliationStartupServiceSchema = {
         '@type': 'City',
         name: 'Brussels',
     },
-    description: 'Domiciliation de siège social pour startups à Bruxelles (Uccle). Adresse professionnelle agréée, idéale pour les jeunes entreprises innovantes.',
+    description: 'Domiciliation de siège social pour startups à Bruxelles (Uccle). Adresse professionnelle enregistrée, idéale pour les jeunes entreprises innovantes.',
     serviceType: 'Business Domiciliation for Startups',
 };
 

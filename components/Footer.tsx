@@ -38,6 +38,7 @@ const Footer: FC = () => {
                             <li><a href="/a-propos" className="hover:text-[#E63946]">{t('link_about')}</a></li>
                             <li><a href="/contact" className="hover:text-[#E63946]">{t('link_contact')}</a></li>
                             <li><a href="/contact" className="hover:text-[#E63946]">{t('link_domiciliate')}</a></li>
+                            <li><a href="/blog" className="hover:text-[#E63946]">{t('link_blog')}</a></li>
                         </ul>
                     </div>
 

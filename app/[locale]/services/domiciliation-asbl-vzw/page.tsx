@@ -43,7 +43,7 @@ const domiciliationASBLServiceSchema = {
         '@type': 'City',
         name: 'Brussels',
     },
-    description: 'Domiciliation du siège social de votre ASBL/VZW à Bruxelles (Uccle). Adresse professionnelle agréée, gestion du courrier, conformité légale pour associations sans but lucratif.',
+    description: 'Domiciliation du siège social de votre ASBL/VZW à Bruxelles (Uccle). Adresse professionnelle enregistrée, gestion du courrier, conformité légale pour associations sans but lucratif.',
     serviceType: 'Non-Profit Domiciliation',
 };
 

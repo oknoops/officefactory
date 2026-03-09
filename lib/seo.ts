@@ -24,6 +24,7 @@ export const ALL_PATHS = [
   '/services/domiciliation-startups',
   '/belgian-workspace-association',
   '/spf-economie',
+  '/blog',
 ];
 
 /**

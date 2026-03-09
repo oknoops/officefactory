@@ -34,7 +34,7 @@ const Navbar: FC = () => {
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex flex-1 justify-between ml-12 items-center">
                     {/* Links */}
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-6">
                         <Link href="/" className="font-medium hover:text-[#E63946] transition-colors py-6">{t('home')}</Link>
 
                         <div className="relative group/nav py-6">
@@ -53,20 +53,21 @@ const Navbar: FC = () => {
                         </div>
 
                         <Link href="/a-propos" className="font-medium hover:text-[#E63946] transition-colors py-6">{t('about')}</Link>
+                        <Link href="/blog" className="font-medium hover:text-[#E63946] transition-colors py-6">{t('blog')}</Link>
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-3 relative">
+                    <div className="flex items-center gap-2 relative">
                         <div className="mr-2">
                             <LanguageSwitcher />
                         </div>
-                        <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light text-sm px-4">
+                        <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light text-sm px-3 whitespace-nowrap">
                             {t('login')}
                         </a>
-                        <a href="/contact" className="btn btn-dark text-sm px-4">
+                        <a href="/contact" className="btn btn-dark text-sm px-3 whitespace-nowrap">
                             {t('domiciliate')}
                         </a>
-                        <a href="/contact" className="btn btn-dark text-center text-sm px-4">
+                        <a href="/contact" className="btn btn-dark text-center text-sm px-3 whitespace-nowrap">
                             {t('contact')}
                         </a>
                     </div>
@@ -112,6 +113,13 @@ const Navbar: FC = () => {
                             className="hover:text-[#E63946] border-b border-gray-100 pb-2"
                         >
                             {t('about')}
+                        </Link>
+                        <Link
+                            href="/blog"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="hover:text-[#E63946] border-b border-gray-100 pb-2"
+                        >
+                            {t('blog')}
                         </Link>
                     </div>
 
