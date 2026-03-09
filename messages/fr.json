@@ -463,7 +463,7 @@
     "DomiciliationSRLPage": {
         "tag": "Domiciliation SRL / BV",
         "title": "Domiciliation de votre SRL à Bruxelles",
-        "desc": "Vous créez ou gérez une SRL (BV) ? Domiciliez votre siège social à Bruxelles chez Office Factory, centre d'affaires enregistré auprès du SPF Économie. Une adresse professionnelle conforme pour votre société à responsabilité limitée.",
+        "description": "Vous créez ou gérez une SRL (BV) ? Domiciliez votre siège social à Bruxelles chez Office Factory, centre d'affaires enregistré auprès du SPF Économie. Une adresse professionnelle conforme pour votre société à responsabilité limitée.",
         "btn_quote": "Demander une offre",
         "what_title": "La SRL : la forme juridique la plus populaire en Belgique",
         "what_p1": "La Société à Responsabilité Limitée (SRL), connue sous le nom de Besloten Vennootschap (BV) en néerlandais, est devenue depuis la réforme du Code des Sociétés et Associations (CSA) en 2019 la forme juridique la plus courante en Belgique. Elle remplace l'ancienne SPRL et offre une grande flexibilité aux entrepreneurs.",
@@ -503,7 +503,7 @@
     "DomiciliationASBLPage": {
         "tag": "Domiciliation ASBL / VZW",
         "title": "Domiciliation de votre ASBL à Bruxelles",
-        "desc": "Votre association sans but lucratif a besoin d'un siège social officiel ? Office Factory propose la domiciliation pour ASBL (VZW) à Bruxelles, dans un centre enregistré auprès du SPF Économie.",
+        "description": "Votre association sans but lucratif a besoin d'un siège social officiel ? Office Factory propose la domiciliation pour ASBL (VZW) à Bruxelles, dans un centre enregistré auprès du SPF Économie.",
         "btn_quote": "Demander une offre",
         "what_title": "L'ASBL en Belgique : les obligations de siège social",
         "what_p1": "L'Association Sans But Lucratif (ASBL), ou Vereniging Zonder Winstoogmerk (VZW) en néerlandais, est la forme juridique utilisée par les organisations qui poursuivent un but désintéressé en Belgique. Depuis la réforme du CSA, les ASBL sont soumises à des obligations similaires aux sociétés commerciales en matière de siège social.",
@@ -543,7 +543,7 @@
     "DomiciliationFreelancePage": {
         "tag": "Domiciliation Indépendants",
         "title": "Domiciliation pour indépendants à Bruxelles",
-        "desc": "En tant qu'indépendant, séparez votre adresse privée de votre adresse professionnelle. Office Factory vous offre une adresse de domiciliation à Bruxelles dans un centre enregistré.",
+        "description": "En tant qu'indépendant, séparez votre adresse privée de votre adresse professionnelle. Office Factory vous offre une adresse de domiciliation à Bruxelles dans un centre enregistré.",
         "btn_quote": "Demander une offre",
         "why_title": "Pourquoi séparer adresse privée et professionnelle ?",
         "why_p1": "En tant qu'indépendant en personne physique (ou en société unipersonnelle), votre adresse professionnelle est souvent votre domicile. Cela signifie que votre adresse privée apparaît sur vos factures, votre site internet, les registres de la BCE et tous vos documents commerciaux. En domiciliant votre activité chez Office Factory, vous protégez votre vie privée tout en projetant une image professionnelle.",
@@ -583,7 +583,7 @@
     "DomiciliationStartupPage": {
         "tag": "Domiciliation Startups",
         "title": "Domiciliation pour startups à Bruxelles",
-        "desc": "Vous lancez votre entreprise ? Commencez avec une adresse professionnelle à Bruxelles. Office Factory accompagne les startups avec une domiciliation enregistrée, simple et rapide.",
+        "description": "Vous lancez votre entreprise ? Commencez avec une adresse professionnelle à Bruxelles. Office Factory accompagne les startups avec une domiciliation enregistrée, simple et rapide.",
         "btn_quote": "Demander une offre",
         "why_title": "Pourquoi votre startup a besoin d'un siège social ?",
         "why_p1": "En Belgique, toute société doit avoir un siège social enregistré avant de pouvoir s'inscrire à la BCE et obtenir un numéro de TVA. C'est la toute première étape administrative lors de la création de votre entreprise. Le notaire vérifiera que vous disposez d'une adresse de siège social valide avant de constituer votre société.",

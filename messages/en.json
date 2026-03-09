@@ -463,7 +463,7 @@
     "DomiciliationSRLPage": {
         "tag": "SRL / BV Domiciliation",
         "title": "Domiciliation for your SRL in Brussels",
-        "desc": "Creating or managing an SRL (BV)? Domicile your registered office in Brussels at Office Factory, an SPF Economy registered business center. A compliant professional address for your limited liability company.",
+        "description": "Creating or managing an SRL (BV)? Domicile your registered office in Brussels at Office Factory, an SPF Economy registered business center. A compliant professional address for your limited liability company.",
         "btn_quote": "Request an offer",
         "what_title": "The SRL: Belgium's most popular legal form",
         "what_p1": "The Société à Responsabilité Limitée (SRL), known as Besloten Vennootschap (BV) in Dutch, has become the most common legal form in Belgium since the reform of the Companies and Associations Code (CSA) in 2019. It replaces the former SPRL and offers great flexibility to entrepreneurs.",
@@ -503,7 +503,7 @@
     "DomiciliationASBLPage": {
         "tag": "ASBL / VZW Domiciliation",
         "title": "Domiciliation for your ASBL in Brussels",
-        "desc": "Does your non-profit need an official registered office? Office Factory offers domiciliation for ASBL (VZW) in Brussels, in an SPF Economy registered center.",
+        "description": "Does your non-profit need an official registered office? Office Factory offers domiciliation for ASBL (VZW) in Brussels, in an SPF Economy registered center.",
         "btn_quote": "Request an offer",
         "what_title": "ASBL in Belgium: registered office obligations",
         "what_p1": "The Association Sans But Lucratif (ASBL), or Vereniging Zonder Winstoogmerk (VZW) in Dutch, is the legal form used by organizations pursuing a non-profit purpose in Belgium. Since the CSA reform, ASBLs are subject to similar obligations as commercial companies regarding registered offices.",
@@ -543,7 +543,7 @@
     "DomiciliationFreelancePage": {
         "tag": "Freelancer Domiciliation",
         "title": "Domiciliation for freelancers in Brussels",
-        "desc": "As a freelancer, separate your private address from your business address. Office Factory offers you a domiciliation address in Brussels at a registered center.",
+        "description": "As a freelancer, separate your private address from your business address. Office Factory offers you a domiciliation address in Brussels at a registered center.",
         "btn_quote": "Request an offer",
         "why_title": "Why separate your private and business address?",
         "why_p1": "As a sole trader (or single-member company), your business address is often your home. This means your private address appears on your invoices, website, CBE registers and all commercial documents. By domiciling your business at Office Factory, you protect your privacy while projecting a professional image.",
@@ -583,7 +583,7 @@
     "DomiciliationStartupPage": {
         "tag": "Startup Domiciliation",
         "title": "Domiciliation for startups in Brussels",
-        "desc": "Launching your company? Start with a professional address in Brussels. Office Factory supports startups with registered, simple and fast domiciliation.",
+        "description": "Launching your company? Start with a professional address in Brussels. Office Factory supports startups with registered, simple and fast domiciliation.",
         "btn_quote": "Request an offer",
         "why_title": "Why your startup needs a registered office",
         "why_p1": "In Belgium, every company must have a registered office before it can register with the CBE and obtain a VAT number. This is the very first administrative step when creating your business. The notary will verify that you have a valid registered office address before incorporating your company.",

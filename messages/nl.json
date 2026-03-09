@@ -463,7 +463,7 @@
     "DomiciliationSRLPage": {
         "tag": "Domiciliëring BV / SRL",
         "title": "Domiciliëring van uw BV in Brussel",
-        "desc": "Richt u een BV (SRL) op of beheert u er een? Vestig uw maatschappelijke zetel in Brussel bij Office Factory, een bij de FOD Economie geregistreerd zakencentrum. Een conform professioneel adres voor uw besloten vennootschap.",
+        "description": "Richt u een BV (SRL) op of beheert u er een? Vestig uw maatschappelijke zetel in Brussel bij Office Factory, een bij de FOD Economie geregistreerd zakencentrum. Een conform professioneel adres voor uw besloten vennootschap.",
         "btn_quote": "Een offerte aanvragen",
         "what_title": "De BV: de populairste rechtsvorm in België",
         "what_p1": "De Besloten Vennootschap (BV), in het Frans bekend als Société à Responsabilité Limitée (SRL), is sinds de hervorming van het Wetboek van Vennootschappen en Verenigingen (WVV) in 2019 de meest voorkomende rechtsvorm in België geworden. Ze vervangt de voormalige BVBA en biedt grote flexibiliteit aan ondernemers.",
@@ -503,7 +503,7 @@
     "DomiciliationASBLPage": {
         "tag": "Domiciliëring VZW / ASBL",
         "title": "Domiciliëring van uw VZW in Brussel",
-        "desc": "Heeft uw vereniging zonder winstoogmerk een officiële maatschappelijke zetel nodig? Office Factory biedt domiciliëring voor VZW's (ASBL's) in Brussel, in een bij de FOD Economie geregistreerd centrum.",
+        "description": "Heeft uw vereniging zonder winstoogmerk een officiële maatschappelijke zetel nodig? Office Factory biedt domiciliëring voor VZW's (ASBL's) in Brussel, in een bij de FOD Economie geregistreerd centrum.",
         "btn_quote": "Een offerte aanvragen",
         "what_title": "De VZW in België: verplichtingen inzake maatschappelijke zetel",
         "what_p1": "De Vereniging Zonder Winstoogmerk (VZW), of Association Sans But Lucratif (ASBL) in het Frans, is de rechtsvorm die wordt gebruikt door organisaties met een belangeloos doel in België. Sinds de hervorming van het WVV zijn VZW's onderworpen aan vergelijkbare verplichtingen als commerciële vennootschappen wat betreft de maatschappelijke zetel.",
@@ -543,7 +543,7 @@
     "DomiciliationFreelancePage": {
         "tag": "Domiciliëring Zelfstandigen",
         "title": "Domiciliëring voor zelfstandigen in Brussel",
-        "desc": "Als zelfstandige, scheid uw privéadres van uw professioneel adres. Office Factory biedt u een domiciliëringsadres in Brussel in een geregistreerd centrum.",
+        "description": "Als zelfstandige, scheid uw privéadres van uw professioneel adres. Office Factory biedt u een domiciliëringsadres in Brussel in een geregistreerd centrum.",
         "btn_quote": "Een offerte aanvragen",
         "why_title": "Waarom privé- en professioneel adres scheiden?",
         "why_p1": "Als zelfstandige natuurlijk persoon (of eenpersoons-BV) is uw professioneel adres vaak uw woonplaats. Dit betekent dat uw privéadres verschijnt op uw facturen, uw website, de KBO-registers en al uw commerciële documenten. Door uw activiteit te domiciliëren bij Office Factory beschermt u uw privacy en straalt u tegelijkertijd een professioneel imago uit.",
@@ -583,7 +583,7 @@
     "DomiciliationStartupPage": {
         "tag": "Domiciliëring Startups",
         "title": "Domiciliëring voor startups in Brussel",
-        "desc": "Start u uw bedrijf? Begin met een professioneel adres in Brussel. Office Factory begeleidt startups met geregistreerde, eenvoudige en snelle domiciliëring.",
+        "description": "Start u uw bedrijf? Begin met een professioneel adres in Brussel. Office Factory begeleidt startups met geregistreerde, eenvoudige en snelle domiciliëring.",
         "btn_quote": "Een offerte aanvragen",
         "why_title": "Waarom uw startup een maatschappelijke zetel nodig heeft",
         "why_p1": "In België moet elk bedrijf een maatschappelijke zetel hebben voordat het zich kan inschrijven bij de KBO en een btw-nummer kan verkrijgen. Dit is de allereerste administratieve stap bij het oprichten van uw onderneming. De notaris zal controleren of u beschikt over een geldig adres voor uw maatschappelijke zetel voordat hij uw vennootschap opricht.",
