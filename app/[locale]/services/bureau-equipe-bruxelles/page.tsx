@@ -5,6 +5,7 @@ import { Maximize2, Monitor, Users, Layers } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -17,6 +18,7 @@ export async function generateMetadata({
         title: t('bureau_equipe_title'),
         description: t('bureau_equipe_desc'),
         keywords: t('bureau_equipe_keywords'),
+        alternates: generateAlternates(locale, '/services/bureau-equipe-bruxelles'),
     };
 }
 

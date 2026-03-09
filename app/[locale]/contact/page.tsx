@@ -4,6 +4,7 @@ import MapSection from '@/components/MapSection';
 import { useTranslations, useLocale } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -15,6 +16,7 @@ export async function generateMetadata({
     return {
         title: t('contact_title'),
         description: t('contact_desc'),
+        alternates: generateAlternates(locale, '/contact'),
     };
 }
 

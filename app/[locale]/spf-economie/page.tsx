@@ -6,6 +6,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -17,6 +18,7 @@ export async function generateMetadata({
     return {
         title: t('spf_title'),
         description: t('spf_desc'),
+        alternates: generateAlternates(locale, '/spf-economie'),
     };
 }
 

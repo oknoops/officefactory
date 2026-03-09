@@ -5,6 +5,7 @@ import { Key, Layout, CreditCard, ShieldCheck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -17,6 +18,7 @@ export async function generateMetadata({
         title: t('bureau_individuel_title'),
         description: t('bureau_individuel_desc'),
         keywords: t('bureau_individuel_keywords'),
+        alternates: generateAlternates(locale, '/services/bureau-individuel-bruxelles'),
     };
 }
 

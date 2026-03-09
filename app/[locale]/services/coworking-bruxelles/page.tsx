@@ -5,6 +5,7 @@ import { Wifi, Coffee, Users, Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -17,6 +18,7 @@ export async function generateMetadata({
         title: t('coworking_title'),
         description: t('coworking_desc'),
         keywords: t('coworking_keywords'),
+        alternates: generateAlternates(locale, '/services/coworking-bruxelles'),
     };
 }
 

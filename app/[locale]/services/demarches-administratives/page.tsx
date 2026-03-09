@@ -6,6 +6,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -18,6 +19,7 @@ export async function generateMetadata({
         title: t('demarches_title'),
         description: t('demarches_desc'),
         keywords: t('demarches_keywords'),
+        alternates: generateAlternates(locale, '/services/demarches-administratives'),
     };
 }
 

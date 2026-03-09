@@ -5,6 +5,7 @@ import { Check } from 'lucide-react';
 import NewsletterForm from '@/components/NewsletterForm';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
     params
@@ -16,6 +17,7 @@ export async function generateMetadata({
     return {
         title: t('services_title'),
         description: t('services_desc'),
+        alternates: generateAlternates(locale, '/nos-services'),
     };
 }
 
