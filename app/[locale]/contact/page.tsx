@@ -24,7 +24,7 @@ export default function ContactPage() {
     const t = useTranslations('ContactPage');
     const locale = useLocale();
 
-    let iframeSrc = "https://brusselsofficefactory.odoo.com/nous-contacter?v=1";
+    let iframeSrc = "https://brusselsofficefactory.odoo.com/nous-contacter-form";
     let marginTop = "-85px";
 
     if (locale === 'en') {
