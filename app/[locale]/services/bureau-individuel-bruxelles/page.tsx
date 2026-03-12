@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Key, Layout, CreditCard, ShieldCheck } from 'lucide-react';
@@ -41,9 +42,9 @@ export default function PrivateOfficePage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('desc_p1')}<strong className="text-[#1D1D1B]">{t('desc_b')}</strong>{t('desc_p2')}
                         </p>
-                        <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_avail')}
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
@@ -106,9 +107,9 @@ export default function PrivateOfficePage() {
                         {t('p_price_1')}<strong className="text-[#E63946] text-2xl">{t('p_price_b')}</strong>{t('p_price_2')}
                     </p>
                     <div className="flex gap-4 justify-center">
-                        <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
+                        <Link href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
                             {t('btn_visit')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FileText, Edit, XCircle, Check } from 'lucide-react';
@@ -42,9 +43,9 @@ export default function DemarchesAdministrativesPage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('desc')}
                         </p>
-                        <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_contact')}
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
@@ -136,9 +137,9 @@ export default function DemarchesAdministrativesPage() {
                     <p className="text-xl opacity-90 mb-8">
                         {t('cta_desc')}
                     </p>
-                    <a href="/contact" className="btn bg-white text-[#E63946] hover:bg-gray-100 font-semibold px-8 py-3 rounded-full text-lg">
+                    <Link href="/contact" className="btn bg-white text-[#E63946] hover:bg-gray-100 font-semibold px-8 py-3 rounded-full text-lg">
                         {t('cta_btn')}
-                    </a>
+                    </Link>
                 </div>
             </section>
 

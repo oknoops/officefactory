@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Wifi, Coffee, Users, Calendar } from 'lucide-react';
@@ -41,9 +42,9 @@ export default function CoworkingPage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('desc_1')}<strong className="text-[#1D1D1B]">{t('desc_b1')}</strong>{t('desc_2')}<strong className="text-[#1D1D1B]">{t('desc_b2')}</strong>{t('desc_3')}
                         </p>
-                        <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_visit')}
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
@@ -135,9 +136,9 @@ export default function CoworkingPage() {
                             <p className="text-sm text-[#6C757D] mb-8 pb-8 border-b border-gray-100">
                                 {t('card_desc')}
                             </p>
-                            <a href="/contact" className="btn btn-primary w-full py-3 rounded-lg font-semibold text-center block">
+                            <Link href="/contact" className="btn btn-primary w-full py-3 rounded-lg font-semibold text-center block">
                                 {t('btn_sub')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

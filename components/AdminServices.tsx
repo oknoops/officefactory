@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const AdminServices: FC = () => {
     const t = useTranslations('AdminServices');
@@ -22,9 +23,9 @@ const AdminServices: FC = () => {
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
                             {t('serv1_desc')}
                         </p>
-                        <a href="/contact" className="text-[#E63946] font-semibold hover:underline">
+                        <Link href="/contact" className="text-[#E63946] font-semibold hover:underline">
                             {t('serv1_link')}
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Service 2 */}
@@ -33,9 +34,9 @@ const AdminServices: FC = () => {
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
                             {t('serv2_desc')}
                         </p>
-                        <a href="/contact" className="text-[#E63946] font-semibold hover:underline">
+                        <Link href="/contact" className="text-[#E63946] font-semibold hover:underline">
                             {t('serv2_link')}
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Service 3 */}
@@ -44,9 +45,9 @@ const AdminServices: FC = () => {
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
                             {t('serv3_desc')}
                         </p>
-                        <a href="/contact" className="text-[#E63946] font-semibold hover:underline">
+                        <Link href="/contact" className="text-[#E63946] font-semibold hover:underline">
                             {t('serv3_link')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

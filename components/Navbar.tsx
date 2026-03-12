@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { FC, useState } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -64,12 +64,12 @@ const Navbar: FC = () => {
                         <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light text-sm px-3 whitespace-nowrap">
                             {t('login')}
                         </a>
-                        <a href="/contact" className="btn btn-dark text-sm px-3 whitespace-nowrap">
+                        <Link href="/contact" className="btn btn-dark text-sm px-3 whitespace-nowrap">
                             {t('domiciliate')}
-                        </a>
-                        <a href="/contact" className="btn btn-dark text-center text-sm px-3 whitespace-nowrap">
+                        </Link>
+                        <Link href="/contact" className="btn btn-dark text-center text-sm px-3 whitespace-nowrap">
                             {t('contact')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -127,12 +127,12 @@ const Navbar: FC = () => {
                         <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light w-full justify-center">
                             {t('login')}
                         </a>
-                        <a href="/contact" className="btn btn-dark w-full justify-center">
+                        <Link href="/contact" className="btn btn-dark w-full justify-center">
                             {t('domiciliate')}
-                        </a>
-                        <a href="/contact" className="btn btn-primary w-full justify-center">
+                        </Link>
+                        <Link href="/contact" className="btn btn-primary w-full justify-center">
                             {t('getStarted')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

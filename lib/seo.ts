@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
+import { getPathname, type Pathnames } from '@/i18n/routing';
 
 export const SITE_URL = 'https://www.officefactory.be';
 export const LOCALES = ['fr', 'en', 'nl'] as const;
 export type Locale = (typeof LOCALES)[number];
 
+/** Static pathnames (no dynamic segments like [slug]) */
+export type StaticPathname = Exclude<Pathnames, `${string}[${string}]${string}`>;
+
 /**
- * All page paths (without locale prefix).
+ * All page paths (internal, without locale prefix).
  * Used for sitemap generation and alternate links.
  */
-export const ALL_PATHS = [
-  '',
+export const ALL_PATHS: StaticPathname[] = [
+  '/',
   '/a-propos',
   '/contact',
   '/nos-services',
@@ -28,17 +32,28 @@ export const ALL_PATHS = [
 ];
 
 /**
+ * Get the localized path for a given internal path and locale.
+ */
+export function getLocalizedPath(path: StaticPathname, locale: Locale): string {
+  if (path === '/') return '';
+  return getPathname({ locale, href: path });
+}
+
+/**
  * Generate hreflang alternates and canonical URL for a page.
  */
-export function generateAlternates(locale: string, path: string): Metadata['alternates'] {
-  const canonicalPath = `/${locale}${path}`;
+export function generateAlternates(locale: string, path: StaticPathname): Metadata['alternates'] {
+  const localizedPath = getLocalizedPath(path, locale as Locale);
+  const canonicalPath = `/${locale}${localizedPath}`;
   const languages: Record<string, string> = {};
 
   for (const loc of LOCALES) {
-    languages[loc] = `${SITE_URL}/${loc}${path}`;
+    const locPath = getLocalizedPath(path, loc);
+    languages[loc] = `${SITE_URL}/${loc}${locPath}`;
   }
   // x-default points to the default locale (fr)
-  languages['x-default'] = `${SITE_URL}/fr${path}`;
+  const frPath = getLocalizedPath(path, 'fr');
+  languages['x-default'] = `${SITE_URL}/fr${frPath}`;
 
   return {
     canonical: `${SITE_URL}${canonicalPath}`,

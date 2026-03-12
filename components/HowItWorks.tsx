@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { FileEdit, Briefcase, FileSignature } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const HowItWorks: FC = () => {
     const t = useTranslations('HowItWorks');
@@ -64,9 +65,9 @@ const HowItWorks: FC = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                    <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full text-lg font-semibold">
+                    <Link href="/contact" className="btn btn-primary px-8 py-3 rounded-full text-lg font-semibold">
                         {t('cta')}
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

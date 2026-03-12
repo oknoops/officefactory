@@ -15,7 +15,7 @@ export async function generateMetadata({
     icons: {
       icon: '/favicon.webp',
     },
-    alternates: generateAlternates(locale, ''),
+    alternates: generateAlternates(locale, '/'),
   };
 }
 

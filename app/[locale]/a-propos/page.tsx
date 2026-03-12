@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ShieldCheck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
 
@@ -48,7 +49,7 @@ export default function AboutPage() {
                                 {t('p3_part1')}<strong className="text-[#1D1D1B]">{t('p3_bold1')}</strong>{t('p3_part2')}
                             </p>
                             <p>
-                                {t('p4_part1')}<a href="/belgian-workspace-association" className="text-[#E63946] font-semibold hover:underline">{t('p4_link')}</a>{t('p4_part2')}
+                                {t('p4_part1')}<Link href="/belgian-workspace-association" className="text-[#E63946] font-semibold hover:underline">{t('p4_link')}</Link>{t('p4_part2')}
                             </p>
                         </div>
                     </div>
@@ -91,9 +92,9 @@ export default function AboutPage() {
                             <p className="text-[#6C757D] mb-4">
                                 {t('law_part1')}<strong className="text-[#1D1D1B]">{t('law_bold')}</strong>{t('law_part2')}
                             </p>
-                            <a href="/spf-economie" className="text-[#E63946] font-semibold hover:underline flex items-center gap-2">
+                            <Link href="/spf-economie" className="text-[#E63946] font-semibold hover:underline flex items-center gap-2">
                                 {t('law_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -107,9 +108,9 @@ export default function AboutPage() {
                             <p className="text-[#6C757D] mb-4">
                                 {t('bwa_banner_part1')}<strong className="text-[#1D1D1B]">{t('bwa_banner_bold')}</strong>{t('bwa_banner_part2')}
                             </p>
-                            <a href="/belgian-workspace-association" className="text-[#E63946] font-semibold hover:underline flex items-center gap-2">
+                            <Link href="/belgian-workspace-association" className="text-[#E63946] font-semibold hover:underline flex items-center gap-2">
                                 {t('bwa_banner_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -121,12 +122,12 @@ export default function AboutPage() {
                         {t('cta_title')}
                     </h2>
                     <div className="flex gap-4 justify-center">
-                        <a href="/nos-services" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
+                        <Link href="/nos-services" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
                             {t('cta_btn1')}
-                        </a>
-                        <a href="/contact" className="btn btn-dark px-8 py-3 rounded-full font-semibold">
+                        </Link>
+                        <Link href="/contact" className="btn btn-dark px-8 py-3 rounded-full font-semibold">
                             {t('cta_btn2')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

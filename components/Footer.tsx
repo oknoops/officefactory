@@ -1,7 +1,6 @@
-import { Component } from 'lucide-react';
 import Image from 'next/image';
-import Script from 'next/script';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 import { FC } from 'react';
 import NewsletterForm from './NewsletterForm';
@@ -35,10 +34,10 @@ const Footer: FC = () => {
                     <div className="col-span-1">
                         <h4 className="font-bold mb-4 text-[#1D1D1B]">{t('aboutHead')}</h4>
                         <ul className="space-y-2 text-[#6C757D]">
-                            <li><a href="/a-propos" className="hover:text-[#E63946]">{t('link_about')}</a></li>
-                            <li><a href="/contact" className="hover:text-[#E63946]">{t('link_contact')}</a></li>
-                            <li><a href="/contact" className="hover:text-[#E63946]">{t('link_domiciliate')}</a></li>
-                            <li><a href="/blog" className="hover:text-[#E63946]">{t('link_blog')}</a></li>
+                            <li><Link href="/a-propos" className="hover:text-[#E63946]">{t('link_about')}</Link></li>
+                            <li><Link href="/contact" className="hover:text-[#E63946]">{t('link_contact')}</Link></li>
+                            <li><Link href="/contact" className="hover:text-[#E63946]">{t('link_domiciliate')}</Link></li>
+                            <li><Link href="/blog" className="hover:text-[#E63946]">{t('link_blog')}</Link></li>
                         </ul>
                     </div>
 
@@ -46,12 +45,12 @@ const Footer: FC = () => {
                     <div className="col-span-1">
                         <h4 className="font-bold mb-4 text-[#1D1D1B]">{t('servicesHead')}</h4>
                         <ul className="space-y-2 text-[#6C757D]">
-                            <li><a href="/nos-services" className="hover:text-[#E63946]">{t('link_services_all')}</a></li>
-                            <li><a href="/services/domiciliation-bruxelles" className="hover:text-[#E63946]">{t('link_services_domiciliation')}</a></li>
-                            <li><a href="/services/coworking-bruxelles" className="hover:text-[#E63946]">{t('link_services_coworking')}</a></li>
-                            <li><a href="/services/bureau-individuel-bruxelles" className="hover:text-[#E63946]">{t('link_services_bureau_individuel')}</a></li>
-                            <li><a href="/services/bureau-equipe-bruxelles" className="hover:text-[#E63946]">{t('link_services_bureau_equipe')}</a></li>
-                            <li><a href="/services/demarches-administratives" className="hover:text-[#E63946]">{t('link_services_demarches')}</a></li>
+                            <li><Link href="/nos-services" className="hover:text-[#E63946]">{t('link_services_all')}</Link></li>
+                            <li><Link href="/services/domiciliation-bruxelles" className="hover:text-[#E63946]">{t('link_services_domiciliation')}</Link></li>
+                            <li><Link href="/services/coworking-bruxelles" className="hover:text-[#E63946]">{t('link_services_coworking')}</Link></li>
+                            <li><Link href="/services/bureau-individuel-bruxelles" className="hover:text-[#E63946]">{t('link_services_bureau_individuel')}</Link></li>
+                            <li><Link href="/services/bureau-equipe-bruxelles" className="hover:text-[#E63946]">{t('link_services_bureau_equipe')}</Link></li>
+                            <li><Link href="/services/demarches-administratives" className="hover:text-[#E63946]">{t('link_services_demarches')}</Link></li>
                         </ul>
                     </div>
 
@@ -70,15 +69,6 @@ const Footer: FC = () => {
                         <p className="text-[#6C757D] text-sm mb-4">
                             {t('newsletter_desc')}
                         </p>
-                        {/* 
-                This form submits to Odoo. 
-                Typically Odoo forms post to /website_mass_mailing/subscribe 
-                or use an iframe.
-                Since this is an external site, we should use a simple form acting as a proxy or link.
-                However, user asked to "Connect odoo to a newsletter subscription banner".
-                The best way is a form action pointing to the Odoo instance if CORS allows, 
-                or we just simulate it visually and ask user for the endpoint.
-            */}
                         <NewsletterForm />
                     </div>
                 </div>

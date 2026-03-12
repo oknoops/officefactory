@@ -1,8 +1,10 @@
+import type { StaticPathname } from '@/lib/seo';
+
 export type BlogCategory = 'guides' | 'legal' | 'local' | 'news';
 
 export type BlogSection =
   | { type: 'text'; id: string; tocKey: string; titleKey: string; contentKey: string }
-  | { type: 'steps'; id: string; tocKey: string; titleKey: string; introKey: string; count: number; linkKey?: string; linkHref?: string }
+  | { type: 'steps'; id: string; tocKey: string; titleKey: string; introKey: string; count: number; linkKey?: string; linkHref?: StaticPathname }
   | { type: 'obligations'; id: string; tocKey: string; titleKey: string; introKey: string; count: number };
 
 export interface BlogPost {
@@ -14,7 +16,7 @@ export interface BlogPost {
   translationNamespace: string;
   metadataKey: string; // e.g. 'blog_post1' → reads blog_post1_title, blog_post1_desc, blog_post1_keywords
   sections: BlogSection[];
-  conclusionLinkHref: string;
+  conclusionLinkHref: StaticPathname;
 }
 
 export const BLOG_POSTS: BlogPost[] = [

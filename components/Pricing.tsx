@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const Pricing: FC = () => {
     const t = useTranslations('Pricing');
@@ -43,9 +44,9 @@ const Pricing: FC = () => {
                                     {t('card1_feature3')}
                                 </li>
                             </ul>
-                            <a href="/services/domiciliation-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
+                            <Link href="/services/domiciliation-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
                                 {t('card1_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -79,9 +80,9 @@ const Pricing: FC = () => {
                                     {t('card2_feature3')}
                                 </li>
                             </ul>
-                            <a href="/services/coworking-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
+                            <Link href="/services/coworking-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
                                 {t('card2_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -115,9 +116,9 @@ const Pricing: FC = () => {
                                     {t('card3_feature3')}
                                 </li>
                             </ul>
-                            <a href="/services/bureau-individuel-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
+                            <Link href="/services/bureau-individuel-bruxelles" className="mt-6 text-sm font-semibold text-[#E63946] hover:underline">
                                 {t('card3_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

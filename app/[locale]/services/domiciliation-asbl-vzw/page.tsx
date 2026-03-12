@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -70,9 +71,9 @@ export default function DomiciliationASBLPage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('description')}
                         </p>
-                        <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_quote')}
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
@@ -151,12 +152,12 @@ export default function DomiciliationASBLPage() {
                         {t('price_p1')}<strong className="text-[#E63946] text-2xl">{t('price_amount')}</strong>{t('price_p2')}
                     </p>
                     <div className="flex gap-4 justify-center">
-                        <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
+                        <Link href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
                             {t('btn_sub')}
-                        </a>
-                        <a href="/nos-services" className="btn btn-light px-8 py-3 rounded-full font-semibold">
+                        </Link>
+                        <Link href="/nos-services" className="btn btn-light px-8 py-3 rounded-full font-semibold">
                             {t('btn_other')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

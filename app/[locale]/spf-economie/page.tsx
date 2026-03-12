@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { ShieldCheck, Building, FileText, CheckCircle2 } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
@@ -42,9 +43,9 @@ export default function SPFEconomiePage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('desc')}
                         </p>
-                        <a href="/nos-services" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/nos-services" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_discover')}
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
@@ -142,9 +143,9 @@ export default function SPFEconomiePage() {
                     <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                         {t('cta_desc')}
                     </p>
-                    <a href="/services/domiciliation-bruxelles" className="btn bg-white text-[#1D1D1B] hover:bg-gray-100 font-semibold px-8 py-3 rounded-full text-lg">
+                    <Link href="/services/domiciliation-bruxelles" className="btn bg-white text-[#1D1D1B] hover:bg-gray-100 font-semibold px-8 py-3 rounded-full text-lg">
                         {t('cta_btn')}
-                    </a>
+                    </Link>
                 </div>
             </section>
 

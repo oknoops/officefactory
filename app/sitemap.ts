@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { SITE_URL, LOCALES, ALL_PATHS } from '@/lib/seo';
+import { SITE_URL, LOCALES, ALL_PATHS, getLocalizedPath } from '@/lib/seo';
 import { BLOG_POSTS, getPostSlugForLocale } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,16 +7,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const path of ALL_PATHS) {
     for (const locale of LOCALES) {
+      const localizedPath = getLocalizedPath(path, locale);
       const languages: Record<string, string> = {};
       for (const loc of LOCALES) {
-        languages[loc] = `${SITE_URL}/${loc}${path}`;
+        languages[loc] = `${SITE_URL}/${loc}${getLocalizedPath(path, loc)}`;
       }
 
       entries.push({
-        url: `${SITE_URL}/${locale}${path}`,
+        url: `${SITE_URL}/${locale}${localizedPath}`,
         lastModified: new Date(),
-        changeFrequency: path === '' ? 'weekly' : 'monthly',
-        priority: path === '' ? 1 : path.startsWith('/services/') ? 0.9 : 0.8,
+        changeFrequency: path === '/' ? 'weekly' : 'monthly',
+        priority: path === '/' ? 1 : path.startsWith('/services/') ? 0.9 : 0.8,
         alternates: { languages },
       });
     }

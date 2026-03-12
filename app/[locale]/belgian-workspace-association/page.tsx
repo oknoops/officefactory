@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -157,7 +157,7 @@ export default function BWAPage() {
                             {t('aml_p2')}
                         </p>
                         <Link
-                            href="/blog/office-factory-certifie-aml-belgian-workspace-association"
+                            href={{ pathname: '/blog/[slug]', params: { slug: 'office-factory-certifie-aml-belgian-workspace-association' } }}
                             className="inline-flex items-center gap-2 text-[#E63946] font-semibold hover:underline"
                         >
                             {t('aml_link')} <ArrowRight size={18} />
@@ -175,9 +175,9 @@ export default function BWAPage() {
                     <p className="text-[#6C757D] mb-8 text-lg">
                         {t('cta_desc')}
                     </p>
-                    <a href="/nos-services" className="btn btn-primary px-8 py-3 rounded-full text-lg font-semibold inline-block">
+                    <Link href="/nos-services" className="btn btn-primary px-8 py-3 rounded-full text-lg font-semibold inline-block">
                         {t('cta_btn')}
-                    </a>
+                    </Link>
                 </div>
             </section>
 

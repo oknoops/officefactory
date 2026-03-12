@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -67,12 +68,12 @@ function BlogPageContent({ locale }: { locale: string }) {
           <p className="text-lg text-gray-300 mb-8">
             {t('cta_text')}
           </p>
-          <a
+          <Link
             href="/contact"
             className="btn btn-primary px-8 py-3 rounded-full font-semibold inline-block"
           >
             {t('cta_btn')}
-          </a>
+          </Link>
         </div>
       </section>
 

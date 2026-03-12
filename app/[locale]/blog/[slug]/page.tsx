@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -14,11 +14,11 @@ import TableOfContents from './TableOfContents';
 import ShareButtons from './ShareButtons';
 
 export async function generateStaticParams() {
-  const params: { slug: string }[] = [];
+  const params: { locale: string; slug: string }[] = [];
   for (const post of BLOG_POSTS) {
-    params.push({ slug: post.slugs.fr });
-    params.push({ slug: post.slugs.en });
-    params.push({ slug: post.slugs.nl });
+    for (const locale of ['fr', 'en', 'nl']) {
+      params.push({ locale, slug: post.slugs[locale as keyof typeof post.slugs] });
+    }
   }
   return params;
 }
@@ -235,12 +235,12 @@ function BlogPostContent({
           <p className="text-lg text-gray-300 mb-8">
             {tBlog('cta_text')}
           </p>
-          <a
+          <Link
             href="/contact"
             className="btn btn-primary px-8 py-3 rounded-full font-semibold inline-block"
           >
             {tBlog('cta_btn')}
-          </a>
+          </Link>
         </div>
       </section>
 

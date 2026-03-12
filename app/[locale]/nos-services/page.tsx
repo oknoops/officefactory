@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Check } from 'lucide-react';
 import NewsletterForm from '@/components/NewsletterForm';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
 
@@ -38,9 +39,9 @@ export default function ServicesPage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('desc')}
                         </p>
-                        <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_contact')}
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Right Image */}
@@ -99,9 +100,9 @@ export default function ServicesPage() {
                             {t('s1_price')}
                         </div>
                         <div className="mt-4">
-                            <a href="/services/domiciliation-bruxelles" className="text-[#E63946] font-semibold hover:underline">
+                            <Link href="/services/domiciliation-bruxelles" className="text-[#E63946] font-semibold hover:underline">
                                 {t('s1_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -140,9 +141,9 @@ export default function ServicesPage() {
                             {t('s2_price')}
                         </div>
                         <div className="mt-4">
-                            <a href="/services/coworking-bruxelles" className="text-[#E63946] font-semibold hover:underline">
+                            <Link href="/services/coworking-bruxelles" className="text-[#E63946] font-semibold hover:underline">
                                 {t('s2_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -205,9 +206,9 @@ export default function ServicesPage() {
                             {t('s3_price')}
                         </div>
                         <div className="mt-4">
-                            <a href="/services/bureau-individuel-bruxelles" className="text-[#E63946] font-semibold hover:underline">
+                            <Link href="/services/bureau-individuel-bruxelles" className="text-[#E63946] font-semibold hover:underline">
                                 {t('s3_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -246,9 +247,9 @@ export default function ServicesPage() {
                             {t('s4_price')}
                         </div>
                         <div className="mt-4">
-                            <a href="/services/bureau-equipe-bruxelles" className="text-[#E63946] font-semibold hover:underline">
+                            <Link href="/services/bureau-equipe-bruxelles" className="text-[#E63946] font-semibold hover:underline">
                                 {t('s4_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -307,9 +308,9 @@ export default function ServicesPage() {
                             {t('s5_price')}
                         </div>
                         <div className="mt-4">
-                            <a href="/services/demarches-administratives" className="text-[#E63946] font-semibold hover:underline">
+                            <Link href="/services/demarches-administratives" className="text-[#E63946] font-semibold hover:underline">
                                 {t('s5_link')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -330,9 +331,9 @@ export default function ServicesPage() {
                         <p className="text-white/90 mb-8 text-lg">
                             {t('banner_desc')}
                         </p>
-                        <a href="/contact" className="inline-block bg-white text-[#E63946] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
+                        <Link href="/contact" className="inline-block bg-white text-[#E63946] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
                             {t('banner_btn')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

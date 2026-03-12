@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -84,9 +85,9 @@ export default function DomiciliationPage() {
                         <p className="text-lg text-[#6C757D] mb-8 leading-relaxed">
                             {t('hero_p2')}
                         </p>
-                        <a href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
                             {t('btn_quote')}
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
@@ -193,20 +194,20 @@ export default function DomiciliationPage() {
                         {t('who_subtitle')}
                     </p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
+                        {([
                             { href: '/services/domiciliation-srl-bv', icon: Building, key: 'srl' },
                             { href: '/services/domiciliation-asbl-vzw', icon: Users, key: 'asbl' },
                             { href: '/services/domiciliation-independants', icon: MapPin, key: 'freelance' },
                             { href: '/services/domiciliation-startups', icon: Rocket, key: 'startup' },
-                        ].map(({ href, icon: Icon, key }) => (
-                            <a key={key} href={href} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#E63946]/20 transition-all group text-center block">
+                        ] as const).map(({ href, icon: Icon, key }) => (
+                            <Link key={key} href={href} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#E63946]/20 transition-all group text-center block">
                                 <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#E63946] mx-auto mb-6 group-hover:bg-[#E63946] group-hover:text-white transition-colors">
                                     <Icon size={32} />
                                 </div>
                                 <h3 className="text-xl font-bold mb-3 text-[#1D1D1B]">{t(`who_${key}_t`)}</h3>
                                 <p className="text-[#6C757D] mb-4">{t(`who_${key}_d`)}</p>
                                 <span className="text-[#E63946] font-semibold">{t('who_link')}</span>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -242,12 +243,12 @@ export default function DomiciliationPage() {
                         {t('price_p1')}<strong className="text-[#E63946] text-2xl">{t('price_amount')}</strong>{t('price_p2')}
                     </p>
                     <div className="flex gap-4 justify-center">
-                        <a href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
+                        <Link href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
                             {t('btn_sub')}
-                        </a>
-                        <a href="/nos-services" className="btn btn-light px-8 py-3 rounded-full font-semibold">
+                        </Link>
+                        <Link href="/nos-services" className="btn btn-light px-8 py-3 rounded-full font-semibold">
                             {t('btn_other')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

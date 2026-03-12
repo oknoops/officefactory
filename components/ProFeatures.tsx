@@ -1,6 +1,7 @@
 import { UserCheck, Car, Clock, Package, Wifi, Users } from 'lucide-react';
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const FeatureItem: FC<{ icon: any, title: string, desc: string }> = ({ icon: Icon, title, desc }) => (
     <div className="flex gap-4 items-start">
@@ -26,9 +27,9 @@ const ProFeatures: FC = () => {
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#1D1D1B] leading-tight">
                         {t('title')}
                     </h2>
-                    <a href="/a-propos" className="btn btn-primary px-8 py-3 text-lg">
+                    <Link href="/a-propos" className="btn btn-primary px-8 py-3 text-lg">
                         {t('cta')}
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Right Grid */}
