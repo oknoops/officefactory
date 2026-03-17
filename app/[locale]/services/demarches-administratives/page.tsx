@@ -3,7 +3,6 @@ import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FileText, Edit, XCircle, Check } from 'lucide-react';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
@@ -143,7 +142,6 @@ export default function DemarchesAdministrativesPage() {
                 </div>
             </section>
 
-            <WhatsAppButton />
             <Footer />
         </main>
     );

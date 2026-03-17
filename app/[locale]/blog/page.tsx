@@ -1,7 +1,6 @@
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
@@ -77,7 +76,6 @@ function BlogPageContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <WhatsAppButton />
       <Footer />
     </main>
   );

@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ShieldCheck, Building, FileText, CheckCircle2 } from 'lucide-react';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
@@ -149,7 +148,6 @@ export default function SPFEconomiePage() {
                 </div>
             </section>
 
-            <WhatsAppButton />
             <Footer />
         </main>
     );

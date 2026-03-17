@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { Check, FileText, ShieldCheck, Building, ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -198,7 +197,6 @@ export default function DomiciliationSRLPage() {
                 </div>
             </section>
 
-            <WhatsAppButton />
             <Footer />
         </main>
     );

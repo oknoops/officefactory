@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { Target, Users, BookOpen, ShieldCheck, Award, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -181,7 +180,6 @@ export default function BWAPage() {
                 </div>
             </section>
 
-            <WhatsAppButton />
             <Footer />
         </main>
     );

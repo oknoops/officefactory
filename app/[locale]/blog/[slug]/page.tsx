@@ -3,7 +3,6 @@ import { Link } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { ChevronRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -244,7 +243,6 @@ function BlogPostContent({
         </div>
       </section>
 
-      <WhatsAppButton />
       <Footer />
     </main>
   );
