@@ -680,7 +680,9 @@
         "blog_post5_keywords": "expat business Brussels, domiciliation expat, registered office expat Belgium, start company foreigner Brussels",
         "blog_post6_title": "Home Address vs Business Address: Why It Matters for Your Company | Office Factory",
         "blog_post6_desc": "Home address or business address for your company? Learn about the impact on privacy, credibility, and legal compliance.",
-        "blog_post6_keywords": "home address company, business address company, registered office home, domiciliation benefits, entrepreneur privacy"
+        "blog_post6_keywords": "home address company, business address company, registered office home, domiciliation benefits, entrepreneur privacy",
+        "merci_title": "Thank you for your message | Office Factory",
+        "merci_desc": "Your message has been received. Our team will get back to you as soon as possible."
     },
     "BlogPage": {
         "title": "Blog",
@@ -900,5 +902,12 @@
         "toc_conclusion": "Conclusion",
         "legal_faq_q": "Do all Belgian company types need a registered office?",
         "legal_faq_a": "Yes, the Code of Companies and Associations (CSA) requires every company or association incorporated in Belgium to have a registered office located on Belgian territory. This obligation applies equally to commercial companies (SRL, SA) and non-profit associations (ASBL). The registered office address must appear in the articles of association and be published in the Belgian Official Gazette. Domiciliation at a business centre registered with the SPF Economy is a compliant and recognised way to fulfil this requirement."
+    },
+    "ThankYouPage": {
+        "title": "Thank you!",
+        "message": "Thank you for your message! We will get back to you as soon as possible.",
+        "cta_home": "Back to home",
+        "cta_blog": "Our blog",
+        "cta_services": "Our services"
     }
 }

@@ -680,7 +680,9 @@
         "blog_post5_keywords": "expatrié entreprise Bruxelles, domiciliation expatrié, siège social expat Belgique, créer société étranger Bruxelles",
         "blog_post6_title": "Adresse personnelle vs adresse professionnelle : pourquoi ça compte | Office Factory",
         "blog_post6_desc": "Adresse personnelle ou adresse professionnelle pour votre entreprise ? Découvrez les impacts sur la vie privée, la crédibilité et la conformité légale.",
-        "blog_post6_keywords": "adresse personnelle entreprise, adresse professionnelle société, siège social domicile, domiciliation avantages, vie privée entrepreneur"
+        "blog_post6_keywords": "adresse personnelle entreprise, adresse professionnelle société, siège social domicile, domiciliation avantages, vie privée entrepreneur",
+        "merci_title": "Merci pour votre message | Office Factory",
+        "merci_desc": "Votre message a bien été reçu. Notre équipe vous recontactera dans les plus brefs délais."
     },
     "BlogPage": {
         "title": "Blog",
@@ -900,5 +902,12 @@
         "toc_conclusion": "Conclusion",
         "legal_faq_q": "Tous les types de sociétés belges doivent-ils avoir un siège social ?",
         "legal_faq_a": "Oui, le Code des Sociétés et des Associations (CSA) impose à toute société ou association constituée en Belgique de disposer d'un siège social situé sur le territoire belge. Cette obligation s'applique aussi bien aux sociétés commerciales (SRL, SA) qu'aux associations sans but lucratif (ASBL). L'adresse du siège social doit figurer dans les statuts et être publiée au Moniteur Belge. La domiciliation dans un centre d'affaires enregistré auprès du SPF Économie constitue une solution conforme et reconnue pour satisfaire à cette exigence."
+    },
+    "ThankYouPage": {
+        "title": "Merci !",
+        "message": "Merci pour votre message ! Nous vous recontactons dans les plus brefs délais.",
+        "cta_home": "Retour à l'accueil",
+        "cta_blog": "Notre blog",
+        "cta_services": "Nos services"
     }
 }

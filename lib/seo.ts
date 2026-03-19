@@ -29,6 +29,7 @@ export const ALL_PATHS: StaticPathname[] = [
   '/belgian-workspace-association',
   '/spf-economie',
   '/blog',
+  '/merci',
 ];
 
 /**

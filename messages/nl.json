@@ -680,7 +680,9 @@
         "blog_post5_keywords": "expat bedrijf Brussel, domiciliëring expat, maatschappelijke zetel expat België, bedrijf oprichten buitenlander Brussel",
         "blog_post6_title": "Thuisadres vs zakelijk adres: waarom het belangrijk is voor uw bedrijf | Office Factory",
         "blog_post6_desc": "Thuisadres of zakelijk adres voor uw bedrijf? Ontdek de impact op privacy, geloofwaardigheid en wettelijke conformiteit.",
-        "blog_post6_keywords": "thuisadres bedrijf, zakelijk adres onderneming, maatschappelijke zetel thuis, domiciliëring voordelen, privacy ondernemer"
+        "blog_post6_keywords": "thuisadres bedrijf, zakelijk adres onderneming, maatschappelijke zetel thuis, domiciliëring voordelen, privacy ondernemer",
+        "merci_title": "Bedankt voor uw bericht | Office Factory",
+        "merci_desc": "Uw bericht is goed ontvangen. Ons team neemt zo snel mogelijk contact met u op."
     },
     "BlogPage": {
         "title": "Blog",
@@ -900,5 +902,12 @@
         "toc_conclusion": "Conclusie",
         "legal_faq_q": "Moeten alle Belgische vennootschapstypes een maatschappelijke zetel hebben?",
         "legal_faq_a": "Ja, het Wetboek van Vennootschappen en Verenigingen (WVV) verplicht elke vennootschap of vereniging die in België is opgericht om over een maatschappelijke zetel op Belgisch grondgebied te beschikken. Deze verplichting geldt zowel voor commerciële vennootschappen (BV, NV) als voor verenigingen zonder winstoogmerk (VZW). Het adres van de maatschappelijke zetel moet worden opgenomen in de statuten en worden gepubliceerd in het Belgisch Staatsblad. Domiciliëring bij een bij de FOD Economie geregistreerd zakencentrum is een conforme en erkende manier om aan deze vereiste te voldoen."
+    },
+    "ThankYouPage": {
+        "title": "Bedankt!",
+        "message": "Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.",
+        "cta_home": "Terug naar home",
+        "cta_blog": "Ons blog",
+        "cta_services": "Onze diensten"
     }
 }

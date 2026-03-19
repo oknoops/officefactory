@@ -71,6 +71,11 @@ export const routing = defineRouting({
             en: '/services/domiciliation-startups',
             nl: '/diensten/domiciliering-startups',
         },
+        '/merci': {
+            fr: '/merci',
+            en: '/thank-you',
+            nl: '/bedankt',
+        },
     },
 });
 
