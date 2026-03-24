@@ -76,7 +76,7 @@ export default function ServicesPage() {
                             {t('s1_title')}
                         </h2>
                         <p className="text-[#6C757D] mb-6 leading-relaxed">
-                            {t('s1_desc_p1')}<strong className="font-semibold text-[#1D1D1B]">{t('s1_desc_b1')}</strong>{t('s1_desc_p2')}<strong className="font-semibold text-[#1D1D1B]">{t('s1_desc_b2')}</strong>{t('s1_desc_p3')}
+                            {t('s1_desc_p1')}<Link href="/services/siege-social-bruxelles" className="font-semibold text-[#1D1D1B] hover:text-[#E63946] transition-colors">{t('s1_desc_b1')}</Link>{t('s1_desc_p2')}<strong className="font-semibold text-[#1D1D1B]">{t('s1_desc_b2')}</strong>{t('s1_desc_p3')}
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-start gap-3">
@@ -232,7 +232,7 @@ export default function ServicesPage() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>
-                                <span className="text-[#1D1D1B]">{t('s4_f2')}</span>
+                                <Link href="/services/salle-de-reunion-bruxelles" className="text-[#1D1D1B] hover:text-[#E63946] transition-colors">{t('s4_f2')}</Link>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#E63946] mt-1"><Check size={20} /></span>

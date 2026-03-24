@@ -30,6 +30,10 @@ export const ALL_PATHS: StaticPathname[] = [
   '/spf-economie',
   '/blog',
   '/merci',
+  '/faq',
+  '/services/salle-de-reunion-bruxelles',
+  '/services/siege-social-bruxelles',
+  '/services/domiciliation-virtuelle',
 ];
 
 /**

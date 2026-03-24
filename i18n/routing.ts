@@ -76,6 +76,22 @@ export const routing = defineRouting({
             en: '/thank-you',
             nl: '/bedankt',
         },
+        '/faq': '/faq',
+        '/services/salle-de-reunion-bruxelles': {
+            fr: '/services/salle-de-reunion-bruxelles',
+            en: '/services/meeting-room-brussels',
+            nl: '/diensten/vergaderzaal-brussel',
+        },
+        '/services/siege-social-bruxelles': {
+            fr: '/services/siege-social-bruxelles',
+            en: '/services/registered-office-brussels',
+            nl: '/diensten/maatschappelijke-zetel-brussel',
+        },
+        '/services/domiciliation-virtuelle': {
+            fr: '/services/domiciliation-virtuelle',
+            en: '/services/virtual-domiciliation',
+            nl: '/diensten/virtuele-domiciliering',
+        },
     },
 });
 

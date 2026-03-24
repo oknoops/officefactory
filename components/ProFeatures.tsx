@@ -3,13 +3,15 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-const FeatureItem: FC<{ icon: any, title: string, desc: string }> = ({ icon: Icon, title, desc }) => (
+const FeatureItem: FC<{ icon: any, title: string, desc: string, href?: Parameters<typeof Link>[0]['href'] }> = ({ icon: Icon, title, desc, href }) => (
     <div className="flex gap-4 items-start">
         <div className="bg-red-50 text-[#E63946] p-4 rounded-xl flex-shrink-0">
             <Icon size={32} strokeWidth={2} />
         </div>
         <div>
-            <h3 className="text-xl font-bold mb-2 text-[#1D1D1B]">{title}</h3>
+            <h3 className="text-xl font-bold mb-2 text-[#1D1D1B]">
+                {href ? <Link href={href} className="hover:text-[#E63946] transition-colors">{title}</Link> : title}
+            </h3>
             <p className="text-[#6C757D] leading-relaxed text-sm">
                 {desc}
             </p>
@@ -63,6 +65,7 @@ const ProFeatures: FC = () => {
                         icon={Users}
                         title={t('feat6_title')}
                         desc={t('feat6_desc')}
+                        href="/services/salle-de-reunion-bruxelles"
                     />
                 </div>
             </div>

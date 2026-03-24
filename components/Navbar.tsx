@@ -35,10 +35,10 @@ const Navbar: FC = () => {
                 <div className="hidden md:flex flex-1 justify-between ml-12 items-center">
                     {/* Links */}
                     <div className="flex items-center gap-6">
-                        <Link href="/" className="font-medium hover:text-[#E63946] transition-colors py-6">{t('home')}</Link>
+                        <Link href="/" className="font-medium hover:text-[#E63946] transition-colors py-6 whitespace-nowrap">{t('home')}</Link>
 
                         <div className="relative group/nav py-6">
-                            <button className="font-medium hover:text-[#E63946] transition-colors flex items-center gap-1">
+                            <button className="font-medium hover:text-[#E63946] transition-colors flex items-center gap-1 whitespace-nowrap">
                                 {t('services')}
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                             </button>
@@ -52,8 +52,11 @@ const Navbar: FC = () => {
                             </div>
                         </div>
 
-                        <Link href="/a-propos" className="font-medium hover:text-[#E63946] transition-colors py-6">{t('about')}</Link>
-                        <Link href="/blog" className="font-medium hover:text-[#E63946] transition-colors py-6">{t('blog')}</Link>
+                        <Link href="/a-propos" className="font-medium hover:text-[#E63946] transition-colors py-6 whitespace-nowrap">{t('about')}</Link>
+
+                        <Link href="/blog" className="font-medium hover:text-[#E63946] transition-colors py-6 whitespace-nowrap">{t('resources_blog')}</Link>
+
+                        <Link href="/faq" className="font-medium hover:text-[#E63946] transition-colors py-6 whitespace-nowrap">{t('resources_faq')}</Link>
                     </div>
 
                     {/* Actions */}
@@ -119,7 +122,14 @@ const Navbar: FC = () => {
                             onClick={() => setIsMenuOpen(false)}
                             className="hover:text-[#E63946] border-b border-gray-100 pb-2"
                         >
-                            {t('blog')}
+                            {t('resources_blog')}
+                        </Link>
+                        <Link
+                            href="/faq"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="hover:text-[#E63946] border-b border-gray-100 pb-2"
+                        >
+                            {t('resources_faq')}
                         </Link>
                     </div>
 
