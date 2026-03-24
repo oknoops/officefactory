@@ -12,10 +12,33 @@ export async function generateMetadata({
   return {
     title: t('layout_title'),
     description: t('layout_desc'),
+    metadataBase: new URL('https://www.officefactory.be'),
     icons: {
       icon: '/favicon.webp',
     },
     alternates: generateAlternates(locale, '/'),
+    openGraph: {
+      title: t('layout_title'),
+      description: t('layout_desc'),
+      url: `https://www.officefactory.be/${locale}`,
+      siteName: 'Office Factory',
+      images: [
+        {
+          url: '/image2.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Office Factory — Bruxelles',
+        },
+      ],
+      locale: locale === 'fr' ? 'fr_BE' : locale === 'nl' ? 'nl_BE' : 'en',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('layout_title'),
+      description: t('layout_desc'),
+      images: ['/image2.jpg'],
+    },
   };
 }
 
@@ -57,7 +80,7 @@ export default async function RootLayout({
     image: 'https://www.officefactory.be/logo.webp',
     '@id': 'https://www.officefactory.be',
     url: 'https://www.officefactory.be',
-    telephone: '+32-2-331-04-74',
+    telephone: '+32-471-79-45-52',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '842 Chaussée d\'Alsemberg',
@@ -80,6 +103,12 @@ export default async function RootLayout({
       },
     ],
     priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '47',
+      bestRating: '5',
+    },
   };
 
   return (

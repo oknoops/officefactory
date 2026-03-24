@@ -5,6 +5,7 @@ import HowItWorks from '@/components/HowItWorks';
 import Pricing from '@/components/Pricing';
 import ProFeatures from '@/components/ProFeatures';
 import MapSection from '@/components/MapSection';
+import BlogPreview from '@/components/BlogPreview';
 import Footer from '@/components/Footer';
 
 export default async function Home({
@@ -22,6 +23,7 @@ export default async function Home({
       <HowItWorks />
       <Pricing />
       <ProFeatures />
+      <BlogPreview />
       <MapSection />
       <Footer />
     </main>
