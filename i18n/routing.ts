@@ -77,6 +77,11 @@ export const routing = defineRouting({
             nl: '/bedankt',
         },
         '/faq': '/faq',
+        '/politique-de-confidentialite': {
+            fr: '/politique-de-confidentialite',
+            en: '/privacy-policy',
+            nl: '/privacybeleid',
+        },
         '/services/salle-de-reunion-bruxelles': {
             fr: '/services/salle-de-reunion-bruxelles',
             en: '/services/meeting-room-brussels',

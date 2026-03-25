@@ -34,6 +34,7 @@ export const ALL_PATHS: StaticPathname[] = [
   '/services/salle-de-reunion-bruxelles',
   '/services/siege-social-bruxelles',
   '/services/domiciliation-virtuelle',
+  '/politique-de-confidentialite',
 ];
 
 /**

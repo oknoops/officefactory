@@ -74,8 +74,11 @@ const Footer: FC = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-gray-200 pt-8 text-center text-sm text-[#6C757D]">
+                <div className="border-t border-gray-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-[#6C757D]">
                     <p>{t('copyright')}</p>
+                    <Link href="/politique-de-confidentialite" className="hover:text-[#E63946]">
+                        {t('link_privacy')}
+                    </Link>
                 </div>
             </div>
         </footer>
