@@ -1258,6 +1258,13 @@
     "faq4_q": "Est-ce que la BCE accepte une adresse de domiciliation ?",
     "faq4_a": "Oui, à condition que le prestataire soit enregistré auprès du SPF Économie et que l'adresse corresponde à un lieu physique réel. Office Factory remplit toutes ces conditions. Votre siège social sera pleinement reconnu par la BCE, les tribunaux et l'administration fiscale."
   },
+  "NotFoundPage": {
+    "title": "Page introuvable",
+    "message": "La page que vous recherchez n'existe pas ou a été déplacée. Pas d'inquiétude, nous allons vous aider à retrouver votre chemin.",
+    "cta_home": "Retour à l'accueil",
+    "cta_contact": "Contactez-nous",
+    "cta_services": "Nos services"
+  },
   "PrivacyPage": {
     "title": "Politique de confidentialité",
     "last_updated": "Dernière mise à jour : 25 mars 2026",

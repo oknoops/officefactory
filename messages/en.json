@@ -1258,6 +1258,13 @@
     "faq4_q": "Does the BCE accept a domiciliation address?",
     "faq4_a": "Yes, provided the provider is registered with SPF Economy and the address corresponds to a real physical location. Office Factory meets all these requirements. Your registered office will be fully recognised by the BCE, courts and tax administration."
   },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "message": "The page you are looking for does not exist or has been moved. Don't worry, we'll help you find your way.",
+    "cta_home": "Back to homepage",
+    "cta_contact": "Contact us",
+    "cta_services": "Our services"
+  },
   "PrivacyPage": {
     "title": "Privacy Policy",
     "last_updated": "Last updated: 25 March 2026",

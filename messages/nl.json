@@ -1258,6 +1258,13 @@
     "faq4_q": "Aanvaardt de KBO een domiciliëringsadres?",
     "faq4_a": "Ja, op voorwaarde dat de aanbieder geregistreerd is bij de FOD Economie en het adres overeenkomt met een echt fysiek adres. Office Factory voldoet aan al deze voorwaarden. Uw maatschappelijke zetel wordt volledig erkend door de KBO, rechtbanken en belastingdienst."
   },
+  "NotFoundPage": {
+    "title": "Pagina niet gevonden",
+    "message": "De pagina die u zoekt bestaat niet of is verplaatst. Geen zorgen, wij helpen u de juiste weg te vinden.",
+    "cta_home": "Terug naar de startpagina",
+    "cta_contact": "Neem contact op",
+    "cta_services": "Onze diensten"
+  },
   "PrivacyPage": {
     "title": "Privacybeleid",
     "last_updated": "Laatst bijgewerkt: 25 maart 2026",
