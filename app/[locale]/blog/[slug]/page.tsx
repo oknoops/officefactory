@@ -147,8 +147,8 @@ function BlogPostContent({
 
       {/* Hero Image */}
       <div className="bg-[#F8F9FA] pb-12">
-        <div className="container max-w-3xl mx-auto">
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg">
+        <div className="container max-w-2xl mx-auto">
+          <div className="relative aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-lg">
             <Image
               src={post.image}
               alt={t('post_title')}
@@ -161,7 +161,7 @@ function BlogPostContent({
       </div>
 
       {/* Article Layout */}
-      <div className="container py-12">
+      <div className="container mt-10 pb-12">
         <div className="flex gap-12 justify-center">
           {/* Table of Contents - Desktop Sidebar */}
           <TableOfContents items={tocItems} />

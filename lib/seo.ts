@@ -42,7 +42,10 @@ export const ALL_PATHS: StaticPathname[] = [
  */
 export function getLocalizedPath(path: StaticPathname, locale: Locale): string {
   if (path === '/') return '';
-  return getPathname({ locale, href: path });
+  const full = getPathname({ locale, href: path });
+  // getPathname returns paths with locale prefix (e.g. "/en/about-us"),
+  // strip it so callers can construct URLs with their own prefix.
+  return full.replace(`/${locale}`, '');
 }
 
 /**
