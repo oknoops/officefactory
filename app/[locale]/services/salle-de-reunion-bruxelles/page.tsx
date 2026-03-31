@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Monitor, Calendar, UserCheck, Coffee } from 'lucide-react';
+import { Monitor, Calendar, UserCheck, Coffee, Check, ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
@@ -58,6 +58,20 @@ export default function MeetingRoomPage() {
                 </div>
             </section>
 
+            {/* Why Rent a Meeting Room */}
+            <section className="py-20">
+                <div className="container max-w-4xl">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#1D1D1B] text-center">
+                        {t('what_title')}
+                    </h2>
+                    <div className="prose prose-lg text-[#6C757D] leading-relaxed max-w-none">
+                        <p className="mb-6">{t('what_p1')}</p>
+                        <p className="mb-6">{t('what_p2')}</p>
+                        <p>{t('what_p3')}</p>
+                    </div>
+                </div>
+            </section>
+
             {/* Features Breakdown */}
             <section className="py-20">
                 <div className="container">
@@ -97,6 +111,53 @@ export default function MeetingRoomPage() {
                 </div>
             </section>
 
+            {/* Why Choose Our Meeting Rooms */}
+            <section className="py-20">
+                <div className="container grid md:grid-cols-2 gap-16 items-center">
+                    <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg">
+                        <Image
+                            src="/office-factory-building.webp"
+                            alt="Office Factory Building"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div>
+                        <h2 className="text-3xl font-bold mb-8 text-[#1D1D1B]">
+                            {t('why_title')}
+                        </h2>
+                        <ul className="space-y-4">
+                            {[1, 2, 3, 4, 5, 6].map((i) => (
+                                <li key={i} className="flex items-start gap-3">
+                                    <span className="text-[#E63946] mt-1 shrink-0"><Check size={20} /></span>
+                                    <span className="text-[#1D1D1B]">{t(`why_${i}`)}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            {/* How to Book */}
+            <section className="py-20">
+                <div className="container max-w-4xl">
+                    <h2 className="text-3xl font-bold mb-12 text-[#1D1D1B] text-center">
+                        {t('steps_title')}
+                    </h2>
+                    <div className="space-y-8">
+                        {[1, 2, 3].map((i) => (
+                            <div key={i} className="flex gap-6 items-start">
+                                <div className="w-12 h-12 bg-[#E63946] text-white rounded-full flex items-center justify-center font-bold text-lg shrink-0">{i}</div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-[#1D1D1B] mb-2">{t(`step${i}_t`)}</h3>
+                                    <p className="text-[#6C757D]">{t(`step${i}_d`)}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
             <section className="py-20 bg-[#F8F9FA]">
                 <div className="container max-w-4xl text-center">
@@ -109,6 +170,28 @@ export default function MeetingRoomPage() {
                     <Link href="/contact" className="btn btn-primary px-8 py-3 rounded-full font-semibold">
                         {t('cta_btn')}
                     </Link>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="py-20">
+                <div className="container max-w-4xl">
+                    <h2 className="text-3xl font-bold mb-12 text-[#1D1D1B] text-center">
+                        {t('faq_title')}
+                    </h2>
+                    <div className="space-y-4">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                            <details key={i} className="bg-white border border-gray-200 rounded-xl group">
+                                <summary className="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#1D1D1B] hover:text-[#E63946] transition-colors">
+                                    {t(`faq${i}_q`)}
+                                    <ChevronDown size={20} className="shrink-0 ml-4 text-[#6C757D] group-open:rotate-180 transition-transform" />
+                                </summary>
+                                <div className="px-6 pb-6 text-[#6C757D] leading-relaxed">
+                                    {t(`faq${i}_a`)}
+                                </div>
+                            </details>
+                        ))}
+                    </div>
                 </div>
             </section>
 

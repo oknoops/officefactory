@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t('layout_desc'),
     metadataBase: new URL('https://www.officefactory.be'),
     icons: {
-      icon: '/favicon.webp',
+      icon: '/favicon.png',
     },
     alternates: generateAlternates(locale, '/'),
     openGraph: {
@@ -24,7 +24,7 @@ export async function generateMetadata({
       siteName: 'Office Factory',
       images: [
         {
-          url: '/image2.jpg',
+          url: '/blog-siege-social.jpg',
           width: 1200,
           height: 630,
           alt: 'Office Factory — Bruxelles',
@@ -37,7 +37,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: t('layout_title'),
       description: t('layout_desc'),
-      images: ['/image2.jpg'],
+      images: ['/blog-siege-social.jpg'],
     },
   };
 }

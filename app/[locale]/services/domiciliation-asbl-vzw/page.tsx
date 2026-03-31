@@ -76,7 +76,7 @@ export default function DomiciliationASBLPage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/letterbox.jpg"
+                            src="/hero-domiciliation.jpg"
                             alt="Domiciliation ASBL VZW - Office Factory Bruxelles"
                             fill
                             className="object-cover"

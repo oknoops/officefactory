@@ -95,7 +95,7 @@ export default function DomiciliationSRLPage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/letterbox.jpg"
+                            src="/hero-domiciliation.jpg"
                             alt="Office Factory - Domiciliation SRL/BV"
                             fill
                             className="object-cover"

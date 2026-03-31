@@ -49,7 +49,7 @@ export default function SPFEconomiePage() {
 
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/spf-economy-building.jpg"
+                            src="/hero-spf-economie.jpg"
                             alt="Bâtiment officiel"
                             fill
                             className="object-cover"

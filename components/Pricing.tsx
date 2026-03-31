@@ -18,7 +18,7 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="relative h-64 w-full">
                             <Image
-                                src="/letterbox.jpg"
+                                src="/hero-domiciliation.jpg"
                                 alt={t('card1_title')}
                                 fill
                                 style={{ objectFit: 'cover' }}
@@ -55,7 +55,7 @@ const Pricing: FC = () => {
                     <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                         <div className="relative h-64 w-full">
                             <Image
-                                src="/office.jpg"
+                                src="/hero-coworking.jpg"
                                 alt={t('card2_title')}
                                 fill
                                 style={{ objectFit: 'cover' }}

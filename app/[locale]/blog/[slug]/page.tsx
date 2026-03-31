@@ -146,7 +146,7 @@ function BlogPostContent({
       </div>
 
       {/* Hero Image */}
-      <div className="bg-[#F8F9FA] pb-12">
+      <div className="bg-[#F8F9FA] pb-20">
         <div className="container max-w-2xl mx-auto">
           <div className="relative aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-lg">
             <Image
@@ -167,7 +167,7 @@ function BlogPostContent({
           <TableOfContents items={tocItems} />
 
           {/* Article Content */}
-          <article className="max-w-3xl w-full">
+          <article className="max-w-3xl w-full pt-8">
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span

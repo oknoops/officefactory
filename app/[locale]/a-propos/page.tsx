@@ -57,7 +57,7 @@ export default function AboutPage() {
                     {/* Right Image */}
                     <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/modernofficebuilding.webp"
+                            src="/office-factory-building.webp"
                             alt="Office Factory Building in Uccle"
                             fill
                             className="object-cover"

@@ -63,7 +63,7 @@ export default function ServicesPage() {
                     {/* Image (Left) */}
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg order-2 md:order-1">
                         <Image
-                            src="/letterbox.jpg"
+                            src="/hero-domiciliation.jpg"
                             alt="Boîtes aux lettres domiciliation"
                             fill
                             className="object-cover"
@@ -150,7 +150,7 @@ export default function ServicesPage() {
                     {/* Image (Right) */}
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg">
                         <Image
-                            src="/office.jpg"
+                            src="/hero-coworking.jpg"
                             alt="Espace Coworking"
                             fill
                             className="object-cover"

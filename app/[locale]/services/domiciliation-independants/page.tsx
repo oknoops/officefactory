@@ -76,7 +76,7 @@ export default function DomiciliationFreelancePage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/letterbox.jpg"
+                            src="/hero-domiciliation.jpg"
                             alt="Office Factory - Domiciliation pour indépendants"
                             fill
                             className="object-cover"

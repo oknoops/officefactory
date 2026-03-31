@@ -50,7 +50,7 @@ export default function RootNotFound() {
     return (
         <html lang={locale}>
             <head>
-                <link rel="icon" href="/favicon.webp" />
+                <link rel="icon" href="/favicon.png" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
                     rel="stylesheet"

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { FileText, Edit, XCircle, Check } from 'lucide-react';
+import { FileText, Edit, XCircle, Check, ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
@@ -129,6 +129,26 @@ export default function DemarchesAdministrativesPage() {
                 </div>
             </section>
 
+            {/* Why Choose Office Factory */}
+            <section className="py-20 bg-[#F8F9FA]">
+                <div className="container grid md:grid-cols-2 gap-16 items-center">
+                    <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg">
+                        <Image src="/office-factory-building.webp" alt="Office Factory Building" fill className="object-cover" />
+                    </div>
+                    <div>
+                        <h2 className="text-3xl font-bold mb-8 text-[#1D1D1B]">{t('why_title')}</h2>
+                        <ul className="space-y-4">
+                            {[1, 2, 3, 4, 5, 6].map((i) => (
+                                <li key={i} className="flex items-start gap-3">
+                                    <span className="text-[#E63946] mt-1 shrink-0"><Check size={20} /></span>
+                                    <span className="text-[#1D1D1B]">{t(`why_${i}`)}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
             <section className="py-20 bg-[#E63946] text-white text-center">
                 <div className="container max-w-4xl">
@@ -139,6 +159,24 @@ export default function DemarchesAdministrativesPage() {
                     <Link href="/contact" className="btn bg-white text-[#E63946] hover:bg-gray-100 font-semibold px-8 py-3 rounded-full text-lg">
                         {t('cta_btn')}
                     </Link>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="py-20">
+                <div className="container max-w-4xl">
+                    <h2 className="text-3xl font-bold mb-12 text-[#1D1D1B] text-center">{t('faq_title')}</h2>
+                    <div className="space-y-4">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                            <details key={i} className="bg-white border border-gray-200 rounded-xl group">
+                                <summary className="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#1D1D1B] hover:text-[#E63946] transition-colors">
+                                    {t(`faq${i}_q`)}
+                                    <ChevronDown size={20} className="shrink-0 ml-4 text-[#6C757D] group-open:rotate-180 transition-transform" />
+                                </summary>
+                                <div className="px-6 pb-6 text-[#6C757D] leading-relaxed">{t(`faq${i}_a`)}</div>
+                            </details>
+                        ))}
+                    </div>
                 </div>
             </section>
 

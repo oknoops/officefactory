@@ -133,7 +133,7 @@ export default function BWAPage() {
                 <div className="container grid md:grid-cols-2 gap-12 items-center">
                     <div className="relative h-[350px] w-full rounded-3xl overflow-hidden shadow-lg">
                         <Image
-                            src="/certificat_bwa.jpg"
+                            src="/certificat-bwa.jpg"
                             alt={t('aml_img_alt')}
                             fill
                             className="object-cover"

@@ -54,7 +54,7 @@ function BlogPageContent({ locale }: { locale: string }) {
       {/* Blog Listing */}
       <section className="py-16">
         <div className="container">
-          <BlogList posts={BLOG_POSTS} locale={locale} />
+          <BlogList posts={[...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())} locale={locale} />
         </div>
       </section>
 

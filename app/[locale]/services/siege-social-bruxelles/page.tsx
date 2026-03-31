@@ -87,7 +87,7 @@ export default function SiegeSocialPage() {
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/modernofficebuilding.webp"
+                            src="/office-factory-building.webp"
                             alt="Siège social Bruxelles - Office Factory"
                             fill
                             className="object-cover"
@@ -158,7 +158,7 @@ export default function SiegeSocialPage() {
                 <div className="container grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg">
                         <Image
-                            src="/relaxed-coworking.webp"
+                            src="/hero-siege-social.webp"
                             alt="Office Factory - Espace professionnel"
                             fill
                             className="object-cover"
