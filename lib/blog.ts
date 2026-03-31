@@ -249,6 +249,47 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'text', id: 'what-to-check', tocKey: 'toc_check', titleKey: 'check_title', contentKey: 'check_content' },
     ],
   },
+  {
+    id: 'changer-siege-social',
+    slugs: {
+      fr: 'comment-changer-siege-social-entreprise-belgique',
+      en: 'how-to-change-company-registered-office-belgium',
+      nl: 'hoe-wijzig-ik-maatschappelijke-zetel-belgie',
+    },
+    category: 'guides',
+    date: '2026-03-31',
+    image: '/hero-domiciliation.jpg',
+    translationNamespace: 'BlogPost12',
+    metadataKey: 'blog_post12',
+    conclusionLinkHref: '/services/demarches-administratives',
+    sections: [
+      { type: 'text', id: 'why-change', tocKey: 'toc_why', titleKey: 'why_title', contentKey: 'why_content' },
+      { type: 'steps', id: 'steps', tocKey: 'toc_steps', titleKey: 'steps_title', introKey: 'steps_intro', count: 5 },
+      { type: 'text', id: 'costs', tocKey: 'toc_costs', titleKey: 'costs_title', contentKey: 'costs_content' },
+      { type: 'text', id: 'domiciliation-solution', tocKey: 'toc_domiciliation', titleKey: 'domiciliation_title', contentKey: 'domiciliation_content' },
+      { type: 'text', id: 'mistakes-to-avoid', tocKey: 'toc_mistakes', titleKey: 'mistakes_title', contentKey: 'mistakes_content' },
+    ],
+  },
+  {
+    id: 'top-5-raisons-domiciliation-bruxelles',
+    slugs: {
+      fr: 'top-5-raisons-choisir-adresse-domiciliation-bruxelles',
+      en: '5-reasons-to-choose-domiciliation-address-brussels',
+      nl: 'top-5-redenen-domiciliatieadres-brussel',
+    },
+    category: 'guides',
+    date: '2026-03-31',
+    image: '/office-factory-building.webp',
+    translationNamespace: 'BlogPost13',
+    metadataKey: 'blog_post13',
+    conclusionLinkHref: '/services/domiciliation-bruxelles',
+    sections: [
+      { type: 'text', id: 'intro-context', tocKey: 'toc_intro', titleKey: 'intro_title', contentKey: 'intro_content' },
+      { type: 'steps', id: 'reasons', tocKey: 'toc_reasons', titleKey: 'reasons_title', introKey: 'reasons_intro', count: 5 },
+      { type: 'text', id: 'who-is-it-for', tocKey: 'toc_who', titleKey: 'who_title', contentKey: 'who_content' },
+      { type: 'text', id: 'how-to-start', tocKey: 'toc_how', titleKey: 'how_title', contentKey: 'how_content' },
+    ],
+  },
 ];
 
 export const CATEGORIES: BlogCategory[] = ['guides', 'legal', 'local', 'news'];
