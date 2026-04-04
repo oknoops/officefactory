@@ -73,51 +73,9 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Office Factory',
-    image: 'https://www.officefactory.be/logo.webp',
-    '@id': 'https://www.officefactory.be',
-    url: 'https://www.officefactory.be',
-    telephone: '+32-471-79-45-52',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '842 Chaussée d\'Alsemberg',
-      addressLocality: 'Uccle',
-      postalCode: '1180',
-      addressRegion: 'Brussels',
-      addressCountry: 'BE',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 50.7935,
-      longitude: 4.3440,
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '17:00',
-      },
-    ],
-    priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
-      bestRating: '5',
-    },
-  };
-
   return (
     <html lang={locale} className={inter.className}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
         {/* Google Tag Manager */}
         <Script
           id="gtm-head"
