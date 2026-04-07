@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ChevronRight } from 'lucide-react';
@@ -31,6 +31,9 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  const correctSlug = post.slugs[locale as keyof typeof post.slugs];
+  if (slug !== correctSlug) return {};
+
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   const alternates = {
@@ -59,6 +62,11 @@ export default async function BlogPostPage({
   const { locale, slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const correctSlug = post.slugs[locale as keyof typeof post.slugs];
+  if (slug !== correctSlug) {
+    redirect(`/${locale}/blog/${correctSlug}`);
+  }
 
   return <BlogPostContent locale={locale} post={post} />;
 }
