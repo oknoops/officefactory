@@ -60,7 +60,7 @@ const Navbar: FC = () => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-2 relative">
+                    <div className="flex items-center gap-2 relative ml-6">
                         <div className="mr-2">
                             <LanguageSwitcher />
                         </div>
