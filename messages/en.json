@@ -1,4 +1,8 @@
 {
+    "Common": {
+        "from_price": "From",
+        "excl_vat": "excl. VAT"
+    },
     "Navigation": {
         "home": "Home",
         "services": "Our Services",
@@ -1339,8 +1343,8 @@
         "step3_d": "Your registered office is registered at the BCE and published in the Official Gazette. You receive your mail from day one.",
         "price_title": "Pricing",
         "price_p1": "Registered office in Brussels from ",
-        "price_amount": "€79.00",
-        "price_p2": " excl. VAT/month. All-inclusive package, no long-term commitment.",
+        "price_amount": "€79 / month",
+        "price_p2": " excl. VAT. All-inclusive package, no long-term commitment.",
         "btn_sub": "Establish my registered office",
         "btn_other": "View all our services",
         "faq_title": "Frequently Asked Questions",

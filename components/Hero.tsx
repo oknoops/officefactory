@@ -47,9 +47,10 @@ const Hero: FC = () => {
                     {/* Placeholder for real hero image - user to replace */}
                     <div className="relative h-full w-full">
                         <Image
-                            src="/hero-siege-social.webp"
+                            src="/hero-siege-social.jpg"
                             alt="Office Factory Coworking"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             style={{ objectFit: "cover" }}
                             priority
                         />

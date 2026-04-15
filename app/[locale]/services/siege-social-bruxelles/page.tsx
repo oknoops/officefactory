@@ -60,6 +60,7 @@ const siegeSocialSchema = {
 
 export default function SiegeSocialPage() {
     const t = useTranslations('SiegeSocialPage');
+    const tCommon = useTranslations('Common');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <script
@@ -78,18 +79,26 @@ export default function SiegeSocialPage() {
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#1D1D1B] leading-tight">
                             {t('title')}
                         </h1>
-                        <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
+                        <p className="text-xl text-[#6C757D] mb-6 leading-relaxed">
                             {t('hero_p1')}<strong className="text-[#1D1D1B]">{t('hero_p1_b')}</strong>{t('hero_p2')}
                         </p>
-                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
-                            {t('btn_cta')}
-                        </Link>
+                        <div className="inline-flex items-baseline gap-2 bg-white border border-gray-200 px-5 py-3 rounded-full shadow-sm mb-6">
+                            <span className="text-sm text-[#6C757D]">{tCommon('from_price')}</span>
+                            <span className="text-2xl font-bold text-[#E63946]">{t('price_amount')}</span>
+                            <span className="text-sm text-[#6C757D]">{tCommon('excl_vat')}</span>
+                        </div>
+                        <div>
+                            <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                                {t('btn_cta')}
+                            </Link>
+                        </div>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
                             src="/office-factory-building.webp"
                             alt="Siège social Bruxelles - Office Factory"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />
@@ -158,9 +167,10 @@ export default function SiegeSocialPage() {
                 <div className="container grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-lg">
                         <Image
-                            src="/hero-siege-social.webp"
+                            src="/hero-siege-social.jpg"
                             alt="Office Factory - Espace professionnel"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>

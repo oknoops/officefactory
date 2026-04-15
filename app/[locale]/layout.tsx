@@ -51,7 +51,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 const locales = ['fr', 'en', 'nl'];
 
@@ -64,10 +64,7 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
 
-  console.log('RootLayout received locale parameter:', locale);
-
   if (!locales.includes(locale)) {
-    console.log('RootLayout triggering notFound for locale:', locale);
     notFound();
   }
 
@@ -100,21 +97,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <NextIntlClientProvider messages={messages}>
-          {/* Google Analytics */}
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-E70BV0BQBS"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-E70BV0BQBS');
-          `}
-          </Script>
-
           {children}
           <WhatsAppButton />
         </NextIntlClientProvider>

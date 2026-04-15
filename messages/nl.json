@@ -1,4 +1,8 @@
 {
+    "Common": {
+        "from_price": "Vanaf",
+        "excl_vat": "excl. BTW"
+    },
     "Navigation": {
         "home": "Home",
         "services": "Onze Diensten",
@@ -1339,8 +1343,8 @@
         "step3_d": "Uw maatschappelijke zetel is ingeschreven bij de KBO en gepubliceerd in het Belgisch Staatsblad. U ontvangt uw post vanaf de eerste dag.",
         "price_title": "Tarieven",
         "price_p1": "Maatschappelijke zetel in Brussel vanaf ",
-        "price_amount": "79,00 €",
-        "price_p2": " excl. btw/maand. All-in formule, zonder langdurige verbintenis.",
+        "price_amount": "€79 / maand",
+        "price_p2": " excl. btw. All-in formule, zonder langdurige verbintenis.",
         "btn_sub": "Mijn maatschappelijke zetel vestigen",
         "btn_other": "Bekijk al onze diensten",
         "faq_title": "Veelgestelde vragen",

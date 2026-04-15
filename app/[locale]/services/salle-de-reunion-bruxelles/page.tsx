@@ -51,6 +51,7 @@ export default function MeetingRoomPage() {
                             src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?w=900&auto=format&fit=crop&q=60"
                             alt="Salle de réunion Office Factory Bruxelles"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />
@@ -119,6 +120,7 @@ export default function MeetingRoomPage() {
                             src="/office-factory-building.webp"
                             alt="Office Factory Building"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>

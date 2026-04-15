@@ -52,6 +52,7 @@ const virtualOfficeSchema = {
 
 export default function DomiciliationVirtuellePage() {
     const t = useTranslations('DomiciliationVirtuellePage');
+    const tCommon = useTranslations('Common');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(virtualOfficeSchema) }} />
@@ -64,8 +65,15 @@ export default function DomiciliationVirtuellePage() {
                         <span className="text-[#E63946] font-semibold tracking-wider uppercase mb-2 block">{t('tag')}</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#1D1D1B] leading-tight">{t('title')}</h1>
                         <p className="text-xl text-[#6C757D] mb-4 leading-relaxed">{t('hero_p1')}</p>
-                        <p className="text-lg text-[#6C757D] mb-8 leading-relaxed">{t('hero_p2')}</p>
-                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">{t('btn_cta')}</Link>
+                        <p className="text-lg text-[#6C757D] mb-6 leading-relaxed">{t('hero_p2')}</p>
+                        <div className="inline-flex items-baseline gap-2 bg-white border border-gray-200 px-5 py-3 rounded-full shadow-sm mb-6">
+                            <span className="text-sm text-[#6C757D]">{tCommon('from_price')}</span>
+                            <span className="text-2xl font-bold text-[#E63946]">{t('price_amount')}</span>
+                            <span className="text-sm text-[#6C757D]">{tCommon('excl_vat')}</span>
+                        </div>
+                        <div>
+                            <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">{t('btn_cta')}</Link>
+                        </div>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image src="/hero-domiciliation.jpg" alt="Bureau virtuel Office Factory Bruxelles" fill className="object-cover" priority />

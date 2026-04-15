@@ -60,6 +60,7 @@ export default function AboutPage() {
                             src="/office-factory-building.webp"
                             alt="Office Factory Building in Uccle"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />

@@ -161,6 +161,7 @@ function BlogPostContent({
               src={post.image}
               alt={t('post_title')}
               fill
+              sizes="(max-width: 768px) 100vw, 672px"
               className="object-cover"
               priority
             />

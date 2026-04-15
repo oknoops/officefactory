@@ -51,6 +51,7 @@ export default function DemarchesAdministrativesPage() {
                             src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=60"
                             alt="Documents administratifs et bureau"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />

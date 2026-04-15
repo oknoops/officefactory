@@ -50,6 +50,7 @@ export default function ServicesPage() {
                             src="https://images.unsplash.com/photo-1765366417077-dc1a6fbd5e34?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByaXZhdGUlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D"
                             alt="Office Factory Building"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />
@@ -66,6 +67,7 @@ export default function ServicesPage() {
                             src="/hero-domiciliation.jpg"
                             alt="Boîtes aux lettres domiciliation"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>
@@ -153,6 +155,7 @@ export default function ServicesPage() {
                             src="/hero-coworking.jpg"
                             alt="Espace Coworking"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>
@@ -168,6 +171,7 @@ export default function ServicesPage() {
                             src="https://plus.unsplash.com/premium_photo-1723823035067-adef00deb8ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHByaXZhdGUlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D"
                             alt="Bureau individuel"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>
@@ -259,6 +263,7 @@ export default function ServicesPage() {
                             src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8b2ZmaWNlfGVufDB8fDB8fHww"
                             alt="Bureau d'équipe"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>
@@ -274,6 +279,7 @@ export default function ServicesPage() {
                             src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=60"
                             alt="Démarches administratives"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>

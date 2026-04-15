@@ -80,3 +80,4 @@ function BlogPageContent({ locale }: { locale: string }) {
     </main>
   );
 }
+

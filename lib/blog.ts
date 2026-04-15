@@ -111,7 +111,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     category: 'guides',
     date: '2026-03-23',
-    image: '/hero-siege-social.webp',
+    image: '/hero-siege-social.jpg',
     translationNamespace: 'BlogPost5',
     metadataKey: 'blog_post5',
     conclusionLinkHref: '/contact',

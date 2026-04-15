@@ -20,6 +20,7 @@ const Footer: FC = () => {
                                     src="/logo.webp"
                                     alt="Office Factory Logo"
                                     fill
+                                    sizes="160px"
                                     style={{ objectFit: 'contain', objectPosition: 'left' }}
                                 />
                             </div>

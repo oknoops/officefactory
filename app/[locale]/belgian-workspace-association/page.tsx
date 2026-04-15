@@ -51,6 +51,7 @@ export default function BWAPage() {
                                 src="/logo-BWA.webp"
                                 alt="Belgian Workspace Association Logo"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 384px"
                                 style={{ objectFit: 'contain' }}
                                 priority
                             />
@@ -136,6 +137,7 @@ export default function BWAPage() {
                             src="/certificat-bwa.jpg"
                             alt={t('aml_img_alt')}
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>

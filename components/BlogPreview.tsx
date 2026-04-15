@@ -58,6 +58,7 @@ const BlogPreview: FC = () => {
                                         src={post.image}
                                         alt={postTitle}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                         style={{ objectFit: 'cover' }}
                                         loading="lazy"
                                     />

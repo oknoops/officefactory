@@ -25,6 +25,7 @@ export async function generateMetadata({
 
 export default function PrivateOfficePage() {
     const t = useTranslations('BureauIndividuelPage');
+    const tCommon = useTranslations('Common');
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -42,16 +43,24 @@ export default function PrivateOfficePage() {
                         <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
                             {t('desc_p1')}<strong className="text-[#1D1D1B]">{t('desc_b')}</strong>{t('desc_p2')}
                         </p>
-                        <p className="text-lg text-[#6C757D] mb-8 leading-relaxed">{t('hero_p2')}</p>
-                        <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
-                            {t('btn_avail')}
-                        </Link>
+                        <p className="text-lg text-[#6C757D] mb-6 leading-relaxed">{t('hero_p2')}</p>
+                        <div className="inline-flex items-baseline gap-2 bg-white border border-gray-200 px-5 py-3 rounded-full shadow-sm mb-6">
+                            <span className="text-sm text-[#6C757D]">{tCommon('from_price')}</span>
+                            <span className="text-2xl font-bold text-[#E63946]">{t('p_price_b')}</span>
+                            <span className="text-sm text-[#6C757D]">{tCommon('excl_vat')}</span>
+                        </div>
+                        <div>
+                            <Link href="/contact" className="btn btn-primary text-base px-8 py-3 font-semibold rounded-full">
+                                {t('btn_avail')}
+                            </Link>
+                        </div>
                     </div>
                     <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl">
                         <Image
                             src="https://plus.unsplash.com/premium_photo-1723823035067-adef00deb8ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHByaXZhdGUlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D"
                             alt="Bureau Individuel Bruxelles - Office Factory"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />
