@@ -6,6 +6,8 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
+  compress: true,
+  poweredByHeader: false,
   async redirects() {
     // Fix double-locale-prefix URLs detected by Google Search Console
     return [
@@ -16,7 +18,34 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        // Long-cache static build assets (hashed filenames)
+        source: '/_next/static/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        // Long-cache next/image optimized assets
+        source: '/_next/image/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        // Cache static images/fonts in /public for 1 year
+        source: '/:path*.(jpg|jpeg|png|webp|avif|svg|ico|gif|woff|woff2|ttf|otf)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ];
+  },
   images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: 'https',

@@ -73,10 +73,15 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={inter.className}>
       <head>
-        {/* Google Tag Manager */}
+        {/* Preconnect to critical third-party origins to shorten network dependency tree */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://brusselsofficefactory.odoo.com" />
+        <link rel="dns-prefetch" href="https://maps.google.com" />
+        {/* Google Tag Manager — deferred until after interactive to avoid blocking LCP */}
         <Script
           id="gtm-head"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

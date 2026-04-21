@@ -30,7 +30,6 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  console.log('Home Component rendered with locale:', locale);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',

@@ -290,6 +290,26 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'text', id: 'how-to-start', tocKey: 'toc_how', titleKey: 'how_title', contentKey: 'how_content' },
     ],
   },
+  {
+    id: 'uccle-emplacement-ideal-domiciliation',
+    slugs: {
+      fr: 'pourquoi-uccle-emplacement-ideal-domiciliation',
+      en: 'why-uccle-ideal-location-domiciliation',
+      nl: 'waarom-ukkel-ideale-locatie-domiciliering',
+    },
+    category: 'local',
+    date: '2026-04-21',
+    image: '/office-factory-building.webp',
+    translationNamespace: 'BlogPost14',
+    metadataKey: 'blog_post14',
+    conclusionLinkHref: '/services/domiciliation-bruxelles',
+    sections: [
+      { type: 'text', id: 'intro-context', tocKey: 'toc_intro', titleKey: 'intro_title', contentKey: 'intro_content' },
+      { type: 'steps', id: 'reasons', tocKey: 'toc_reasons', titleKey: 'reasons_title', introKey: 'reasons_intro', count: 5 },
+      { type: 'text', id: 'who-is-it-for', tocKey: 'toc_who', titleKey: 'who_title', contentKey: 'who_content' },
+      { type: 'text', id: 'how-to-start', tocKey: 'toc_how', titleKey: 'how_title', contentKey: 'how_content' },
+    ],
+  },
 ];
 
 export const CATEGORIES: BlogCategory[] = ['guides', 'legal', 'local', 'news'];
