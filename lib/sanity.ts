@@ -56,7 +56,7 @@ const CARD_FIELDS = /* groq */ `
   title,
   excerpt,
   publishedAt,
-  category,
+  "category": category->value,
   coverImage,
   language
 `;
@@ -67,7 +67,7 @@ const FULL_FIELDS = /* groq */ `
   title,
   excerpt,
   publishedAt,
-  category,
+  "category": category->value,
   coverImage,
   language,
   body,
