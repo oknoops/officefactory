@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
-import type { BlogPost, BlogCategory } from '@/lib/blog';
-import { getPostSlugForLocale } from '@/lib/blog';
+import type { BlogCategory } from '@/lib/blog';
+import type { BlogCardItem } from '@/lib/blogCards';
 
 const CATEGORY_COLORS: Record<BlogCategory, string> = {
   guides: 'bg-blue-100 text-blue-700',
@@ -16,11 +16,11 @@ const CATEGORY_COLORS: Record<BlogCategory, string> = {
 };
 
 interface BlogListProps {
-  posts: BlogPost[];
+  items: BlogCardItem[];
   locale: string;
 }
 
-export default function BlogList({ posts, locale }: BlogListProps) {
+export default function BlogList({ items, locale }: BlogListProps) {
   const t = useTranslations('BlogPage');
   const [activeCategory, setActiveCategory] = useState<BlogCategory | 'all'>('all');
 
@@ -32,14 +32,11 @@ export default function BlogList({ posts, locale }: BlogListProps) {
     { key: 'news' as const, label: t('cat_news') },
   ];
 
-  const filteredPosts =
-    activeCategory === 'all'
-      ? posts
-      : posts.filter((p) => p.category === activeCategory);
+  const filtered =
+    activeCategory === 'all' ? items : items.filter((p) => p.category === activeCategory);
 
   return (
     <>
-      {/* Category Filter Bar */}
       <div className="flex flex-wrap gap-3 justify-center mb-12">
         {categoryKeys.map(({ key, label }) => (
           <button
@@ -56,43 +53,104 @@ export default function BlogList({ posts, locale }: BlogListProps) {
         ))}
       </div>
 
-      {/* Blog Post Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredPosts.map((post) => (
-          <BlogCard key={post.id} post={post} locale={locale} />
-        ))}
+        {filtered.map((item) =>
+          item.kind === 'code' ? (
+            <CodeCard key={item.id} item={item} locale={locale} />
+          ) : (
+            <SanityCard key={item.id} item={item} locale={locale} />
+          ),
+        )}
       </div>
 
-      {filteredPosts.length === 0 && (
+      {filtered.length === 0 && (
         <p className="text-center text-[#6C757D] py-12">{t('no_posts')}</p>
       )}
-
-      {/* Pagination placeholder */}
-      {/* TODO: Add pagination when more posts are available */}
     </>
   );
 }
 
-function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
-  const t = useTranslations(post.translationNamespace);
+function CodeCard({
+  item,
+  locale,
+}: {
+  item: Extract<BlogCardItem, { kind: 'code' }>;
+  locale: string;
+}) {
+  const t = useTranslations(item.post.translationNamespace);
   const tBlog = useTranslations('BlogPage');
 
-  const formattedDate = new Date(post.date).toLocaleDateString(
-    locale === 'fr' ? 'fr-BE' : locale === 'nl' ? 'nl-BE' : 'en-GB',
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  );
-
-  const slug = getPostSlugForLocale(post, locale);
+  const formattedDate = formatDate(item.date, locale);
 
   return (
+    <Card
+      href={`/blog/${item.slug}`}
+      image={item.post.image}
+      imageAlt={t('post_title')}
+      category={item.category}
+      categoryLabel={tBlog(`cat_${item.category}`)}
+      date={formattedDate}
+      title={t('post_title')}
+      excerpt={t('post_excerpt')}
+      readMore={tBlog('read_more')}
+    />
+  );
+}
+
+function SanityCard({
+  item,
+  locale,
+}: {
+  item: Extract<BlogCardItem, { kind: 'sanity' }>;
+  locale: string;
+}) {
+  const tBlog = useTranslations('BlogPage');
+  const formattedDate = formatDate(item.date, locale);
+  return (
+    <Card
+      href={`/blog/${item.slug}`}
+      image={item.image}
+      imageAlt={item.imageAlt}
+      category={item.category}
+      categoryLabel={tBlog(`cat_${item.category}`)}
+      date={formattedDate}
+      title={item.title}
+      excerpt={item.excerpt}
+      readMore={tBlog('read_more')}
+    />
+  );
+}
+
+function Card({
+  href,
+  image,
+  imageAlt,
+  category,
+  categoryLabel,
+  date,
+  title,
+  excerpt,
+  readMore,
+}: {
+  href: string;
+  image: string;
+  imageAlt: string;
+  category: BlogCategory;
+  categoryLabel: string;
+  date: string;
+  title: string;
+  excerpt: string;
+  readMore: string;
+}) {
+  return (
     <Link
-      href={`/blog/${slug}`}
+      href={href}
       className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow"
     >
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
-          src={post.image}
-          alt={t('post_title')}
+          src={image}
+          alt={imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -100,23 +158,26 @@ function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
       </div>
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span
-            className={`text-xs font-semibold px-3 py-1 rounded-full ${CATEGORY_COLORS[post.category]}`}
-          >
-            {tBlog(`cat_${post.category}`)}
+          <span className={`text-xs font-semibold px-3 py-1 rounded-full ${CATEGORY_COLORS[category]}`}>
+            {categoryLabel}
           </span>
-          <span className="text-xs text-[#6C757D]">{formattedDate}</span>
+          <span className="text-xs text-[#6C757D]">{date}</span>
         </div>
         <h3 className="text-lg font-bold text-[#1D1D1B] mb-2 group-hover:text-[#E63946] transition-colors">
-          {t('post_title')}
+          {title}
         </h3>
-        <p className="text-[#6C757D] text-sm line-clamp-2 mb-4">
-          {t('post_excerpt')}
-        </p>
+        <p className="text-[#6C757D] text-sm line-clamp-2 mb-4">{excerpt}</p>
         <span className="text-[#E63946] font-semibold text-sm inline-flex items-center gap-1">
-          {tBlog('read_more')} <ArrowRight size={14} />
+          {readMore} <ArrowRight size={14} />
         </span>
       </div>
     </Link>
+  );
+}
+
+function formatDate(iso: string, locale: string) {
+  return new Date(iso).toLocaleDateString(
+    locale === 'fr' ? 'fr-BE' : locale === 'nl' ? 'nl-BE' : 'en-GB',
+    { year: 'numeric', month: 'long', day: 'numeric' },
   );
 }

@@ -9,8 +9,12 @@ import { getTranslations } from 'next-intl/server';
 import { SITE_URL } from '@/lib/seo';
 import { BLOG_POSTS, getPostBySlug, getPostSlugForLocale } from '@/lib/blog';
 import type { BlogSection } from '@/lib/blog';
+import { getAllSanitySlugParams, getSanityPostBySlug, urlForImage } from '@/lib/sanity';
 import TableOfContents from './TableOfContents';
 import ShareButtons from './ShareButtons';
+import SanityPostContent from './SanityPostContent';
+
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -19,7 +23,8 @@ export async function generateStaticParams() {
       params.push({ locale, slug: post.slugs[locale as keyof typeof post.slugs] });
     }
   }
-  return params;
+  const sanityParams = await getAllSanitySlugParams();
+  return [...params, ...sanityParams];
 }
 
 export async function generateMetadata({
@@ -29,28 +34,46 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return {};
+  if (post) {
+    const correctSlug = post.slugs[locale as keyof typeof post.slugs];
+    if (slug !== correctSlug) return {};
 
-  const correctSlug = post.slugs[locale as keyof typeof post.slugs];
-  if (slug !== correctSlug) return {};
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    const alternates = {
+      canonical: `${SITE_URL}/${locale}/blog/${post.slugs[locale as keyof typeof post.slugs]}`,
+      languages: {
+        fr: `${SITE_URL}/fr/blog/${post.slugs.fr}`,
+        en: `${SITE_URL}/en/blog/${post.slugs.en}`,
+        nl: `${SITE_URL}/nl/blog/${post.slugs.nl}`,
+        'x-default': `${SITE_URL}/fr/blog/${post.slugs.fr}`,
+      },
+    };
 
-  const t = await getTranslations({ locale, namespace: 'Metadata' });
+    return {
+      title: t(`${post.metadataKey}_title`),
+      description: t(`${post.metadataKey}_desc`),
+      keywords: t(`${post.metadataKey}_keywords`),
+      alternates,
+    };
+  }
 
-  const alternates = {
-    canonical: `${SITE_URL}/${locale}/blog/${post.slugs[locale as keyof typeof post.slugs]}`,
-    languages: {
-      fr: `${SITE_URL}/fr/blog/${post.slugs.fr}`,
-      en: `${SITE_URL}/en/blog/${post.slugs.en}`,
-      nl: `${SITE_URL}/nl/blog/${post.slugs.nl}`,
-      'x-default': `${SITE_URL}/fr/blog/${post.slugs.fr}`,
-    },
-  };
+  const sanityPost = await getSanityPostBySlug(slug, locale);
+  if (!sanityPost) return {};
 
+  const image = urlForImage(sanityPost.coverImage).width(1200).height(630).fit('crop').auto('format').url();
   return {
-    title: t(`${post.metadataKey}_title`),
-    description: t(`${post.metadataKey}_desc`),
-    keywords: t(`${post.metadataKey}_keywords`),
-    alternates,
+    title: sanityPost.seo?.metaTitle || sanityPost.title,
+    description: sanityPost.seo?.metaDescription || sanityPost.excerpt,
+    keywords: sanityPost.seo?.keywords,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/blog/${sanityPost.slug}`,
+    },
+    openGraph: {
+      title: sanityPost.title,
+      description: sanityPost.excerpt,
+      images: [{ url: image, width: 1200, height: 630, alt: sanityPost.coverImage.alt || sanityPost.title }],
+      type: 'article',
+    },
   };
 }
 
@@ -61,14 +84,21 @@ export default async function BlogPostPage({
 }) {
   const { locale, slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) notFound();
 
-  const correctSlug = post.slugs[locale as keyof typeof post.slugs];
-  if (slug !== correctSlug) {
-    redirect(`/${locale}/blog/${correctSlug}`);
+  if (post) {
+    const correctSlug = post.slugs[locale as keyof typeof post.slugs];
+    if (slug !== correctSlug) {
+      redirect(`/${locale}/blog/${correctSlug}`);
+    }
+    return <BlogPostContent locale={locale} post={post} />;
   }
 
-  return <BlogPostContent locale={locale} post={post} />;
+  const sanityPost = await getSanityPostBySlug(slug, locale);
+  if (sanityPost) {
+    return <SanityPostContent post={sanityPost} locale={locale} />;
+  }
+
+  notFound();
 }
 
 function BlogPostContent({

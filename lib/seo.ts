@@ -11,6 +11,10 @@ export type StaticPathname = Exclude<Pathnames, `${string}[${string}]${string}`>
 /**
  * All page paths (internal, without locale prefix).
  * Used for sitemap generation and alternate links.
+ *
+ * Note: noindex-only pages (/merci and its localized siblings) are NOT included
+ * here — submitting them to Google burns crawl budget and signals low sitemap quality.
+ * They remain reachable via routing.ts (the contact form still redirects there).
  */
 export const ALL_PATHS: StaticPathname[] = [
   '/',
@@ -29,7 +33,6 @@ export const ALL_PATHS: StaticPathname[] = [
   '/belgian-workspace-association',
   '/spf-economie',
   '/blog',
-  '/merci',
   '/faq',
   '/services/salle-de-reunion-bruxelles',
   '/services/siege-social-bruxelles',
