@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   compress: true,
   poweredByHeader: false,
+  // Tree-shake lucide-react so only the icons we import ship in the bundle
+  // (the default barrel import pulls in ~1000 icons → ~60 KiB of legacy JS)
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+      preventFullImport: true,
+    },
+  },
   async redirects() {
     // Fix double-locale-prefix URLs detected by Google Search Console
     return [

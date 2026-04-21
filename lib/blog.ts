@@ -299,7 +299,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     category: 'local',
     date: '2026-04-21',
-    image: '/office-factory-building.webp',
+    image: '/blog-uccle.jpg',
     translationNamespace: 'BlogPost14',
     metadataKey: 'blog_post14',
     conclusionLinkHref: '/services/domiciliation-bruxelles',

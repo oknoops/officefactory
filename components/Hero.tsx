@@ -53,6 +53,8 @@ const Hero: FC = () => {
                             sizes="(max-width: 768px) 100vw, 50vw"
                             style={{ objectFit: "cover" }}
                             priority
+                            fetchPriority="high"
+                            quality={70}
                         />
                     </div>
                 </div>
