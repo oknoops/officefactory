@@ -40,21 +40,25 @@ export default function ContactPage() {
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
 
-            <section className="pt-32 pb-12 bg-[#F8F9FA]">
+            <section className="pt-28 pb-12 bg-[#F8F9FA]">
                 <div className="container">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#1D1D1B] text-center">
-                        {t('title')}
-                    </h1>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-[#1D1D1B]">
-                            {t('intro_title')}
-                        </h2>
-                        <p className="text-lg text-[#6C757D] leading-relaxed mb-4">
-                            {t('intro_p1')}
-                        </p>
-                        <p className="text-lg text-[#6C757D] leading-relaxed">
-                            {t('intro_p2')}
-                        </p>
+                    <div className="max-w-3xl mx-auto text-center mb-8">
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#1D1D1B]">
+                            {t('title')}
+                        </h1>
+                    </div>
+                    <div className="bg-white rounded-2xl shadow-sm overflow-hidden w-full max-w-3xl mx-auto border border-gray-100">
+                        <iframe
+                            src={iframeSrc}
+                            height="1250px"
+                            className="border-0 w-full"
+                            style={{
+                                marginTop: marginTop,
+                            }}
+                            scrolling="no"
+                            loading="lazy"
+                            title="Formulaire de contact Office Factory"
+                        />
                     </div>
                 </div>
             </section>
@@ -104,6 +108,19 @@ export default function ContactPage() {
             <section className="py-16 bg-[#F8F9FA] border-t border-gray-100">
                 <div className="container">
                     <div className="max-w-3xl mx-auto text-center">
+                        <p className="text-lg text-[#6C757D] leading-relaxed mb-4">
+                            {t('intro_p1')}
+                        </p>
+                        <p className="text-lg text-[#6C757D] leading-relaxed">
+                            {t('intro_p2')}
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-16 bg-white border-t border-gray-100">
+                <div className="container">
+                    <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1D1D1B]">
                             {t('why_title')}
                         </h2>
@@ -113,32 +130,6 @@ export default function ContactPage() {
                         <p className="text-lg text-[#6C757D] leading-relaxed">
                             {t('why_p2')}
                         </p>
-                    </div>
-                </div>
-            </section>
-
-            <section className="py-16 bg-white border-t border-gray-100">
-                <div className="container">
-                    <div className="max-w-3xl mx-auto text-center mb-10">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1D1D1B]">
-                            {t('form_title')}
-                        </h2>
-                        <p className="text-lg text-[#6C757D] leading-relaxed">
-                            {t('form_intro')}
-                        </p>
-                    </div>
-                    <div className="bg-white rounded-2xl shadow-sm overflow-hidden w-full max-w-4xl mx-auto border border-gray-100">
-                        <iframe
-                            src={iframeSrc}
-                            height="1250px"
-                            className="border-0 w-full"
-                            style={{
-                                marginTop: marginTop,
-                            }}
-                            scrolling="no"
-                            loading="lazy"
-                            title="Formulaire de contact Office Factory"
-                        />
                     </div>
                 </div>
             </section>
