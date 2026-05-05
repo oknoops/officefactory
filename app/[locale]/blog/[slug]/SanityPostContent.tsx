@@ -5,17 +5,9 @@ import Footer from '@/components/Footer';
 import { ChevronRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { PortableText, type PortableTextComponents } from '@portabletext/react';
-import type { SanityBlogPostFull } from '@/lib/sanity';
-import { urlForImage } from '@/lib/sanity';
+import { urlForImage, type PostFull } from '@/lib/sanity';
 import { SITE_URL } from '@/lib/seo';
 import ShareButtons from './ShareButtons';
-
-const CATEGORY_COLORS: Record<string, string> = {
-  guides: 'bg-blue-100 text-blue-700',
-  legal: 'bg-amber-100 text-amber-700',
-  local: 'bg-green-100 text-green-700',
-  news: 'bg-purple-100 text-purple-700',
-};
 
 const components: PortableTextComponents = {
   block: {
@@ -27,6 +19,9 @@ const components: PortableTextComponents = {
     ),
     h3: ({ children }) => (
       <h3 className="text-xl font-bold text-[#1D1D1B] mt-8 mb-3">{children}</h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-lg font-bold text-[#1D1D1B] mt-6 mb-2">{children}</h4>
     ),
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-[#E63946] pl-4 italic text-[#6C757D] my-6">
@@ -43,17 +38,23 @@ const components: PortableTextComponents = {
     ),
   },
   marks: {
-    strong: ({ children }) => <strong className="font-semibold text-[#1D1D1B]">{children}</strong>,
+    strong: ({ children }) => (
+      <strong className="font-semibold text-[#1D1D1B]">{children}</strong>
+    ),
     em: ({ children }) => <em className="italic">{children}</em>,
-    underline: ({ children }) => <span className="underline">{children}</span>,
+    code: ({ children }) => (
+      <code className="bg-gray-100 text-[#1D1D1B] px-1.5 py-0.5 rounded text-sm">
+        {children}
+      </code>
+    ),
     link: ({ value, children }) => {
       const href: string = value?.href ?? '#';
-      const openInNewTab: boolean = value?.openInNewTab ?? false;
+      const external = /^https?:\/\//i.test(href);
       return (
         <a
           href={href}
           className="text-[#E63946] underline hover:no-underline"
-          {...(openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {children}
         </a>
@@ -90,7 +91,7 @@ export default async function SanityPostContent({
   post,
   locale,
 }: {
-  post: SanityBlogPostFull;
+  post: PostFull;
   locale: string;
 }) {
   const tBlog = await getTranslations({ locale, namespace: 'BlogPage' });
@@ -100,27 +101,15 @@ export default async function SanityPostContent({
     { year: 'numeric', month: 'long', day: 'numeric' },
   );
 
-  const coverSrc = urlForImage(post.coverImage).width(1200).height(600).fit('crop').auto('format').url();
-  const coverAlt = post.coverImage.alt ?? post.title;
+  const cover = post.coverImage;
+  const coverSrc = cover
+    ? urlForImage(cover).width(1200).height(600).fit('crop').auto('format').url()
+    : null;
+  const coverAlt = cover?.alt ?? post.title;
   const postUrl = `${SITE_URL}/${locale}/blog/${post.slug}`;
-  const authorName = post.author?.name ?? 'Office Factory';
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    author: { '@type': post.author ? 'Person' : 'Organization', name: authorName },
-    datePublished: post.publishedAt,
-    image: coverSrc,
-    publisher: { '@type': 'Organization', name: 'Office Factory' },
-  };
 
   return (
     <main className="min-h-screen flex flex-col bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <Navbar />
 
       <div className="pt-28 pb-4 bg-[#F8F9FA]">
@@ -141,32 +130,33 @@ export default async function SanityPostContent({
         </div>
       </div>
 
-      <div className="bg-[#F8F9FA] pb-20">
-        <div className="container max-w-2xl mx-auto">
-          <div className="relative aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src={coverSrc}
-              alt={coverAlt}
-              fill
-              sizes="(max-width: 768px) 100vw, 672px"
-              className="object-cover"
-              priority
-            />
+      {coverSrc ? (
+        <div className="bg-[#F8F9FA] pb-20">
+          <div className="container max-w-2xl mx-auto">
+            <div className="relative aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={coverSrc}
+                alt={coverAlt}
+                fill
+                sizes="(max-width: 768px) 100vw, 672px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
-      </div>
+      ) : null}
 
       <div className="container mt-10 pb-12">
         <article className="max-w-3xl w-full mx-auto pt-8">
           <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span
-              className={`text-xs font-semibold px-3 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-gray-100 text-gray-700'}`}
-            >
-              {tBlog(`cat_${post.category}` as 'cat_guides' | 'cat_legal' | 'cat_local' | 'cat_news')}
-            </span>
             <span className="text-sm text-[#6C757D]">{formattedDate}</span>
-            <span className="text-sm text-[#6C757D]">·</span>
-            <span className="text-sm text-[#6C757D]">{authorName}</span>
+            {post.readingTimeMinutes ? (
+              <>
+                <span className="text-sm text-[#6C757D]">·</span>
+                <span className="text-sm text-[#6C757D]">{post.readingTimeMinutes} min</span>
+              </>
+            ) : null}
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold text-[#1D1D1B] mb-6 leading-tight">
@@ -176,7 +166,7 @@ export default async function SanityPostContent({
           <p className="text-lg text-[#6C757D] leading-relaxed mb-10">{post.excerpt}</p>
 
           <div className="prose prose-lg max-w-none">
-            <PortableText value={post.body} components={components} />
+            {post.body ? <PortableText value={post.body} components={components} /> : null}
           </div>
 
           <div className="border-t border-b border-gray-200 py-6 my-12">

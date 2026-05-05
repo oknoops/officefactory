@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL, LOCALES, ALL_PATHS, getLocalizedPath } from '@/lib/seo';
 import { BLOG_POSTS, getPostSlugForLocale } from '@/lib/blog';
-import { getAllSanitySlugParams, sanityClient } from '@/lib/sanity';
+import { getAllPostSlugs } from '@/lib/sanity';
 
 /**
  * Stable lastModified dates per static path.
@@ -86,26 +86,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Sanity-authored posts (external contributors)
+  // Sanity-authored posts
   try {
-    const sanityParams = await getAllSanitySlugParams();
-    if (sanityParams.length > 0) {
-      const sanityDates = await sanityClient.fetch<{ slug: string; language: string; publishedAt: string }[]>(
-        `*[_type == "blogPost" && defined(slug.current)]{"slug": slug.current, language, publishedAt}`,
-        {},
-        { next: { revalidate: 60 } },
-      );
-      const dateBySlug = new Map<string, string>();
-      for (const d of sanityDates) dateBySlug.set(`${d.language}:${d.slug}`, d.publishedAt);
-
-      for (const { locale, slug } of sanityParams) {
-        entries.push({
-          url: `${SITE_URL}/${locale}/blog/${slug}`,
-          lastModified: dateBySlug.get(`${locale}:${slug}`) ?? '2026-04-21',
-          changeFrequency: 'monthly',
-          priority: 0.7,
-        });
-      }
+    const sanityRows = await getAllPostSlugs();
+    for (const row of sanityRows) {
+      entries.push({
+        url: `${SITE_URL}/${row.locale}/blog/${row.slug}`,
+        lastModified: row._updatedAt ?? row.publishedAt,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
     }
   } catch {
     // If Sanity is unreachable, don't break the sitemap.

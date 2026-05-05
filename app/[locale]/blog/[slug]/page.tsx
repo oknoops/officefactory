@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Link } from '@/i18n/routing';
+import { Link, getPathname } from '@/i18n/routing';
 import { notFound, redirect } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,12 +9,30 @@ import { getTranslations } from 'next-intl/server';
 import { SITE_URL } from '@/lib/seo';
 import { BLOG_POSTS, getPostBySlug, getPostSlugForLocale } from '@/lib/blog';
 import type { BlogSection } from '@/lib/blog';
-import { getAllSanitySlugParams, getSanityPostBySlug, urlForImage } from '@/lib/sanity';
+import {
+  getAllPostSlugs,
+  getPostBySlug as getSanityPostBySlug,
+  urlForImage,
+  type Locale,
+} from '@/lib/sanity';
+import { BreadcrumbJsonLd } from '@/components/StructuredData';
 import TableOfContents from './TableOfContents';
 import ShareButtons from './ShareButtons';
 import SanityPostContent from './SanityPostContent';
 
-export const revalidate = 60;
+export const revalidate = 300;
+
+const HOME_LABEL: Record<string, string> = {
+  fr: 'Accueil',
+  nl: 'Home',
+  en: 'Home',
+};
+
+const LOCALE_TAG: Record<string, string> = {
+  fr: 'fr-BE',
+  nl: 'nl-BE',
+  en: 'en-GB',
+};
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -23,8 +41,11 @@ export async function generateStaticParams() {
       params.push({ locale, slug: post.slugs[locale as keyof typeof post.slugs] });
     }
   }
-  const sanityParams = await getAllSanitySlugParams();
-  return [...params, ...sanityParams];
+  const sanityRows = await getAllPostSlugs();
+  for (const row of sanityRows) {
+    params.push({ locale: row.locale, slug: row.slug });
+  }
+  return params;
 }
 
 export async function generateMetadata({
@@ -57,22 +78,38 @@ export async function generateMetadata({
     };
   }
 
-  const sanityPost = await getSanityPostBySlug(slug, locale);
+  const sanityPost = await getSanityPostBySlug(locale as Locale, slug);
   if (!sanityPost) return {};
 
-  const image = urlForImage(sanityPost.coverImage).width(1200).height(630).fit('crop').auto('format').url();
+  const cover = sanityPost.coverImage;
+  const image = cover
+    ? urlForImage(cover).width(1200).height(630).fit('crop').auto('format').url()
+    : undefined;
+
+  const languages: Record<string, string> = {};
+  for (const loc of ['fr', 'nl', 'en'] as const) {
+    const s = sanityPost.slugByLocale[loc];
+    if (s) languages[loc] = `${SITE_URL}/${loc}/blog/${s}`;
+  }
+  if (sanityPost.slugByLocale.fr) {
+    languages['x-default'] = `${SITE_URL}/fr/blog/${sanityPost.slugByLocale.fr}`;
+  }
+
   return {
-    title: sanityPost.seo?.metaTitle || sanityPost.title,
-    description: sanityPost.seo?.metaDescription || sanityPost.excerpt,
-    keywords: sanityPost.seo?.keywords,
+    title: sanityPost.seoTitle ?? sanityPost.title,
+    description: sanityPost.seoDescription ?? sanityPost.excerpt,
     alternates: {
       canonical: `${SITE_URL}/${locale}/blog/${sanityPost.slug}`,
+      languages,
     },
     openGraph: {
       title: sanityPost.title,
-      description: sanityPost.excerpt,
-      images: [{ url: image, width: 1200, height: 630, alt: sanityPost.coverImage.alt || sanityPost.title }],
+      description: sanityPost.seoDescription ?? sanityPost.excerpt,
+      ...(image
+        ? { images: [{ url: image, width: 1200, height: 630, alt: cover?.alt ?? sanityPost.title }] }
+        : {}),
       type: 'article',
+      locale: LOCALE_TAG[locale] ?? 'fr-BE',
     },
   };
 }
@@ -93,12 +130,62 @@ export default async function BlogPostPage({
     return <BlogPostContent locale={locale} post={post} />;
   }
 
-  const sanityPost = await getSanityPostBySlug(slug, locale);
-  if (sanityPost) {
-    return <SanityPostContent post={sanityPost} locale={locale} />;
-  }
+  const sanityPost = await getSanityPostBySlug(locale as Locale, slug);
+  if (!sanityPost) notFound();
 
-  notFound();
+  const canonicalPath = getPathname({
+    locale: locale as Locale,
+    href: { pathname: '/blog/[slug]', params: { slug } },
+  });
+  const blogPath = getPathname({ locale: locale as Locale, href: '/blog' });
+  const homePath = getPathname({ locale: locale as Locale, href: '/' });
+
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+  const blogUrl = `${SITE_URL}${blogPath}`;
+  const homeUrl = `${SITE_URL}${homePath}`;
+
+  const cover = sanityPost.coverImage;
+  const image = cover
+    ? urlForImage(cover).width(1200).height(630).fit('crop').auto('format').url()
+    : undefined;
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: sanityPost.title,
+    description: sanityPost.seoDescription ?? sanityPost.excerpt,
+    ...(image ? { image: [image] } : {}),
+    datePublished: sanityPost.publishedAt,
+    dateModified: sanityPost._updatedAt ?? sanityPost.publishedAt,
+    inLanguage: locale,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+    },
+    author: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Office Factory',
+    },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+  };
+
+  const breadcrumbItems = [
+    { name: HOME_LABEL[locale] ?? 'Home', url: homeUrl },
+    { name: 'Blog', url: blogUrl },
+    { name: sanityPost.title, url: canonicalUrl },
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <SanityPostContent post={sanityPost} locale={locale} />
+    </>
+  );
 }
 
 function BlogPostContent({
@@ -113,7 +200,7 @@ function BlogPostContent({
 
   const formattedDate = new Date(post.date).toLocaleDateString(
     locale === 'fr' ? 'fr-BE' : locale === 'nl' ? 'nl-BE' : 'en-GB',
-    { year: 'numeric', month: 'long', day: 'numeric' }
+    { year: 'numeric', month: 'long', day: 'numeric' },
   );
 
   const postUrl = `${SITE_URL}/${locale}/blog/${getPostSlugForLocale(post, locale)}`;
@@ -164,7 +251,6 @@ function BlogPostContent({
       />
       <Navbar />
 
-      {/* Breadcrumbs */}
       <div className="pt-28 pb-4 bg-[#F8F9FA]">
         <div className="container">
           <nav className="flex items-center text-sm text-[#6C757D]">
@@ -183,7 +269,6 @@ function BlogPostContent({
         </div>
       </div>
 
-      {/* Hero Image */}
       <div className="bg-[#F8F9FA] pb-20">
         <div className="container max-w-2xl mx-auto">
           <div className="relative aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-lg">
@@ -199,15 +284,11 @@ function BlogPostContent({
         </div>
       </div>
 
-      {/* Article Layout */}
       <div className="container mt-10 pb-12">
         <div className="flex gap-12 justify-center">
-          {/* Table of Contents - Desktop Sidebar */}
           <TableOfContents items={tocItems} />
 
-          {/* Article Content */}
           <article className="max-w-3xl w-full pt-8">
-            {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span
                 className={`text-xs font-semibold px-3 py-1 rounded-full ${CATEGORY_COLORS[post.category]}`}
@@ -219,22 +300,18 @@ function BlogPostContent({
               <span className="text-sm text-[#6C757D]">Office Factory</span>
             </div>
 
-            {/* Title */}
             <h1 className="text-3xl md:text-4xl font-bold text-[#1D1D1B] mb-8 leading-tight">
               {t('post_title')}
             </h1>
 
-            {/* Intro */}
             <div className="prose prose-lg text-[#6C757D] leading-relaxed max-w-none mb-12">
               <p>{t('intro')}</p>
             </div>
 
-            {/* Dynamic Sections */}
             {post.sections.map((section) => (
               <SectionRenderer key={section.id} section={section} t={t} />
             ))}
 
-            {/* Conclusion */}
             <section className="mb-12">
               <h2
                 id="conclusion"
@@ -253,26 +330,17 @@ function BlogPostContent({
               </Link>
             </section>
 
-            {/* Share Buttons */}
             <div className="border-t border-b border-gray-200 py-6 my-12">
               <ShareButtons url={postUrl} title={t('post_title')} />
             </div>
-
-            {/* Related Articles */}
-            {/* TODO: Add related articles section when more posts are available */}
           </article>
         </div>
       </div>
 
-      {/* CTA Banner */}
       <section className="py-20 bg-[#1D1D1B]">
         <div className="container text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-white">
-            {tBlog('cta_title')}
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            {tBlog('cta_text')}
-          </p>
+          <h2 className="text-3xl font-bold mb-6 text-white">{tBlog('cta_title')}</h2>
+          <p className="text-lg text-gray-300 mb-8">{tBlog('cta_text')}</p>
           <Link
             href="/contact"
             className="btn btn-primary px-8 py-3 rounded-full font-semibold inline-block"
@@ -297,10 +365,7 @@ function SectionRenderer({
   if (section.type === 'text') {
     return (
       <section className="mb-12">
-        <h2
-          id={section.id}
-          className="text-2xl font-bold text-[#1D1D1B] mb-4 scroll-mt-28"
-        >
+        <h2 id={section.id} className="text-2xl font-bold text-[#1D1D1B] mb-4 scroll-mt-28">
           {t(section.titleKey as Parameters<typeof t>[0])}
         </h2>
         <div className="prose prose-lg text-[#6C757D] leading-relaxed max-w-none">
@@ -313,10 +378,7 @@ function SectionRenderer({
   if (section.type === 'steps') {
     return (
       <section className="mb-12">
-        <h2
-          id={section.id}
-          className="text-2xl font-bold text-[#1D1D1B] mb-4 scroll-mt-28"
-        >
+        <h2 id={section.id} className="text-2xl font-bold text-[#1D1D1B] mb-4 scroll-mt-28">
           {t(section.titleKey as Parameters<typeof t>[0])}
         </h2>
         <p className="text-[#6C757D] leading-relaxed mb-6">
@@ -354,10 +416,7 @@ function SectionRenderer({
   if (section.type === 'obligations') {
     return (
       <section className="mb-12">
-        <h2
-          id={section.id}
-          className="text-2xl font-bold text-[#1D1D1B] mb-4 scroll-mt-28"
-        >
+        <h2 id={section.id} className="text-2xl font-bold text-[#1D1D1B] mb-4 scroll-mt-28">
           {t(section.titleKey as Parameters<typeof t>[0])}
         </h2>
         <p className="text-[#6C757D] leading-relaxed mb-6">

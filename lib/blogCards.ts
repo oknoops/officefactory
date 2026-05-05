@@ -1,6 +1,6 @@
 import type { BlogCategory, BlogPost } from '@/lib/blog';
 import { getPostSlugForLocale } from '@/lib/blog';
-import { getSanityPostsForLocale, urlForImage, type SanityBlogPostCard } from '@/lib/sanity';
+import { getPosts, urlForImage, type Locale, type PostListItem } from '@/lib/sanity';
 import type { getTranslations } from 'next-intl/server';
 
 export type BlogCardItem =
@@ -22,7 +22,7 @@ export async function buildBlogCards(
   locale: string,
   getT: typeof getTranslations,
 ): Promise<BlogCardItem[]> {
-  void getT; // reserved for future localized titles of code posts if needed
+  void getT;
 
   const codeItems: BlogCardItem[] = codePosts.map((post) => ({
     kind: 'code',
@@ -33,18 +33,22 @@ export async function buildBlogCards(
     category: post.category,
   }));
 
-  const sanityPosts: SanityBlogPostCard[] = await getSanityPostsForLocale(locale);
-  const sanityItems: BlogCardItem[] = sanityPosts.map((p) => ({
-    kind: 'sanity',
-    id: p._id,
-    slug: p.slug,
-    title: p.title,
-    excerpt: p.excerpt,
-    image: urlForImage(p.coverImage).width(800).height(450).fit('crop').auto('format').url(),
-    imageAlt: p.coverImage.alt || p.title,
-    date: p.publishedAt,
-    category: p.category,
-  }));
+  const sanityPosts: PostListItem[] = await getPosts(locale as Locale);
+  const sanityItems: BlogCardItem[] = sanityPosts
+    .filter((p): p is PostListItem & { coverImage: NonNullable<PostListItem['coverImage']> } =>
+      p.coverImage !== null,
+    )
+    .map((p) => ({
+      kind: 'sanity',
+      id: p._id,
+      slug: p.slug,
+      title: p.title,
+      excerpt: p.excerpt,
+      image: urlForImage(p.coverImage).width(800).height(450).fit('crop').auto('format').url(),
+      imageAlt: p.coverImage.alt ?? p.title,
+      date: p.publishedAt,
+      category: p.category,
+    }));
 
   return [...codeItems, ...sanityItems].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),

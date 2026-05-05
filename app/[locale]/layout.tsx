@@ -50,6 +50,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { OrganizationJsonLd } from '@/components/StructuredData';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -90,6 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-55W3FZSQ');`,
           }}
         />
+        <OrganizationJsonLd />
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
