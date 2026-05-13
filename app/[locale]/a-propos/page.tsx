@@ -40,7 +40,7 @@ export default function AboutPage() {
                         </h1>
                         <div className="prose prose-lg text-[#6C757D] leading-relaxed">
                             <p className="mb-6">
-                                {t('p1_part1')}<strong className="text-[#1D1D1B]">{t('p1_bold1')}</strong>{t('p1_part2')}<strong className="text-[#1D1D1B]">{t('p1_bold2')}</strong>{t('p1_part3')}
+                                {t('p1_part1')}<strong className="text-[#1D1D1B]">{t('p1_bold1')}</strong>{t('p1_part2')}<strong className="text-[#1D1D1B]">{t('p1_bold2')}</strong>{t('p1_part3')}<strong className="text-[#1D1D1B]">{t('p1_bold3')}</strong>{t('p1_part4')}
                             </p>
                             <p className="mb-6">
                                 {t('p2_part1')}<strong className="text-[#1D1D1B]">{t('p2_bold1')}</strong>{t('p2_part2')}
