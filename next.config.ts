@@ -17,11 +17,124 @@ const nextConfig: NextConfig = {
     },
   },
   async redirects() {
-    // Fix double-locale-prefix URLs detected by Google Search Console
     return [
+      // Fix double-locale-prefix URLs detected by Google Search Console
       {
         source: '/:locale(fr|en|nl)/:locale2(fr|en|nl)/:path*',
         destination: '/:locale2/:path*',
+        permanent: true,
+      },
+
+      // Retired blog post on the Belgian domiciliation law — redirect to the
+      // legal-framework section of the new pillar guide.
+      // Each locale slug can be reached from any locale prefix, so we handle
+      // the cross-locale combinations Google has indexed.
+      {
+        source: '/fr/blog/domiciliation-entreprise-loi-belgique',
+        destination: '/fr/guide-domiciliation-bruxelles#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/fr/blog/belgian-law-company-domiciliation',
+        destination: '/fr/guide-domiciliation-bruxelles#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/fr/blog/belgische-wet-domiciliering-bedrijven',
+        destination: '/fr/guide-domiciliation-bruxelles#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/en/blog/belgian-law-company-domiciliation',
+        destination: '/en/guide-domiciliation-brussels#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/en/blog/domiciliation-entreprise-loi-belgique',
+        destination: '/en/guide-domiciliation-brussels#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/en/blog/belgische-wet-domiciliering-bedrijven',
+        destination: '/en/guide-domiciliation-brussels#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/nl/blog/belgische-wet-domiciliering-bedrijven',
+        destination: '/nl/gids-domiciliering-brussel#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/nl/blog/belgian-law-company-domiciliation',
+        destination: '/nl/gids-domiciliering-brussel#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/nl/blog/domiciliation-entreprise-loi-belgique',
+        destination: '/nl/gids-domiciliering-brussel#legal-framework',
+        permanent: true,
+      },
+
+      // Short legacy slug /domiciliation → service page (per locale).
+      // /domiciliering is the historical NL variant.
+      {
+        source: '/fr/domiciliation',
+        destination: '/fr/services/domiciliation-bruxelles',
+        permanent: true,
+      },
+      {
+        source: '/en/domiciliation',
+        destination: '/en/services/domiciliation-brussels',
+        permanent: true,
+      },
+      {
+        source: '/nl/domiciliation',
+        destination: '/nl/diensten/domiciliering-brussel',
+        permanent: true,
+      },
+      {
+        source: '/fr/domiciliering',
+        destination: '/fr/services/domiciliation-bruxelles',
+        permanent: true,
+      },
+      {
+        source: '/en/domiciliering',
+        destination: '/en/services/domiciliation-brussels',
+        permanent: true,
+      },
+      {
+        source: '/nl/domiciliering',
+        destination: '/nl/diensten/domiciliering-brussel',
+        permanent: true,
+      },
+
+      // Locale-less variants reported as 404. Without these, requests would
+      // hit the next-intl middleware, get rewritten to the default locale,
+      // and only then hit the redirects above (two-hop chain).
+      // We map them directly to the default-locale (FR) destinations.
+      {
+        source: '/blog/belgian-law-company-domiciliation',
+        destination: '/fr/guide-domiciliation-bruxelles#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/blog/belgische-wet-domiciliering-bedrijven',
+        destination: '/fr/guide-domiciliation-bruxelles#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/blog/domiciliation-entreprise-loi-belgique',
+        destination: '/fr/guide-domiciliation-bruxelles#legal-framework',
+        permanent: true,
+      },
+      {
+        source: '/domiciliation',
+        destination: '/fr/services/domiciliation-bruxelles',
+        permanent: true,
+      },
+      {
+        source: '/domiciliering',
+        destination: '/fr/services/domiciliation-bruxelles',
         permanent: true,
       },
     ];
