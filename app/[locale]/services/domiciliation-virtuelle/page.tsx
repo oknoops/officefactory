@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PillarHubLink from '@/components/PillarHubLink';
 import { Check, Mail, MapPin, ShieldCheck, Users, ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
 
@@ -52,6 +53,7 @@ const virtualOfficeSchema = {
 
 export default function DomiciliationVirtuellePage() {
     const t = useTranslations('DomiciliationVirtuellePage');
+    const locale = useLocale();
     const tCommon = useTranslations('Common');
     return (
         <main className="min-h-screen flex flex-col bg-white">
@@ -186,6 +188,8 @@ export default function DomiciliationVirtuellePage() {
                     </div>
                 </div>
             </section>
+
+            <PillarHubLink locale={locale} variant="banner" />
 
             <Footer />
         </main>

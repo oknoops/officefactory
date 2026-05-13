@@ -29,6 +29,7 @@ const STATIC_LAST_MODIFIED: Partial<Record<string, string>> = {
   '/spf-economie': '2026-03-09',
   '/blog': '2026-04-21',
   '/faq': '2026-03-15',
+  '/guide-domiciliation-bruxelles': '2026-05-13',
   '/politique-de-confidentialite': '2026-03-01',
 };
 
@@ -43,6 +44,7 @@ const PRIORITY_OVERRIDES: Partial<Record<string, number>> = {
 function priorityFor(path: string): number {
   const override = PRIORITY_OVERRIDES[path];
   if (override !== undefined) return override;
+  if (path === '/guide-domiciliation-bruxelles') return 0.95;
   if (path.startsWith('/services/')) return 0.9;
   return 0.8;
 }

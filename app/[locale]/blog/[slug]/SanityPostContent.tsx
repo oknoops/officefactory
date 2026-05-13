@@ -8,6 +8,7 @@ import { PortableText, type PortableTextComponents } from '@portabletext/react';
 import { urlForImage, type PostFull } from '@/lib/sanity';
 import { SITE_URL } from '@/lib/seo';
 import ShareButtons from './ShareButtons';
+import PillarHubLink from '@/components/PillarHubLink';
 
 const components: PortableTextComponents = {
   block: {
@@ -174,6 +175,8 @@ export default async function SanityPostContent({
           </div>
         </article>
       </div>
+
+      <PillarHubLink locale={locale} variant="banner" />
 
       <section className="py-20 bg-[#1D1D1B]">
         <div className="container text-center max-w-3xl mx-auto">

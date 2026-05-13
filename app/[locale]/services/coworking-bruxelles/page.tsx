@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PillarHubLink from '@/components/PillarHubLink';
 import { Wifi, Coffee, Users, Calendar, Check, ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
@@ -25,6 +26,7 @@ export async function generateMetadata({
 
 export default function CoworkingPage() {
     const t = useTranslations('CoworkingPage');
+    const locale = useLocale();
     const tCommon = useTranslations('Common');
     return (
         <main className="min-h-screen flex flex-col bg-white">
@@ -239,6 +241,8 @@ export default function CoworkingPage() {
                     </div>
                 </div>
             </section>
+
+            <PillarHubLink locale={locale} variant="banner" />
 
             <Footer />
         </main>

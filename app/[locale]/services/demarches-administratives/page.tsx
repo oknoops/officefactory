@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PillarHubLink from '@/components/PillarHubLink';
 import { FileText, Edit, XCircle, Check, ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
@@ -25,6 +26,7 @@ export async function generateMetadata({
 
 export default function DemarchesAdministrativesPage() {
     const t = useTranslations('DemarchesPage');
+    const locale = useLocale();
     return (
         <main className="min-h-screen flex flex-col bg-white">
             <Navbar />
@@ -180,6 +182,8 @@ export default function DemarchesAdministrativesPage() {
                     </div>
                 </div>
             </section>
+
+            <PillarHubLink locale={locale} variant="banner" />
 
             <Footer />
         </main>

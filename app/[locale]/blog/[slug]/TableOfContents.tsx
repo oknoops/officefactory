@@ -9,9 +9,10 @@ interface TocItem {
 
 interface TableOfContentsProps {
   items: TocItem[];
+  label?: string;
 }
 
-export default function TableOfContents({ items }: TableOfContentsProps) {
+export default function TableOfContents({ items, label = 'Table of Contents' }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   return (
     <nav className="hidden lg:block sticky top-32 self-start w-56 shrink-0">
       <p className="text-xs font-semibold uppercase tracking-wider text-[#6C757D] mb-4">
-        Table of Contents
+        {label}
       </p>
       <ul className="space-y-2 border-l-2 border-gray-200">
         {items.map((item) => (

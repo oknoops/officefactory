@@ -19,6 +19,7 @@ import { BreadcrumbJsonLd } from '@/components/StructuredData';
 import TableOfContents from './TableOfContents';
 import ShareButtons from './ShareButtons';
 import SanityPostContent from './SanityPostContent';
+import PillarHubLink from '@/components/PillarHubLink';
 
 export const revalidate = 300;
 
@@ -336,6 +337,8 @@ function BlogPostContent({
           </article>
         </div>
       </div>
+
+      <PillarHubLink locale={locale} variant="banner" />
 
       <section className="py-20 bg-[#1D1D1B]">
         <div className="container text-center max-w-3xl mx-auto">

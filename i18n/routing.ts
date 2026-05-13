@@ -77,6 +77,11 @@ export const routing = defineRouting({
             nl: '/bedankt',
         },
         '/faq': '/faq',
+        '/guide-domiciliation-bruxelles': {
+            fr: '/guide-domiciliation-bruxelles',
+            en: '/guide-domiciliation-brussels',
+            nl: '/gids-domiciliering-brussel',
+        },
         '/politique-de-confidentialite': {
             fr: '/politique-de-confidentialite',
             en: '/privacy-policy',

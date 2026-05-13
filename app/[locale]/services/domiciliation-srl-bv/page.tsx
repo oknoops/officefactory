@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PillarHubLink from '@/components/PillarHubLink';
 import { Check, FileText, ShieldCheck, Building, ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
@@ -60,6 +61,7 @@ const domiciliationSRLServiceSchema = {
 
 export default function DomiciliationSRLPage() {
     const t = useTranslations('DomiciliationSRLPage');
+    const locale = useLocale();
     const tCommon = useTranslations('Common');
 
     const requirements = [
@@ -205,6 +207,8 @@ export default function DomiciliationSRLPage() {
                     </div>
                 </div>
             </section>
+
+            <PillarHubLink locale={locale} variant="banner" />
 
             <Footer />
         </main>
