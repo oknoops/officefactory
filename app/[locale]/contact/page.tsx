@@ -74,7 +74,7 @@ export default function ContactPage() {
                                 <Phone size={32} strokeWidth={1.5} />
                             </div>
                             <h3 className="text-lg font-bold mb-2 text-[#1D1D1B]">{t('details_phone_label')}</h3>
-                            <a href="tel:+3223333311" className="text-[#6C757D] hover:text-[#E63946] transition-colors">
+                            <a href="tel:+32471794552" className="text-[#6C757D] hover:text-[#E63946] transition-colors">
                                 {t('details_phone')}
                             </a>
                         </div>
