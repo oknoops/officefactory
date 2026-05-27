@@ -5,7 +5,23 @@ import { useLocale } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { ChangeEvent, useTransition } from 'react';
 
-export default function LanguageSwitcher() {
+type Locale = 'fr' | 'en' | 'nl';
+
+interface LanguageSwitcherProps {
+    /**
+     * Per-locale blog slugs for the current page. When the user switches to a
+     * locale whose slug is present, the router navigates to /<locale>/blog/<slug>.
+     * When the user switches to a locale that isn't in this map (e.g. a Sanity
+     * post that isn't translated into that language), the switcher routes to
+     * /<locale>/blog instead of building a URL that would 404.
+     *
+     * Pass this on blog post pages only — on every other page the router's
+     * pathname-replay logic produces the correct localized URL automatically.
+     */
+    blogSlugByLocale?: Partial<Record<Locale, string>>;
+}
+
+export default function LanguageSwitcher({ blogSlugByLocale }: LanguageSwitcherProps = {}) {
     const router = useRouter();
     const pathname = usePathname();
     const params = useParams();
@@ -13,8 +29,28 @@ export default function LanguageSwitcher() {
     const [isPending, startTransition] = useTransition();
 
     const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        const nextLocale = e.target.value as 'fr' | 'en' | 'nl';
+        const nextLocale = e.target.value as Locale;
+        const overriddenSlug = blogSlugByLocale?.[nextLocale];
+
         startTransition(() => {
+            if (overriddenSlug) {
+                router.replace(
+                    { pathname: '/blog/[slug]', params: { slug: overriddenSlug } },
+                    { locale: nextLocale },
+                );
+                return;
+            }
+
+            if (blogSlugByLocale) {
+                // We were given a slug map but the target locale isn't in it —
+                // i.e. no translation exists. Send the user to the blog index
+                // in their chosen language rather than a 404.
+                router.replace({ pathname: '/blog' }, { locale: nextLocale });
+                return;
+            }
+
+            // No overrides → replay the current pathname under the new locale.
+            // Used everywhere outside blog posts.
             router.replace(
                 // @ts-expect-error -- params may contain dynamic segments like [slug]
                 { pathname, params },

@@ -92,6 +92,31 @@ export async function getPostBySlug(locale: Locale, slug: string): Promise<PostF
   }
 }
 
+/**
+ * Look up which locale-prefixed URL a slug actually belongs to.
+ * Used to 301 cross-locale slug requests (e.g. /fr/blog/<en-slug> → /en/blog/<en-slug>)
+ * instead of 404ing, which kept appearing in Ahrefs crawl reports.
+ */
+export async function findPostSlugAcrossLocales(
+  slug: string,
+): Promise<{ fr: string | null; nl: string | null; en: string | null } | null> {
+  const query = `*[_type == "post" && (slug.fr.current == $slug || slug.nl.current == $slug || slug.en.current == $slug)][0] {
+    "fr": slug.fr.current,
+    "nl": slug.nl.current,
+    "en": slug.en.current
+  }`;
+  try {
+    const result = await sanityClient.fetch<{ fr: string | null; nl: string | null; en: string | null } | null>(
+      query,
+      { slug },
+      { next: { revalidate: 300 } },
+    );
+    return result ?? null;
+  } catch {
+    return null;
+  }
+}
+
 type AllSlugsRow = {
   _updatedAt: string;
   publishedAt: string;

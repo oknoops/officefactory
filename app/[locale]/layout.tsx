@@ -20,7 +20,10 @@ export async function generateMetadata({
     openGraph: {
       title: t('layout_title'),
       description: t('layout_desc'),
-      url: `https://www.officefactory.be/${locale}`,
+      // og:url is intentionally omitted at the layout level: setting it here
+      // makes every child page report the home URL as og:url (Ahrefs flagged
+      // this as "Open Graph URL not matching canonical"). Pages that need a
+      // specific og:url should override it in their own generateMetadata.
       siteName: 'Office Factory',
       images: [
         {

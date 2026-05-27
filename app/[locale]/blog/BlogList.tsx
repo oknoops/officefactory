@@ -84,7 +84,7 @@ function CodeCard({
 
   return (
     <Card
-      href={`/blog/${item.slug}`}
+      href={`/${locale}/blog/${item.slug}`}
       image={item.post.image}
       imageAlt={t('post_title')}
       category={item.category}
@@ -108,7 +108,7 @@ function SanityCard({
   const formattedDate = formatDate(item.date, locale);
   return (
     <Card
-      href={`/blog/${item.slug}`}
+      href={`/${locale}/blog/${item.slug}`}
       image={item.image}
       imageAlt={item.imageAlt}
       category={item.category}

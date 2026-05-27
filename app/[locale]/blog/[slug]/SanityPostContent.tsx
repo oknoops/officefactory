@@ -109,9 +109,18 @@ export default async function SanityPostContent({
   const coverAlt = cover?.alt ?? post.title;
   const postUrl = `${SITE_URL}/${locale}/blog/${post.slug}`;
 
+  // Build per-locale slugs for the language switcher: a Sanity post may only
+  // be translated into some locales, so we only emit entries for slugs that
+  // actually exist. The switcher falls back to /<locale>/blog otherwise.
+  const blogSlugByLocale: Partial<Record<'fr' | 'en' | 'nl', string>> = {};
+  for (const loc of ['fr', 'en', 'nl'] as const) {
+    const slug = post.slugByLocale[loc];
+    if (slug) blogSlugByLocale[loc] = slug;
+  }
+
   return (
     <main className="min-h-screen flex flex-col bg-white">
-      <Navbar />
+      <Navbar blogSlugByLocale={blogSlugByLocale} />
 
       <div className="pt-28 pb-4 bg-[#F8F9FA]">
         <div className="container">

@@ -4,6 +4,17 @@ import { BLOG_POSTS, getPostSlugForLocale } from '@/lib/blog';
 import { getAllPostSlugs } from '@/lib/sanity';
 
 /**
+ * Slugs that still exist as Sanity documents but whose URLs now 308-redirect
+ * to the pillar guide (see next.config.ts redirects). Including them in the
+ * sitemap signals "redirect in sitemap" — Ahrefs flagged this as an error.
+ */
+const RETIRED_POST_SLUGS = new Set<string>([
+  'belgian-law-company-domiciliation',
+  'belgische-wet-domiciliering-bedrijven',
+  'domiciliation-entreprise-loi-belgique',
+]);
+
+/**
  * Stable lastModified dates per static path.
  * Using a real content-change date (not `new Date()`) matters:
  * Google penalises sitemaps that claim every URL was updated today.
@@ -92,6 +103,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const sanityRows = await getAllPostSlugs();
     for (const row of sanityRows) {
+      if (RETIRED_POST_SLUGS.has(row.slug)) continue;
       entries.push({
         url: `${SITE_URL}/${row.locale}/blog/${row.slug}`,
         lastModified: row._updatedAt ?? row.publishedAt,

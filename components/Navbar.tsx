@@ -20,7 +20,18 @@ const Logo: FC = () => (
     </div>
 );
 
-const Navbar: FC = () => {
+type Locale = 'fr' | 'en' | 'nl';
+
+interface NavbarProps {
+    /**
+     * Forwarded to LanguageSwitcher. Set this on blog post pages so language
+     * switching routes to the right per-locale slug — or falls back to
+     * /<locale>/blog when a translation is missing instead of 404ing.
+     */
+    blogSlugByLocale?: Partial<Record<Locale, string>>;
+}
+
+const Navbar: FC<NavbarProps> = ({ blogSlugByLocale }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const t = useTranslations('Navigation');
 
@@ -63,7 +74,7 @@ const Navbar: FC = () => {
                     {/* Actions */}
                     <div className="flex items-center gap-2 relative ml-6">
                         <div className="mr-2">
-                            <LanguageSwitcher />
+                            <LanguageSwitcher blogSlugByLocale={blogSlugByLocale} />
                         </div>
                         <a href="https://brusselsofficefactory.odoo.com/web/login" target="_blank" rel="noopener noreferrer" className="btn btn-light text-sm px-3 whitespace-nowrap">
                             {t('login')}
@@ -79,7 +90,7 @@ const Navbar: FC = () => {
 
                 {/* Mobile Menu Button & Switcher */}
                 <div className="md:hidden flex items-center gap-3 z-50">
-                    <LanguageSwitcher />
+                    <LanguageSwitcher blogSlugByLocale={blogSlugByLocale} />
                     <button
                         className="p-2 text-gray-600 hover:text-[#E63946] transition-colors"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}

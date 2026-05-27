@@ -3,6 +3,7 @@ export {
   getPosts,
   getPostBySlug,
   getAllPostSlugs,
+  findPostSlugAcrossLocales,
   type Locale,
   type PostCategory,
   type PostListItem,

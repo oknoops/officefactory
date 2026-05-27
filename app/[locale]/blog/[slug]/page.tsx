@@ -12,6 +12,7 @@ import type { BlogSection } from '@/lib/blog';
 import {
   getAllPostSlugs,
   getPostBySlug as getSanityPostBySlug,
+  findPostSlugAcrossLocales,
   urlForImage,
   type Locale,
 } from '@/lib/sanity';
@@ -96,16 +97,20 @@ export async function generateMetadata({
     languages['x-default'] = `${SITE_URL}/fr/blog/${sanityPost.slugByLocale.fr}`;
   }
 
+  const canonicalUrl = `${SITE_URL}/${locale}/blog/${sanityPost.slug}`;
+
   return {
     title: sanityPost.seoTitle ?? sanityPost.title,
     description: sanityPost.seoDescription ?? sanityPost.excerpt,
     alternates: {
-      canonical: `${SITE_URL}/${locale}/blog/${sanityPost.slug}`,
+      canonical: canonicalUrl,
       languages,
     },
     openGraph: {
       title: sanityPost.title,
       description: sanityPost.seoDescription ?? sanityPost.excerpt,
+      url: canonicalUrl,
+      siteName: 'Office Factory',
       ...(image
         ? { images: [{ url: image, width: 1200, height: 630, alt: cover?.alt ?? sanityPost.title }] }
         : {}),
@@ -132,7 +137,24 @@ export default async function BlogPostPage({
   }
 
   const sanityPost = await getSanityPostBySlug(locale as Locale, slug);
-  if (!sanityPost) notFound();
+  if (!sanityPost) {
+    // Cross-locale slug match: if this slug exists for another locale, redirect
+    // to that locale's URL rather than 404. Fixes /fr/blog/<nl-slug> chains
+    // surfaced by Ahrefs from legacy locale-less inbound links.
+    const crossLocale = await findPostSlugAcrossLocales(slug);
+    if (crossLocale) {
+      const localeSlug = crossLocale[locale as Locale];
+      if (localeSlug) {
+        redirect(`/${locale}/blog/${localeSlug}`);
+      }
+      for (const loc of ['fr', 'nl', 'en'] as const) {
+        if (crossLocale[loc] === slug) {
+          redirect(`/${loc}/blog/${slug}`);
+        }
+      }
+    }
+    notFound();
+  }
 
   const canonicalPath = getPathname({
     locale: locale as Locale,
@@ -240,6 +262,13 @@ function BlogPostContent({
     ],
   };
 
+  // Hardcoded posts always have all three locale slugs.
+  const blogSlugByLocale = {
+    fr: post.slugs.fr,
+    en: post.slugs.en,
+    nl: post.slugs.nl,
+  } as const;
+
   return (
     <main className="min-h-screen flex flex-col bg-white">
       <script
@@ -250,7 +279,7 @@ function BlogPostContent({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Navbar />
+      <Navbar blogSlugByLocale={blogSlugByLocale} />
 
       <div className="pt-28 pb-4 bg-[#F8F9FA]">
         <div className="container">

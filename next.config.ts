@@ -108,6 +108,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // Legacy short service URLs reported as 404 by Ahrefs (links inside
+      // Sanity blog content, e.g. "Découvrir notre service de domiciliation").
+      // The middleware rewrites /services/domiciliation → /fr/services/domiciliation
+      // which has no matching route, so the chain ends in 404.
+      {
+        source: '/fr/services/domiciliation',
+        destination: '/fr/services/domiciliation-bruxelles',
+        permanent: true,
+      },
+      {
+        source: '/en/services/domiciliation',
+        destination: '/en/services/domiciliation-brussels',
+        permanent: true,
+      },
+      {
+        source: '/nl/services/domiciliation',
+        destination: '/nl/diensten/domiciliering-brussel',
+        permanent: true,
+      },
+      {
+        source: '/nl/diensten/domiciliering',
+        destination: '/nl/diensten/domiciliering-brussel',
+        permanent: true,
+      },
+      {
+        source: '/services/domiciliation',
+        destination: '/fr/services/domiciliation-bruxelles',
+        permanent: true,
+      },
+
       // Locale-less variants reported as 404. Without these, requests would
       // hit the next-intl middleware, get rewritten to the default locale,
       // and only then hit the redirects above (two-hop chain).
