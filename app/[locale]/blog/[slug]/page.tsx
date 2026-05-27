@@ -21,6 +21,7 @@ import TableOfContents from './TableOfContents';
 import ShareButtons from './ShareButtons';
 import SanityPostContent from './SanityPostContent';
 import PillarHubLink from '@/components/PillarHubLink';
+import RelatedPosts from '@/components/RelatedPosts';
 
 export const revalidate = 300;
 
@@ -366,6 +367,8 @@ function BlogPostContent({
           </article>
         </div>
       </div>
+
+      <RelatedPosts currentPostId={post.id} category={post.category} locale={locale} />
 
       <PillarHubLink locale={locale} variant="banner" />
 

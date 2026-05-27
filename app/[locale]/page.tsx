@@ -8,6 +8,8 @@ import Pricing from '@/components/Pricing';
 import ProFeatures from '@/components/ProFeatures';
 import MapSection from '@/components/MapSection';
 import BlogPreview from '@/components/BlogPreview';
+import RelatedServices from '@/components/RelatedServices';
+import PillarHubLink from '@/components/PillarHubLink';
 import Footer from '@/components/Footer';
 
 export async function generateMetadata({
@@ -75,6 +77,8 @@ export default async function Home({
       <HowItWorks />
       <Pricing />
       <ProFeatures />
+      <RelatedServices background="gray" />
+      <PillarHubLink locale={locale} variant="banner" />
       <BlogPreview />
       <MapSection />
       <Footer />

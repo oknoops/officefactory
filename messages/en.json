@@ -119,6 +119,26 @@
         "title": "Our location",
         "address": "842 Chaussée d'Alsemberg, 1180 Uccle, Belgium"
     },
+    "RelatedPosts": {
+        "title": "Keep reading",
+        "subtitle": "Three more articles to go deeper on company domiciliation and registered offices."
+    },
+    "RelatedServices": {
+        "title": "A domiciliation tailored to your structure",
+        "subtitle": "Every legal form has its own requirements. Explore our specialised formulas.",
+        "domiciliation-srl-bv_title": "SRL / BV Domiciliation",
+        "domiciliation-srl-bv_desc": "Compliant registered office for your private limited company.",
+        "domiciliation-asbl-vzw_title": "ASBL / VZW Domiciliation",
+        "domiciliation-asbl-vzw_desc": "Dedicated solution for Belgian non-profit associations.",
+        "domiciliation-independants_title": "Freelancer Domiciliation",
+        "domiciliation-independants_desc": "Professional address for sole traders and self-employed individuals.",
+        "domiciliation-startups_title": "Startup Domiciliation",
+        "domiciliation-startups_desc": "Formula built for early-stage companies: flexibility, services and a pro image.",
+        "domiciliation-virtuelle_title": "Virtual Domiciliation",
+        "domiciliation-virtuelle_desc": "Virtual office with address, mail handling and phone reception.",
+        "siege-social-bruxelles_title": "Registered Office in Brussels",
+        "siege-social-bruxelles_desc": "Official registered office address, declared at the SPF Economy."
+    },
     "AdminServices": {
         "title": "Administrative procedures",
         "subtitle": "In addition to our domiciliation and coworking services, Office Factory assists you with all administrative and legal procedures related to the life of your company in Belgium.",

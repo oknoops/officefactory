@@ -119,6 +119,26 @@
         "title": "Onze locatie",
         "address": "842 Alsembergsesteenweg, 1180 Ukkel, België"
     },
+    "RelatedPosts": {
+        "title": "Verder lezen",
+        "subtitle": "Drie artikels om dieper in te gaan op bedrijfsdomiciliëring en uw maatschappelijke zetel."
+    },
+    "RelatedServices": {
+        "title": "Een domiciliëring afgestemd op uw structuur",
+        "subtitle": "Elke rechtsvorm heeft eigen vereisten. Ontdek onze gespecialiseerde formules.",
+        "domiciliation-srl-bv_title": "BV-domiciliëring",
+        "domiciliation-srl-bv_desc": "Conform maatschappelijk zeteladres voor uw besloten vennootschap.",
+        "domiciliation-asbl-vzw_title": "VZW-domiciliëring",
+        "domiciliation-asbl-vzw_desc": "Specifieke oplossing voor Belgische vzw's en non-profitorganisaties.",
+        "domiciliation-independants_title": "Domiciliëring zelfstandigen",
+        "domiciliation-independants_desc": "Professioneel adres voor freelancers en zelfstandigen in persoonlijke naam.",
+        "domiciliation-startups_title": "Startup-domiciliëring",
+        "domiciliation-startups_desc": "Formule op maat voor jonge bedrijven: flexibel, professioneel en compleet.",
+        "domiciliation-virtuelle_title": "Virtuele domiciliëring",
+        "domiciliation-virtuelle_desc": "Virtueel kantoor met adres, postverwerking en telefonisch onthaal.",
+        "siege-social-bruxelles_title": "Maatschappelijke zetel Brussel",
+        "siege-social-bruxelles_desc": "Officieel maatschappelijk adres, geregistreerd bij de FOD Economie."
+    },
     "AdminServices": {
         "title": "Administratieve procedures",
         "subtitle": "Naast onze domiciliëring- en coworkingdiensten, helpt Office Factory u bij alle administratieve en juridische procedures met betrekking tot het leven van uw bedrijf in België.",

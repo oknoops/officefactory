@@ -3,6 +3,7 @@ import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PillarHubLink from '@/components/PillarHubLink';
+import RelatedServices from '@/components/RelatedServices';
 import { Check, Mail, Archive, MapPin, ShieldCheck, Building, Users, Rocket, ChevronDown } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 
@@ -285,6 +286,8 @@ export default function DomiciliationPage() {
                     </div>
                 </div>
             </section>
+
+            <RelatedServices background="white" />
 
             <PillarHubLink locale={locale} variant="banner" />
 

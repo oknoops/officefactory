@@ -9,6 +9,7 @@ import { urlForImage, type PostFull } from '@/lib/sanity';
 import { SITE_URL } from '@/lib/seo';
 import ShareButtons from './ShareButtons';
 import PillarHubLink from '@/components/PillarHubLink';
+import RelatedPosts from '@/components/RelatedPosts';
 
 const components: PortableTextComponents = {
   block: {
@@ -184,6 +185,8 @@ export default async function SanityPostContent({
           </div>
         </article>
       </div>
+
+      <RelatedPosts currentPostId={post._id} category={post.category} locale={locale} />
 
       <PillarHubLink locale={locale} variant="banner" />
 

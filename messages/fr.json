@@ -119,6 +119,26 @@
         "title": "Notre localisation",
         "address": "842 Chaussée d'Alsemberg, 1180 Uccle, Belgique"
     },
+    "RelatedPosts": {
+        "title": "Continuez votre lecture",
+        "subtitle": "Trois articles pour aller plus loin sur la domiciliation et la gestion de votre siège social."
+    },
+    "RelatedServices": {
+        "title": "Une domiciliation adaptée à votre structure",
+        "subtitle": "Chaque forme juridique a ses propres exigences. Découvrez nos formules spécialisées.",
+        "domiciliation-srl-bv_title": "Domiciliation SRL / BV",
+        "domiciliation-srl-bv_desc": "Adresse de siège social conforme pour votre société à responsabilité limitée.",
+        "domiciliation-asbl-vzw_title": "Domiciliation ASBL / VZW",
+        "domiciliation-asbl-vzw_desc": "Solution dédiée aux associations sans but lucratif belges.",
+        "domiciliation-independants_title": "Domiciliation indépendants",
+        "domiciliation-independants_desc": "Adresse professionnelle pour freelances et indépendants en personne physique.",
+        "domiciliation-startups_title": "Domiciliation startups",
+        "domiciliation-startups_desc": "Formule pensée pour les jeunes pousses : flexibilité, services et image pro.",
+        "domiciliation-virtuelle_title": "Domiciliation virtuelle",
+        "domiciliation-virtuelle_desc": "Bureau virtuel avec adresse, gestion de courrier et réception téléphonique.",
+        "siege-social-bruxelles_title": "Siège social à Bruxelles",
+        "siege-social-bruxelles_desc": "Adresse officielle de votre siège social, enregistrée au SPF Économie."
+    },
     "AdminServices": {
         "title": "Démarches administratives",
         "subtitle": "Outre nos services de domiciliation et de coworking, Office Factory vous accompagne dans toutes les démarches administratives et juridiques liées à la vie de votre société, en Belgique.",
