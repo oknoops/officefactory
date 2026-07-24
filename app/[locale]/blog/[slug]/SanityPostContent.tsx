@@ -50,7 +50,13 @@ const components: PortableTextComponents = {
       </code>
     ),
     link: ({ value, children }) => {
-      const href: string = value?.href ?? '#';
+      // Editors paste links from the address bar, so internal targets arrive as
+      // absolute officefactory.be URLs. Strip the origin so they stay same-page
+      // navigations instead of being treated as external (new tab, rel=noopener).
+      // Surrounding whitespace is trimmed too — a stray space makes the href
+      // malformed and crawlers report it as broken.
+      const raw: string = (value?.href ?? '#').trim();
+      const href = raw.startsWith(`${SITE_URL}/`) ? raw.slice(SITE_URL.length) : raw;
       const external = /^https?:\/\//i.test(href);
       return (
         <a
